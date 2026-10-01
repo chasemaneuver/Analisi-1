@@ -2,7 +2,7 @@
 
 Questa è la procedura usata per la dispensa di Analisi 1: dai materiali di studio a una pagina con formule, esercizi e slider, consultabile gratuitamente con un link.
 
-**Il risultato:** [la nostra dispensa](https://chasemaneuver.github.io/Analisi-1/). Gli studenti non devono accedere a GitHub, installare programmi o avviare un notebook. Il tuo computer può restare spento.
+**Il risultato:** [la nostra dispensa](https://chasemaneuver.github.io/Analisi-1/capitolo-1/). Gli studenti non devono accedere a GitHub, installare programmi o avviare un notebook. Il tuo computer può restare spento.
 
 ## 1. Prepara i contenuti
 
@@ -25,8 +25,8 @@ I file essenziali del nostro sito sono:
 
 | File | A cosa serve |
 |---|---|
-| `index.html` | Il rimando al primo capitolo; le pagine dei capitoli sono nelle rispettive cartelle. |
-| `stile.css` | Colori, impaginazione, adattamento al telefono e stampa. |
+| `capitolo-1/index.html` e `capitolo-2/index.html` | Le pagine dei capitoli, con testi, formule e struttura. |
+| `assets/stile.css` | Colori, impaginazione, adattamento al telefono e stampa. |
 | `capitolo-1/laboratori.js` e `capitolo-2/laboratori.js` | Grafici, slider, menu e aggiornamenti interattivi. |
 | `.nojekyll` | Un file vuoto che indica a GitHub di pubblicare direttamente i file, senza elaborarli con Jekyll. |
 
@@ -60,13 +60,13 @@ Il repository è la cartella online dei file. Il sito per gli studenti avrà un 
 
 1. Apri la scheda **Code** del repository.
 2. Premi **Add file → Upload files**. Su una finestra stretta, **Add file** può apparire come un pulsante **+** vicino a **Go to file**.
-3. Premi **Choose your files** e seleziona `index.html`, `stile.css`, `capitolo-1/laboratori.js` e `capitolo-2/laboratori.js` e `.nojekyll`.
+3. Premi **Choose your files** e seleziona `index.html`, `assets/stile.css`, `capitolo-1/laboratori.js` e `capitolo-2/laboratori.js` e `.nojekyll`.
 4. Controlla che i nomi compaiano nell’elenco di caricamento.
 5. Inserisci una descrizione, per esempio “Pubblica la dispensa interattiva”.
 6. Seleziona **Commit directly to the main branch**.
 7. Premi **Commit changes**: significa salvare una versione dei file su GitHub.
 
-Mantieni la struttura: cartelle `capitolo-1` e `capitolo-2` con `index.html` e `laboratori.js`; nella radice lascia `index.html`, `capitolo-2.html`, `stile.css`, `capitoli.js` e `.nojekyll`. Carica i file estratti: uno ZIP da solo non diventa un sito.
+Mantieni la struttura: cartelle `capitolo-1` e `capitolo-2` con `index.html` e `laboratori.js`; in `assets` lascia `stile.css` e `capitoli.js`. Nella radice resta `.nojekyll`, insieme alla documentazione. Carica i file estratti: uno ZIP da solo non diventa un sito.
 
 ## 6. Attiva GitHub Pages
 
@@ -83,18 +83,18 @@ Queste sono le impostazioni del nostro sito. La cartella `/docs` è un’alterna
 
 ## 7. Recupera il link pubblico
 
-**Non devi inserire un link a piacere.** GitHub genera l’indirizzo dal nome del tuo account e del repository:
+**Non devi inserire un link a piacere.** GitHub genera la base dell’indirizzo dal nome del tuo account e del repository. Aggiungi `capitolo-1/` per entrare nel sito, perché le pagine si trovano nelle cartelle:
 
-`https://NOMEUTENTE.github.io/NOMEREPOSITORY/`
+`https://NOMEUTENTE.github.io/NOMEREPOSITORY/capitolo-1/`
 
 Nel nostro caso:
 
-**https://chasemaneuver.github.io/Analisi-1/**
+**https://chasemaneuver.github.io/Analisi-1/capitolo-1/**
 
 1. Dopo aver salvato, attendi che GitHub completi la pubblicazione: non è immediata.
 2. Apri la scheda **Actions** e cerca **pages build and deployment**.
 3. Attendi che il processo risulti completato con successo. Se fallisce, aprilo per leggere l’errore.
-4. Il link del sito compare nel risultato della pubblicazione e, a pubblicazione completata, nelle impostazioni **Pages**.
+4. Il link del sito compare nel risultato della pubblicazione e, a pubblicazione completata, nelle impostazioni **Pages**: aggiungi `capitolo-1/` alla base mostrata da GitHub.
 5. Aprilo e prova nuovamente uno slider.
 6. Condividi questo indirizzo con gli studenti, anziché il link al repository.
 
@@ -110,14 +110,14 @@ Lascia vuoto **Custom domain**: serve solo se possiedi un dominio personale. Non
 
 Il link resta lo stesso. **Non devi riattivare Pages a ogni aggiornamento.**
 
-Per aggiornare un capitolo, sostituisci i file nella relativa cartella; i file condivisi rimangono nella radice.
+Per aggiornare un capitolo, sostituisci i file nella relativa cartella; i file condivisi si trovano in `assets`.
 
 ## Se qualcosa non funziona
 
 | Cosa vedi | Cosa controllare |
 |---|---|
 | Errore 404 | La pubblicazione è terminata? Esiste `index.html` nella cartella scelta in Pages? |
-| Testo senza impaginazione | È stato caricato anche `stile.css`, nella posizione prevista? |
+| Testo senza impaginazione | È stato caricato anche `assets/stile.css`, nella posizione prevista? |
 | Mancano grafici o slider | È presente `capitolo-1/laboratori.js` e `capitolo-2/laboratori.js`? Stai aprendo il sito pubblicato? |
 | Formule mostrate come testo TeX | La connessione consente il caricamento di MathJax? |
 | Compare ancora la vecchia versione | Controlla **Actions**, poi aggiorna senza cache. |
