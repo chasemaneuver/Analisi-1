@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Analisi 1, capitolo 2: funzioni, grafici, composizione e inverse. 12 laboratori interattivi, 21 esercizi e 9 complementi svolti.">
+<title>Funzioni · Analisi 1</title><link rel="stylesheet" href="stile.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="capitoli.js"></script><script defer src="laboratori-capitolo-2.js"></script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script></head>
+<body><a class="skip" href="#contenuto">Vai al contenuto</a><header><a class="brand" href="index.html">A<span>1</span> / Analisi</a><span>UNA DISPENSA DA ESPLORARE</span><button id="stampa" type="button">Stampa / PDF</button></header><div class="layout"><aside><div class="chapter-picker"><label for="capitolo">SCEGLI IL CAPITOLO</label><select id="capitolo" aria-label="Scegli il capitolo"><option value="index.html" >1 · Numeri</option><option value="capitolo-2.html" selected>2 · Funzioni</option></select></div><details open><summary>In questo capitolo</summary><nav aria-label="Indice del capitolo"><a href="#sezione-1">1. Che cos’è una funzione</a><a href="#sezione-2">2. Le proprietà da riconoscere</a><a href="#sezione-3">3. Le funzioni elementari</a><a href="#sezione-4">4. Composizione e funzioni inverse</a><a href="#sezione-5">5. I 21 esercizi svolti</a><a href="#sezione-6">6. I 9 complementi svolti</a><a href="#sezione-7">7. Prima di passare ai limiti</a></nav></details><div class="aside-note">12 laboratori interattivi<br>21 esercizi · 9 complementi<br><small>Apri le soluzioni dopo aver provato su carta.</small></div></aside><main id="contenuto"><div class="hero" id="inizio"><span class="eyebrow">CAPITOLO 02</span><h1>Funzioni<span class="punto">.</span></h1><p class="lead">Una variabile, molte forme.<br>Domini, grafici e funzioni inverse.</p><div class="tags"><span>Teoria e dimostrazioni</span><a href="#laboratorio-1">Esplora i grafici ↗</a></div></div><noscript><p class="avviso">La teoria è leggibile senza JavaScript. Attivalo per formule impaginate e laboratori.</p></noscript><section class="introduzione"><p>Una dispensa rielaborata sul capitolo 2 di Bramanti, Pagani e Salsa, pp. 49–86. Tutte le definizioni, il teorema 2.1, gli esempi principali, i 21 esercizi e i 9 complementi: prova su carta prima di aprire una soluzione. Le figure sono esplorazioni, non dimostrazioni.</p></section>
+<h2 id="sezione-1">1. Che cos’è una funzione</h2><h3 id="Definizione-2.1-%C2%B7-Funzione,-dominio-e-immagine">Definizione 2.1 · Funzione, dominio e immagine</h3><p>Una <strong>funzione</strong> $f:A\to B$ assegna a ogni $x\in A$ un unico elemento $f(x)\in B$. $A$ è il <strong>dominio</strong>, $B$ il <strong>codominio</strong>. L’<strong>immagine</strong> è
+$$f(A)=\{f(x):x\in A\}\subseteq B.$$
+Il codominio è dichiarato; l’immagine si calcola. Scrivere la stessa formula con un altro dominio può dare una funzione diversa.</p>
+<p>$x$ è la <strong>variabile indipendente</strong>, $y=f(x)$ la <strong>variabile dipendente</strong>. $f$ indica la funzione, $f(x)$ un suo valore; $x\mapsto f(x)$ indica la legge di assegnazione. Una funzione $\mathbb N\to\mathbb R$ è una <strong>successione</strong>. Funzioni $\mathbb R^n\to\mathbb R^m$ comprendono le trasformazioni lineari e le funzioni di più variabili.</p>
+<p>Una <strong>funzione reale di variabile reale</strong> ha dominio $D\subseteq\mathbb R$ e valori reali. Il suo <strong>grafico</strong> è
+$$G_f=\{(x,f(x)):x\in D\}.$$
+Una retta verticale interseca un grafico al massimo una volta: per un ingresso non possono esserci due uscite. Per esempio una circonferenza intera non è il grafico di una funzione $y=f(x)$, mentre la semicirconferenza superiore $y=\sqrt{1-x^2}$ lo è, con $D=[-1,1]$.</p>
+<h3 id="Esempi-%C2%B7-Una-formula-descrive-un-modello">Esempi · Una formula descrive un modello</h3><table>
+<thead>
+<tr>
+<th>Ingresso → uscita</th>
+<th>Legge e dominio del modello</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tempo → distanza di caduta</td>
+<td>$s(t)=\frac12gt^2$, $t\ge0$, finché il corpo non raggiunge il suolo; partenza da fermo e attrito trascurato.</td>
+</tr>
+<tr>
+<td>Tasso → capitale dopo un anno</td>
+<td>$k(i)=(1+i/12)^{12}$ per capitale iniziale unitario e tasso annuo nominale $i$, capitalizzato mensilmente. Il tasso mensile è $i/12$.</td>
+</tr>
+<tr>
+<td>Distanza focale → potere diottrico</td>
+<td>$P(f)=1/f$; $f$ in metri, $P$ in diottrie. Una lente convergente ha $f&gt;0$.</td>
+</tr>
+<tr>
+<td>Studente → nome</td>
+<td>A ogni studente un nome; studenti diversi possono avere lo stesso nome.</td>
+</tr>
+<tr>
+<td>Posizione e tempo → temperatura</td>
+<td>$T(x,t)$ è una funzione di due variabili, non una funzione di una sola variabile.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Laboratorio-1-%C2%B7-Ingresso,-uscita,-immagine">Laboratorio 1 · Ingresso, uscita, immagine</h3><p>Muovi $x$ e confronta tre leggi. La finestra del grafico è finita: non rappresenta l’intero dominio.</p>
+<div class="laboratorio" data-lab="1" id="laboratorio-1"></div>
+<h2 id="sezione-2">2. Le proprietà da riconoscere</h2><h3 id="Limitatezza">Limitatezza</h3><p>$f:D\to\mathbb R$ è <strong>limitata superiormente</strong> se esiste $M\in\mathbb R$ tale che $f(x)\le M$ per ogni $x\in D$; è <strong>limitata inferiormente</strong> se esiste $m$ tale che $f(x)\ge m$ per ogni $x\in D$. È <strong>limitata</strong> se valgono entrambe, equivalentemente se $|f(x)|\le K$ per qualche $K\ge0$.</p>
+<p>Esempi su $\mathbb R$: $x^3$ è illimitata sopra e sotto; $x^2$ ha minimo $0$ ma è illimitata sopra; $1/(1+x^2)$ ha immagine $(0,1]$, massimo $1$, estremo inferiore $0$ non raggiunto. Un limite inferiore non deve essere un minimo.</p>
+<h3 id="Parit%C3%A0-e-disparit%C3%A0">Parità e disparità</h3><p>Il dominio deve essere <strong>simmetrico</strong>: $x\in D\Rightarrow-x\in D$.</p>
+<ul>
+<li>$f$ è <strong>pari</strong> se $f(-x)=f(x)$: simmetria rispetto all’asse $y$.</li>
+<li>$f$ è <strong>dispari</strong> se $f(-x)=-f(x)$: simmetria rispetto all’origine.</li>
+</ul>
+<p>$x^2$ è pari, $x^3$ è dispari, $e^x$ non è né pari né dispari. La funzione nulla è entrambe. Se $0\in D$, una funzione dispari soddisfa $f(0)=0$. Un grafico simmetrico rispetto all’asse $x$ può essere quello di una funzione soltanto quando tutti i valori sono zero.</p>
+<h3 id="Monotonia">Monotonia</h3><p>Per tutti $x_1,x_2\in D$ con $x_1&lt;x_2$:</p>
+<table>
+<thead>
+<tr>
+<th>Proprietà</th>
+<th>Confronto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crescente, in senso non stretto</td>
+<td>$f(x_1)\le f(x_2)$</td>
+</tr>
+<tr>
+<td>Strettamente crescente</td>
+<td>$f(x_1)&lt;f(x_2)$</td>
+</tr>
+<tr>
+<td>Decrescente, in senso non stretto</td>
+<td>$f(x_1)\ge f(x_2)$</td>
+</tr>
+<tr>
+<td>Strettamente decrescente</td>
+<td>$f(x_1)&gt;f(x_2)$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Monotona</strong> significa crescente oppure decrescente. Una costante è entrambe in senso non stretto. $x^3$ è strettamente crescente in $\mathbb R$; $x^2$ decresce in $(-\infty,0]$ e cresce in $[0,\infty)$, ma non è monotona su tutta $\mathbb R$. Confrontare due punti in uno stesso intervallo non basta a dimostrare monotonia sull’unione di intervalli.</p>
+<h3 id="Periodicit%C3%A0">Periodicità</h3><p>$T&gt;0$ è un <strong>periodo</strong> di $f$ se il dominio è stabile per traslazione di $\pm T$ e $f(x+T)=f(x)$ per ogni $x\in D$. Una funzione è <strong>periodica</strong> se ammette un periodo. Il più piccolo periodo positivo, <strong>se esiste</strong>, si chiama <strong>periodo fondamentale</strong>. Tutti i multipli interi positivi di un periodo sono periodi.</p>
+<p>$\sin x$ ha periodo fondamentale $2\pi$; $\sin(2x)$ ha periodo fondamentale $\pi$. Una costante ha ogni $T&gt;0$ come periodo, senza un periodo fondamentale. Anche funzioni non costanti possono non avere il più piccolo periodo: l’indicatrice dei razionali ammette ogni periodo razionale positivo. In questa dispensa distinguiamo quindi periodo e periodo fondamentale.</p>
+<h2 id="sezione-3">3. Le funzioni elementari</h2><h3 id="3.1-%C2%B7-Potenze">3.1 · Potenze</h3><p>La famiglia $f(x)=kx^\alpha$ ha coefficiente $k$ ed esponente fissato $\alpha$. Per $x&gt;0$ e $\alpha\ne0$, $x^\alpha$ è strettamente crescente se $\alpha&gt;0$, decrescente se $\alpha&lt;0$; l’immagine è $(0,\infty)$. Un $k&lt;0$ inverte il verso della monotonia, $k=0$ dà una costante sul dominio scelto.</p>
+<p><strong>Dominio reale della potenza.</strong> Per $\alpha=m/n\in\mathbb Q$ scritto ai minimi termini, $n&gt;0$:</p>
+<table>
+<thead>
+<tr>
+<th>Esponente</th>
+<th>Dominio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$n$ dispari, $\alpha&gt;0$</td>
+<td>$\mathbb R$</td>
+</tr>
+<tr>
+<td>$n$ dispari, $\alpha&lt;0$</td>
+<td>$\mathbb R\setminus\{0\}$</td>
+</tr>
+<tr>
+<td>$n$ pari, $\alpha&gt;0$</td>
+<td>$[0,\infty)$</td>
+</tr>
+<tr>
+<td>$n$ pari, $\alpha&lt;0$</td>
+<td>$(0,\infty)$</td>
+</tr>
+<tr>
+<td>$\alpha$ irrazionale positivo</td>
+<td>$[0,\infty)$, con $0^\alpha=0$</td>
+</tr>
+<tr>
+<td>$\alpha$ irrazionale negativo</td>
+<td>$(0,\infty)$</td>
+</tr>
+</tbody>
+</table>
+<p>Per $n$ dispari, $x^{m/n}=(\sqrt[n]{x})^m$: numeratore pari dà una funzione pari, numeratore dispari una funzione dispari. Un numeratore pari non dà una funzione crescente su tutta la retta: $x^{4/5}$ è un controesempio. $x^0=1$ per $x\ne0$; l’eventuale valore in zero va dichiarato separatamente.</p>
+<p><strong>Esempi geometrici:</strong> $x$, $x^2$, $x^3$, $\sqrt x$, $\sqrt[3]x$, $1/x$, $1/x^2$. Tutte le potenze positive valgono $1$ in $x=1$. Per $x&gt;1$, aumentare l’esponente aumenta il valore; per $0&lt;x&lt;1$ lo diminuisce. Una potenza negativa diverge vicino a zero: il grafico non deve attraversare il punto escluso.</p>
+<p><strong>Esempi nelle applicazioni:</strong> moto uniforme $s=vt$; condensatore $Q=C\Delta V$; gas ideale isotermo $p=nRT/V$; potenziale di una carica puntiforme proporzionale a $1/r$; sfera $S=4\pi r^2$, $V=4\pi r^3/3$; caduta da quota $h$, $v=\sqrt{2gh}$ nel modello senza attrito; gas ideale adiabatico $pV^\gamma=\text{costante}$, con $\gamma=5/3$ per un gas monoatomico e $7/5$ per un biatomico nel modello usuale. Il dominio fisico è spesso solo positivo.</p>
+<h3 id="Laboratorio-2-%C2%B7-Potenze-reali">Laboratorio 2 · Potenze reali</h3><p>Scegli un esponente, poi cambia $k$. I valori negativi di $x$ sono presenti solo quando la potenza reale è definita.</p>
+<div class="laboratorio" data-lab="2" id="laboratorio-2"></div>
+<h3 id="3.2-%C2%B7-Esponenziali-e-logaritmi">3.2 · Esponenziali e logaritmi</h3><p>Per $a&gt;0$, $a\ne1$, l’<strong>esponenziale</strong> $a^x$ ha dominio $\mathbb R$ e immagine $(0,\infty)$. È strettamente crescente per $a&gt;1$, decrescente per $0&lt;a&lt;1$; passa per $(0,1)$.</p>
+<p>Il <strong>logaritmo</strong> $\log_a x$ è l’unico esponente $y$ per cui $a^y=x$. Ha dominio $(0,\infty)$, immagine $\mathbb R$, e lo stesso verso di monotonia dell’esponenziale. Passa per $(1,0)$.
+$$\log_a(a^x)=x,\qquad a^{\log_a x}=x\ (x&gt;0).$$
+$$\log_a(xy)=\log_a x+\log_a y,\quad \log_a(x/y)=\log_a x-\log_a y,\quad \log_a(x^r)=r\log_a x\quad(x,y&gt;0).$$
+Il <strong>logaritmo naturale</strong> $\log x=\ln x$ ha base $e\approx2{,}71828$. Cambio di base: $\log_a x=\ln x/\ln a$. Non confondere $a^x$ (base fissata) con $x^a$ (esponente fissato).</p>
+<p><strong>Esempio di scala logaritmica:</strong> nel modello ideale $\mathrm{pH}=-\log_{10}c$, con concentrazione numerica $c$ espressa in mol/L, $c=10^{-7}$ dà pH $7$. A circa $25\,^\circ\mathrm C$, pH sotto $7$ indica acidità, sopra $7$ basicità. Diminuire $c$ di un fattore $10$ aumenta il pH di $1$.</p>
+<p><strong>Esempio di decadimento:</strong> un condensatore che si scarica ha $q(t)=Qe^{-t/\tau}$, con $\tau=RC&gt;0$ e $t\ge0$. Dopo un tempo $\tau$ rimane $Q/e$.</p>
+<h3 id="Laboratorio-3-%C2%B7-Una-funzione-e-la-sua-inversa">Laboratorio 3 · Una funzione e la sua inversa</h3><p>L’esponenziale e il logaritmo si riflettono rispetto a $y=x$. Prova anche una base minore di $1$; il valore $a=1$ non è ammesso.</p>
+<div class="laboratorio" data-lab="3" id="laboratorio-3"></div>
+<h3 id="3.3-%C2%B7-Seno,-coseno,-tangente-e-cotangente">3.3 · Seno, coseno, tangente e cotangente</h3><p>Un angolo $x$ si misura in <strong>radianti</strong>: sulla circonferenza unitaria è la lunghezza orientata dell’arco. $2\pi$ radianti sono un giro, $\pi$ sono $180^\circ$. Il punto associato all’angolo è $(\cos x,\sin x)$.
+$$\tan x=\frac{\sin x}{\cos x},\qquad \cot x=\frac{\cos x}{\sin x},\qquad \sin^2x+\cos^2x=1.$$
+Tangente e cotangente sono reciproche soltanto quando entrambe sono definite e non nulle.</p>
+<table>
+<thead>
+<tr>
+<th>Funzione</th>
+<th>Dominio</th>
+<th>Immagine</th>
+<th>Parità</th>
+<th>Periodo fondamentale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\sin x$</td>
+<td>$\mathbb R$</td>
+<td>$[-1,1]$</td>
+<td>Dispari</td>
+<td>$2\pi$</td>
+</tr>
+<tr>
+<td>$\cos x$</td>
+<td>$\mathbb R$</td>
+<td>$[-1,1]$</td>
+<td>Pari</td>
+<td>$2\pi$</td>
+</tr>
+<tr>
+<td>$\tan x$</td>
+<td>$x\ne\pi/2+k\pi$</td>
+<td>$\mathbb R$</td>
+<td>Dispari</td>
+<td>$\pi$</td>
+</tr>
+<tr>
+<td>$\cot x$</td>
+<td>$x\ne k\pi$</td>
+<td>$\mathbb R$</td>
+<td>Dispari</td>
+<td>$\pi$</td>
+</tr>
+</tbody>
+</table>
+<p>Qui e nelle soluzioni $k\in\mathbb Z$. Valori notevoli: $\sin0=0$, $\cos0=1$, $\sin(\pi/2)=1$, $\cos\pi=-1$, $\sin(\pi/6)=1/2$, $\cos(\pi/3)=1/2$, $\sin(\pi/4)=\cos(\pi/4)=\sqrt2/2$. Inoltre $\sin x=\cos(x-\pi/2)$.</p>
+<h3 id="Laboratorio-4-%C2%B7-Dal-cerchio-alla-sinusoide">Laboratorio 4 · Dal cerchio alla sinusoide</h3><p>Muovi l’angolo e segui le coordinate del punto. La tangente manca quando $\cos x=0$.</p>
+<div class="laboratorio" data-lab="4" id="laboratorio-4"></div>
+<h3 id="3.4-%C2%B7-Vibrazioni-e-inviluppi">3.4 · Vibrazioni e inviluppi</h3><p>Una <strong>vibrazione elementare</strong> $A\sin(\omega t+\varphi)$, con $\omega&gt;0$, ha ampiezza $|A|$, pulsazione $\omega$, frequenza $\omega/(2\pi)$ e periodo $2\pi/\omega$ se $A\ne0$. Il parametro $\varphi$ è la fase: una traslazione orizzontale di $-\varphi/\omega$.</p>
+<p>Se $a,b$ non sono entrambi zero,
+$$a\sin\omega t+b\cos\omega t=R\sin(\omega t+\varphi),\quad R=\sqrt{a^2+b^2},$$
+con $\cos\varphi=a/R$, $\sin\varphi=b/R$. La fase è determinata modulo $2\pi$. Se $a=b=0$, la funzione è nulla e la fase è arbitraria. Sovrapporre frequenze diverse porta alle somme trigonometriche e, in seguito, alle serie di Fourier.</p>
+<p>Per $t\ge0$, $-t\le t\sin\omega t\le t$: le rette $\pm t$ sono gli <strong>inviluppi</strong> di un’oscillazione amplificata. Per $\alpha&gt;0$,
+$$-e^{-\alpha t}\le e^{-\alpha t}\sin\omega t\le e^{-\alpha t}.$$
+La moltiplicazione per $e^{-\alpha t}$ dà un’oscillazione smorzata. Un’oscillazione con ampiezza variabile generalmente non è periodica.</p>
+<h3 id="Laboratorio-5-%C2%B7-Ampiezza,-frequenza-e-smorzamento">Laboratorio 5 · Ampiezza, frequenza e smorzamento</h3><div class="laboratorio" data-lab="5" id="laboratorio-5"></div>
+<h3 id="3.5-%C2%B7-Parte-intera-e-mantissa">3.5 · Parte intera e mantissa</h3><p>La <strong>parte intera</strong> $\lfloor x\rfloor$ è l’unico intero $n$ tale che $n\le x&lt;n+1$. La <strong>mantissa</strong>, o parte frazionaria, è $\{x\}=x-\lfloor x\rfloor\in[0,1)$. In questo paragrafo le parentesi graffe indicano la parte frazionaria.</p>
+<p>$\lfloor2{,}38\rfloor=2$, $\{2{,}38\}=0{,}38$; $\lfloor3\rfloor=3$, $\{3\}=0$; <strong>$\lfloor-1{,}8\rfloor=-2$</strong>, $\{-1{,}8\}=0{,}2$. Troncare le cifre decimali di un negativo non calcola la parte intera. La mantissa ha periodo fondamentale $1$; la parte intera non è periodica.</p>
+<h3 id="Laboratorio-6-%C2%B7-Gradini-e-salti">Laboratorio 6 · Gradini e salti</h3><p>Il punto pieno appartiene al grafico, quello vuoto è escluso. Confronta $x$ e $x^2$ come argomenti.</p>
+<div class="laboratorio" data-lab="6" id="laboratorio-6"></div>
+<h3 id="3.6-%C2%B7-Funzioni-iperboliche">3.6 · Funzioni iperboliche</h3><p>$$\sinh x=\frac{e^x-e^{-x}}2,\qquad\cosh x=\frac{e^x+e^{-x}}2,\qquad\tanh x=\frac{\sinh x}{\cosh x}.$$
+Nel libro: $\mathrm{Sh},\mathrm{Ch},\mathrm{Th}$. Tutte hanno dominio $\mathbb R$. Seno e tangente iperbolici sono dispari e strettamente crescenti; coseno iperbolico è pari, decresce fino a $0$ e cresce dopo $0$. Immagini: $\mathbb R$, $[1,\infty)$ e $(-1,1)$ rispettivamente. Valori in zero: $0,1,0$.
+$$\sinh x&lt;\tfrac12e^x&lt;\cosh x\qquad(x\in\mathbb R).$$
+<strong>Identità fondamentali:</strong>
+$$\cosh^2x-\sinh^2x=1,$$
+$$\sinh(x+y)=\sinh x\cosh y+\cosh x\sinh y,$$
+$$\cosh(x+y)=\cosh x\cosh y+\sinh x\sinh y,$$
+$$\tanh(x+y)=\frac{\tanh x+\tanh y}{1+\tanh x\tanh y}.$$
+In particolare $\sinh(2x)=2\sinh x\cosh x$ e $\cosh(2x)=\cosh^2x+\sinh^2x$. La curva $y=\cosh x$ è una <strong>catenaria</strong>: con una scelta adatta delle scale, descrive un filo omogeneo pesante sospeso fra due estremità.</p>
+<h3 id="Laboratorio-7-%C2%B7-Iperbole-e-catenaria">Laboratorio 7 · Iperbole e catenaria</h3><div class="laboratorio" data-lab="7" id="laboratorio-7"></div>
+<h3 id="3.7-%C2%B7-Operazioni-sui-grafici">3.7 · Operazioni sui grafici</h3><table>
+<thead>
+<tr>
+<th>Nuova funzione</th>
+<th>Effetto e dominio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$f(x)+b$</td>
+<td>Traslazione verticale di $b$; stesso dominio.</td>
+</tr>
+<tr>
+<td>$f(x-h)$</td>
+<td>Traslazione orizzontale di $h$ verso destra; dominio $D+h$.</td>
+</tr>
+<tr>
+<td>$kf(x)$</td>
+<td>Ordinate moltiplicate per $k$; se $k&lt;0$, riflessione rispetto all’asse $x$.</td>
+</tr>
+<tr>
+<td>$f(kx)$, $k\ne0$</td>
+<td>Ascisse divise per $k$; per $k&lt;0$ anche riflessione rispetto all’asse $y$. Dominio $\{x:kx\in D\}$.</td>
+</tr>
+<tr>
+<td>$\lvert f(x)\rvert$</td>
+<td>Si ribalta verso l’alto solo la parte sotto l’asse $x$; stesso dominio.</td>
+</tr>
+<tr>
+<td>$f(\lvert x\rvert)$</td>
+<td>Si copia il ramo destro a sinistra; dominio $\{x:\lvert x\rvert\in D\}$.</td>
+</tr>
+</tbody>
+</table>
+<p>Per $k=0$, $f(kx)$ è la costante $f(0)$ se $0\in D$, altrimenti non è definita. <strong>Esempi:</strong> $\log(x+2)$ trasla $\log x$ di $2$ a sinistra e richiede $x&gt;-2$; $\log(x-1)$ trasla di $1$ a destra e richiede $x&gt;1$; $\log(-x)$ è definita per $x&lt;0$; $|x|$ deriva da $x$; $|\sin x|$ ribalta le semionde negative; $e^{|x|}$ è pari, con minimo $1$ in zero.</p>
+<h3 id="Laboratorio-8-%C2%B7-Trasforma-un-grafico">Laboratorio 8 · Trasforma un grafico</h3><p>Confronta il grafico base in blu e la trasformazione in arancio. La finestra nasconde i valori fuori scala; non cambia il dominio matematico.</p>
+<div class="laboratorio" data-lab="8" id="laboratorio-8"></div>
+<h3 id="3.8-%C2%B7-Funzioni-definite-a-tratti">3.8 · Funzioni definite a tratti</h3><p>Una funzione può usare formule diverse su parti diverse del dominio. Nell’esempio del capitolo,
+$$f(x)=\begin{cases}x&amp;x\le0,\\x^2&amp;0&lt;x\le1,\\\log x&amp;x&gt;1.\end{cases}$$
+Il dominio è <strong>tutta $\mathbb R$</strong>: non si impone $x&gt;0$ ai rami che non usano il logaritmo. $f(1)=1$; il ramo logaritmico non comprende $x=1$, dove avrebbe valore $0$. L’immagine è $\mathbb R$: il primo ramo copre $(-\infty,0]$ e il terzo $(0,\infty)$.</p>
+<h3 id="Laboratorio-9-%C2%B7-Quale-ramo-si-usa?">Laboratorio 9 · Quale ramo si usa?</h3><div class="laboratorio" data-lab="9" id="laboratorio-9"></div>
+<h2 id="sezione-4">4. Composizione e funzioni inverse</h2><h3 id="4.1-%C2%B7-Composizione-e-iterate">4.1 · Composizione e iterate</h3><p>Date $f:E\to\mathbb R$, $g:F\to\mathbb R$, se $f(E)\subseteq F$ si definisce
+$$g\circ f:E\to\mathbb R,\qquad(g\circ f)(x)=g(f(x)).$$
+Se l’inclusione non vale su tutto $E$, il dominio naturale della composizione è $\{x\in E:f(x)\in F\}$. Si calcola <strong>prima la funzione interna</strong>.</p>
+<p>La composizione è associativa, quando le espressioni sono definite: $(f\circ g)\circ r=f\circ(g\circ r)$. Non è in generale commutativa. Con $f(x)=x^2$, $g(x)=\cos x$, $g\circ f=\cos(x^2)$ e $f\circ g=\cos^2x$ sono diverse. Con $f(x)=e^x$, $g(x)=\sqrt x$, $g\circ f=e^{x/2}$ ha dominio $\mathbb R$, mentre $f\circ g=e^{\sqrt x}$ ha dominio $[0,\infty)$.</p>
+<p>Se $f(D)\subseteq D$, l’<strong>iterata seconda</strong> è $f^{\circ2}=f\circ f$; l’iterata $n$-esima compone $f$ con sé stessa $n$ volte. Nel libro compare $f^2$ per l’iterata: qui $f^{\circ2}$ la distingue dal quadrato puntuale $(f(x))^2$. Per $f(x)=1/x$, l’iterata seconda è $x$ su $\mathbb R\setminus\{0\}$, non $1/x^2$.</p>
+<h3 id="Laboratorio-10-%C2%B7-L%E2%80%99ordine-conta">Laboratorio 10 · L’ordine conta</h3><div class="laboratorio" data-lab="10" id="laboratorio-10"></div>
+<h3 id="4.2-%C2%B7-Invertibilit%C3%A0">4.2 · Invertibilità</h3><p>$f:D\to\mathbb R$ è <strong>iniettiva</strong> se $f(x_1)=f(x_2)$ implica $x_1=x_2$. Equivalentemente, ingressi distinti hanno uscite distinte, oppure ogni $y\in f(D)$ proviene da un solo ingresso. In questo caso è invertibile <strong>sulla propria immagine</strong> e
+$$f^{-1}:f(D)\to D,\qquad y=f(x)\Longleftrightarrow x=f^{-1}(y).$$
+Se si richiede un’inversa sull’intero codominio dichiarato $B$, serve anche <strong>suriettività</strong>, cioè $f(D)=B$: iniettività e suriettività insieme danno una <strong>biiezione</strong>.
+$$f^{-1}(f(x))=x\ (x\in D),\qquad f(f^{-1}(y))=y\ (y\in f(D)).$$
+$f^{-1}$ non significa $1/f$. Il <strong>test delle rette orizzontali</strong> riconosce l’iniettività: ogni retta orizzontale incontra il grafico al massimo una volta. Una funzione pari con almeno una coppia $x,-x$ distinta non è iniettiva; una funzione periodica su $\mathbb R$ non è iniettiva.</p>
+<h3 id="Teorema-2.1-%C2%B7-Monotonia-stretta-e-inversa">Teorema 2.1 · Monotonia stretta e inversa</h3><blockquote>
+<p>Una funzione strettamente monotona su $D\subseteq\mathbb R$ è invertibile sulla propria immagine. La sua inversa è strettamente monotona nello stesso verso.</p>
+</blockquote>
+<p><strong>Dimostrazione.</strong> Se $f$ è strettamente crescente, $x_1&lt;x_2$ implica $f(x_1)&lt;f(x_2)$: due ingressi distinti non danno la stessa uscita. Per $y_1&lt;y_2$ nell’immagine, siano $x_i=f^{-1}(y_i)$. Se $x_1\ge x_2$, la crescita di $f$ darebbe $y_1\ge y_2$, assurdo. Quindi $x_1&lt;x_2$. Se $f$ è strettamente decrescente, due ingressi distinti hanno ancora uscite distinte; $y_1&lt;y_2$ forza $x_1&gt;x_2$, quindi l’inversa è strettamente decrescente.</p>
+<p>Il viceversa non vale senza ulteriori ipotesi: scambiando i valori di $x$ nei soli punti $0$ e $1$, la funzione $f(0)=1$, $f(1)=0$, $f(x)=x$ altrove è biiettiva ma non monotona.</p>
+<p>Il grafico dell’inversa si ottiene riflettendo rispetto a $y=x$: $(x,y)\mapsto(y,x)$. Per trovarla, si risolve $y=f(x)$ rispetto a $x$, mantenendo il dominio.</p>
+<table>
+<thead>
+<tr>
+<th>Funzione e dominio</th>
+<th>Inversa e dominio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$2x+3$, $\mathbb R$</td>
+<td>$(y-3)/2$, $\mathbb R$</td>
+</tr>
+<tr>
+<td>$x^2$, $[0,\infty)$</td>
+<td>$\sqrt y$, $[0,\infty)$</td>
+</tr>
+<tr>
+<td>$x^3$, $\mathbb R$</td>
+<td>$\sqrt[3]y$, $\mathbb R$</td>
+</tr>
+<tr>
+<td>$a^x$, $\mathbb R$, $a&gt;0$, $a\ne1$</td>
+<td>$\log_a y$, $(0,\infty)$</td>
+</tr>
+<tr>
+<td>$x^\alpha$, $(0,\infty)$, $\alpha\ne0$</td>
+<td>$y^{1/\alpha}$, $(0,\infty)$</td>
+</tr>
+</tbody>
+</table>
+<p>$x+e^x$ è strettamente crescente e ha un’inversa, benché questa non abbia una formula con le sole funzioni elementari del capitolo. Non confondere l’esistenza dell’inversa con la possibilità di scriverla esplicitamente.</p>
+<h3 id="Laboratorio-11-%C2%B7-Invertire-richiede-un-dominio">Laboratorio 11 · Invertire richiede un dominio</h3><p>Il ramo $x^2$, $x\ge0$, ha inversa $\sqrt x$. La parabola intera non ha un’inversa: manca l’unicità dell’ingresso.</p>
+<div class="laboratorio" data-lab="11" id="laboratorio-11"></div>
+<h3 id="4.3-%C2%B7-Inverse-trigonometriche">4.3 · Inverse trigonometriche</h3><p>Si restringe ciascuna funzione a un intervallo di monotonia stretta.</p>
+<table>
+<thead>
+<tr>
+<th>Funzione ristretta</th>
+<th>Inversa</th>
+<th>Dominio dell’inversa</th>
+<th>Immagine dell’inversa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\sin x$, $[-\pi/2,\pi/2]$</td>
+<td>$\arcsin x$</td>
+<td>$[-1,1]$</td>
+<td>$[-\pi/2,\pi/2]$</td>
+</tr>
+<tr>
+<td>$\cos x$, $[0,\pi]$</td>
+<td>$\arccos x$</td>
+<td>$[-1,1]$</td>
+<td>$[0,\pi]$</td>
+</tr>
+<tr>
+<td>$\tan x$, $(-\pi/2,\pi/2)$</td>
+<td>$\arctan x$</td>
+<td>$\mathbb R$</td>
+<td>$(-\pi/2,\pi/2)$</td>
+</tr>
+</tbody>
+</table>
+<p>Arcoseno e arcotangente sono crescenti e dispari; arcocoseno è decrescente e non è pari né dispari. $\arcsin(\sin x)=x$ soltanto sull’intervallo scelto: per esempio $\arcsin(\sin\pi)=0$, non $\pi$.</p>
+<p><strong>Esempi svolti.</strong> Ponendo $\theta=\arcsin(1/4)$, $\sin x=1/4$ dà $x=\theta+2k\pi$ oppure $x=\pi-\theta+2k\pi$. Ponendo $\beta=\arccos(1/5)$, $\cos x&lt;1/5$ dà $\beta+2k\pi&lt;x&lt;2\pi-\beta+2k\pi$. Infine $\tan x\ge3$ dà $\arctan3+k\pi\le x&lt;\pi/2+k\pi$: il polo resta escluso.</p>
+<h3 id="4.4-%C2%B7-Inverse-iperboliche">4.4 · Inverse iperboliche</h3><p>$$\operatorname{arsinh}x=\ln(x+\sqrt{x^2+1}),\quad x\in\mathbb R.$$
+Per ricavarla da $x=\sinh y$, poni $z=e^y&gt;0$: $z^2-2xz-1=0$. L’unica radice positiva è $z=x+\sqrt{x^2+1}$, poi $y=\ln z$.</p>
+<p>Restringendo $\cosh$ a $[0,\infty)$,
+$$\operatorname{arcosh}x=\ln(x+\sqrt{x^2-1}),\quad x\ge1.$$
+Qui $z^2-2xz+1=0$; il ramo $y\ge0$ seleziona $z\ge1$. Infine
+$$\operatorname{artanh}x=\tfrac12\ln\frac{1+x}{1-x},\quad -1&lt;x&lt;1.$$
+Immagini delle tre inverse: $\mathbb R$, $[0,\infty)$, $\mathbb R$. Nel libro le prime due sono chiamate settore seno e settore coseno iperbolico. <strong>Esempi:</strong> $\sinh x=2$ ha soluzione $\ln(2+\sqrt5)$; $\cosh x=3$ ha due soluzioni $\pm\ln(3+2\sqrt2)$: l’inversa del ramo positivo ne dà una sola.</p>
+<h2 id="sezione-5">5. I 21 esercizi svolti</h2><details class="esercizio"><summary>Esercizio 1 · Domini</summary><div class="soluzione">
+<p><strong>a)</strong> $\sqrt{e^{2x}-e^x}$: $e^x(e^x-1)\ge0$. Poiché $e^x&gt;0$, serve $e^x\ge1$, dunque <strong>$[0,\infty)$</strong>.</p>
+<p><strong>b)</strong> $\ln(1-x^3)$: $1-x^3&gt;0$, dunque <strong>$(-\infty,1)$</strong>.</p>
+<p><strong>c)</strong> $\arcsin(x^2-2)$: $-1\le x^2-2\le1$, cioè $1\le x^2\le3$. Dominio <strong>$[-\sqrt3,-1]\cup[1,\sqrt3]$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 2 · Quattro trasformazioni dell’esponenziale</summary><div class="soluzione">
+<p>Tutte hanno dominio $\mathbb R$.</p>
+<ul>
+<li>$e^{|x|}$: conserva il ramo destro di $e^x$ e lo riflette a sinistra; pari, immagine $[1,\infty)$.</li>
+<li>$3e^x$: dilatazione verticale di fattore $3$; immagine $(0,\infty)$, passa per $(0,3)$.</li>
+<li>$e^x-1$: traslazione verso il basso di $1$; immagine $(-1,\infty)$, passa per l’origine.</li>
+<li>$|e^x-1|$: ribalta il ramo negativo della precedente; vale $1-e^x$ per $x&lt;0$, $e^x-1$ per $x\ge0$; immagine $[0,\infty)$.</li>
+</ul>
+<p>Verifica i quattro grafici nel laboratorio 8 scegliendo «Esercizio 2».</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 3 · Cinque trasformazioni del logaritmo</summary><div class="soluzione">
+<ul>
+<li>$\ln|x|$: dominio $\mathbb R\setminus\{0\}$, immagine $\mathbb R$; copia il ramo destro a sinistra, funzione pari, zeri $\pm1$.</li>
+<li>$3\ln x$: dominio $(0,\infty)$, immagine $\mathbb R$; dilatazione verticale, zero $1$.</li>
+<li>$\ln(x-2)$: dominio $(2,\infty)$, immagine $\mathbb R$; traslazione di $2$ a destra, zero $3$.</li>
+<li>$|\ln x|$: dominio $(0,\infty)$, immagine $[0,\infty)$; cambia segno al ramo $0&lt;x&lt;1$.</li>
+<li>$|\ln|x||$: dominio $\mathbb R\setminus\{0\}$, immagine $[0,\infty)$; prima riflessione del ramo destro a sinistra, poi ribaltamento delle ordinate negative; pari, zeri $\pm1$.</li>
+</ul>
+<p>I cinque grafici sono selezionabili nel laboratorio 8 («Esercizio 3»).</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 4 · A cos(ωx)</summary><div class="soluzione">
+<p>Per $A\in\{1,-1,3,-3\}$ e $\omega\in\{1,2,3\}$, dominio $\mathbb R$, immagine $[-|A|,|A|]$, periodo fondamentale $2\pi/\omega$. $A&lt;0$ riflette il grafico rispetto all’asse $x$; l’ampiezza resta $|A|$. I massimi per $A&gt;0$ sono in $x=2k\pi/\omega$, i minimi in $x=(2k+1)\pi/\omega$; per $A&lt;0$ si scambiano. Usa il laboratorio 5 scegliendo il coseno.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 5 · Moltiplicare sin x</summary><div class="soluzione">
+<p>$x\sin x$ è pari, definita su $\mathbb R$, compresa tra $-|x|$ e $|x|$ e illimitata sopra e sotto. $\sin x/x$ è pari, definita su $\mathbb R\setminus\{0\}$: non assegnare automaticamente un valore in zero; vicino a zero tende a $1$, risultato che verrà dimostrato nel capitolo sui limiti. È compresa fra gli inviluppi $\pm1/|x|$.</p>
+<p>$e^x\sin x$ e $e^{-x}\sin x$ hanno dominio $\mathbb R$ e inviluppi $\pm e^x$, $\pm e^{-x}$: il primo amplifica verso destra, il secondo smorza verso destra. Non sono periodiche e non sono né pari né dispari. In tutti i casi gli zeri ammessi sono $k\pi$ (escludendo $0$ nel quoziente). Nel laboratorio 5 scegli l’inviluppo desiderato; la finestra mostra $x\ge0$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 6 · Dominio, immagine e inversa</summary><div class="soluzione">
+<p><strong>a)</strong> $x^3+2$: dominio e immagine $\mathbb R$, strettamente crescente, inversa $\sqrt[3]{y-2}$.</p>
+<p><strong>b)</strong> $e^{-|x|}$: dominio $\mathbb R$, immagine $(0,1]$. Non iniettiva: $f(x)=f(-x)$. Sul ramo $x\ge0$, inversa $-\ln y$; sul ramo $x\le0$, inversa $\ln y$, entrambe con $0&lt;y\le1$.</p>
+<p><strong>c)</strong> $x|x|$: vale $x^2$ se $x\ge0$, $-x^2$ se $x&lt;0$. Strettamente crescente anche confrontando un negativo con un positivo; dominio e immagine $\mathbb R$. Inversa $\sqrt y$ per $y\ge0$, $-\sqrt{-y}$ per $y&lt;0$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 7 · Iterare 1/x</summary><div class="soluzione">
+<p>$f(x)=1/x$ ha dominio $D=\mathbb R\setminus\{0\}$ e $f(D)=D$. Dunque $f^{\circ2}(x)=1/(1/x)=x$ <strong>su $D$</strong>. La semplificazione non aggiunge $x=0$ al dominio.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 8 · Una composizione a tratti</summary><div class="soluzione">
+<p>Per $f(u)=1$ se $u\ge0$, $f(u)=-1$ se $u&lt;0$ e $g(x)=\sin x$,
+$$f(g(x))=\begin{cases}1&amp;\sin x\ge0,\\-1&amp;\sin x&lt;0.\end{cases}$$
+Dominio $\mathbb R$, immagine $\{-1,1\}$, periodo fondamentale $2\pi$. Vale $1$ su $[2k\pi,(2k+1)\pi]$ e $-1$ su $((2k-1)\pi,2k\pi)$; <strong>in tutti i punti $k\pi$ il valore è $1$</strong>. Il laboratorio 10 mostra questo caso.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 9 · Parte intera e mantissa di x²</summary><div class="soluzione">
+<p>Entrambe hanno dominio $\mathbb R$ e sono pari. Per $n=0,1,2,\ldots$, $\lfloor x^2\rfloor=n$ se $\sqrt n\le|x|&lt;\sqrt{n+1}$; l’immagine è $\{0,1,2,\ldots\}$. Sugli stessi intervalli $\{x^2\}=x^2-n$, con immagine $[0,1)$. In $x=\pm\sqrt n$, il valore della mantissa è $0$. I salti diventano più ravvicinati all’aumentare di $|x|$: nessuna delle due è periodica. Seleziona $x^2$ nel laboratorio 6.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 10 · Parità e disparità</summary><div class="soluzione">
+<p><strong>a)</strong> $x/(1+x^2)$ dispari: numeratore cambia segno, denominatore no. <strong>b)</strong> $x\sin2x$ pari: prodotto di due funzioni dispari. <strong>c)</strong> $\cos(x^3)$ pari: $\cos(-x^3)=\cos(x^3)$. <strong>d)</strong> $2^{x^3}$ né pari né dispari: i valori in $x=1,-1$ sono $2$ e $1/2$, e non può essere dispari perché vale $1$ in zero. <strong>e)</strong> $(x^2+1)/(x^4+2)$ pari. <strong>f)</strong> $(x^3+1)/(x+4)$ né pari né dispari: il dominio $\mathbb R\setminus\{-4\}$ non è simmetrico. Gli altri cinque domini sono $\mathbb R$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 11 · Periodi fondamentali</summary><div class="soluzione">
+<p><strong>a)</strong> $\sin2x+\cos3x$: $2\pi$. Le frequenze distinte non si cancellano: un periodo deve soddisfare $2T\in2\pi\mathbb Z$ e $3T\in2\pi\mathbb Z$; il minimo positivo è $2\pi$.</p>
+<p><strong>b)</strong> $\sin^2x=(1-\cos2x)/2$: $\pi$. <strong>c)</strong> $\cos(2x+1)$: $\pi$; la fase non cambia il periodo.</p>
+<p><strong>d)</strong> $\sin(x^3)$ non è periodica. Fra gli zeri positivi $x_n=(n\pi)^{1/3}$, il segno è costante e alternato. Se esistesse $T&gt;0$, per un grande $n$ con $x_n&gt;T$ lo zero $x_n-T$ sarebbe positivo. La traslazione di un periodo manda due zeri consecutivi in due zeri consecutivi, mantenendo la loro distanza. Ma le distanze $x_{n+1}-x_n$ sono strettamente decrescenti, quindi nessuna coppia diversa ha la stessa distanza: assurdo.</p>
+<p><strong>e)</strong> $2^{\sin x}$: $2\pi$, perché l’iniettività di $2^u$ rende i suoi periodi esattamente quelli di $\sin x$.</p>
+<p><strong>f)</strong> $\tan(x/2)+\cos^2x$: dominio $x\ne(2k+1)\pi$, periodo fondamentale $2\pi$. I poli hanno distanza $2\pi$ e impongono che un periodo sia un suo multiplo; $2\pi$ ripete entrambi gli addendi.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 12 · Monotonia senza derivate</summary><div class="soluzione">
+<p><strong>a)</strong> $1/x^2$ non è monotona sul dominio $\mathbb R\setminus\{0\}$: cresce su $(-\infty,0)$ e decresce su $(0,\infty)$.</p>
+<p><strong>b)</strong> $e^{x^3+1}$ è strettamente crescente in $\mathbb R$: composizione di $x^3+1$ crescente ed esponenziale crescente.</p>
+<p><strong>c)</strong> $\sin2x$ non è monotona in $\mathbb R$: ha massimi e minimi alternati.</p>
+<p><strong>d)</strong> $\ln(1+2^{-x})$ è strettamente decrescente in $\mathbb R$: $2^{-x}$ decresce, sommare $1$ non cambia l’ordine, $\ln$ conserva l’ordine.</p>
+<p><strong>e)</strong> $1/(1+x^2)$ cresce fino a $0$, poi decresce: non è monotona su tutta $\mathbb R$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 13 · Cinque potenze</summary><div class="soluzione">
+<p><strong>a)</strong> $x^{-2/7}$: dominio $\mathbb R\setminus\{0\}$, pari, positiva, immagine $(0,\infty)$; cresce a sinistra e decresce a destra, diverge verso $+\infty$ presso $0$.</p>
+<p><strong>b)</strong> $x^{4/5}$ e <strong>c)</strong> $x^{6/5}$: dominio $\mathbb R$, pari, immagine $[0,\infty)$; decrescono fino a $0$, poi crescono. La prima si eleva sopra $x$ per $0&lt;x&lt;1$, la seconda rimane sotto; per $x&gt;1$ si scambiano.</p>
+<p><strong>d)</strong> $x^\pi$ e <strong>e)</strong> $x^{1/\sqrt2}$: dominio $[0,\infty)$, strettamente crescenti, immagine $[0,\infty)$. Esponenti rispettivamente maggiori e minori di $1$: comportamento analogo a c) e b) sul ramo positivo. I cinque casi sono nel laboratorio 2.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 14 · Moduli e segni</summary><div class="soluzione">
+<p><strong>i)</strong> $|x-4|\ge x+2$. Per $x&lt;4$, $4-x\ge x+2\iff x\le1$; per $x\ge4$, $x-4\ge x+2$ è impossibile. Soluzione <strong>$(-\infty,1]$</strong>.</p>
+<p><strong>ii)</strong> $(2x-1)(x+1)/x\ge0$, $x\ne0$. I punti critici sono $-1,0,1/2$; i segni sui quattro intervalli sono $-,+,-,+$. Si includono gli zeri ma non il polo: <strong>$[-1,0)\cup[1/2,\infty)$</strong>.</p>
+<p><strong>iii)</strong> $(x/|x|)(1-x)\le1+x$, $x\ne0$. Per $x&gt;0$, $1-x\le1+x$; per $x&lt;0$, $x-1\le1+x$. Entrambe vere: <strong>$\mathbb R\setminus\{0\}$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 15 · Radici</summary><div class="soluzione">
+<p><strong>i)</strong> $\sqrt{|x-1|}&lt;2-x$. Serve $x&lt;2$ prima di elevare al quadrato. Per $x&lt;1$, $1-x&lt;(2-x)^2\iff x^2-3x+3&gt;0$, sempre vero poiché il discriminante è $-3$. Per $1\le x&lt;2$, $x-1&lt;(2-x)^2\iff x^2-5x+5&gt;0$, dunque $x&lt;(5-\sqrt5)/2$. Soluzione <strong>$(-\infty,(5-\sqrt5)/2)$</strong>.</p>
+<p><strong>ii)</strong> $\sqrt[3]{1+x^3}&gt;x-4$. Per ogni reale $x$, $1+x^3&gt;x^3$ e la radice cubica è crescente: il primo membro è $&gt;x&gt;x-4$. Soluzione <strong>$\mathbb R$</strong>.</p>
+<p><strong>iii)</strong> $(\sqrt{2x+1}-3)/(x^2-4)\le0$. Dominio $x\ge-1/2$, $x\ne2$ (il polo $-2$ è già fuori dominio). Il numeratore è negativo per $x&lt;4$, nullo in $4$, positivo dopo. Il denominatore è negativo fino a $2$, positivo dopo. Soluzione <strong>$(2,4]$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 16 · Logaritmi</summary><div class="soluzione">
+<p><strong>i)</strong> $\log_2(x-4)-\log_2(x-1)&gt;1$. Dominio $x&gt;4$. La differenza è $\log_2((x-4)/(x-1))$, ma il rapporto è in $(0,1)$, dunque il logaritmo è negativo: <strong>nessuna soluzione</strong>.</p>
+<p><strong>ii)</strong> $(\log_2x)^2-3\log_2x-5\ge0$. Dominio $x&gt;0$. Con $t=\log_2x$, le radici sono $a=(3-\sqrt{29})/2$, $b=(3+\sqrt{29})/2$ e serve $t\le a$ oppure $t\ge b$. Per monotonia: <strong>$(0,2^a]\cup[2^b,\infty)$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 17 · Un’equazione con due basi</summary><div class="soluzione">
+<p>$\log_{1/2}(1+x)=\log_2(2-x)$ richiede $-1&lt;x&lt;2$. Poiché $\log_{1/2}u=-\log_2u$, l’equazione equivale a $(1+x)(2-x)=1$, cioè $x^2-x-1=0$. Entrambe le radici sono nel dominio: <strong>$x=(1\pm\sqrt5)/2$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 18 · Disequazioni trigonometriche</summary><div class="soluzione">
+<p><strong>i)</strong> $2\sin^2x+\sin x-3&lt;0$. Con $s=\sin x\in[-1,1]$, $(2s+3)(s-1)&lt;0$ equivale a $s&lt;1$. Soluzione <strong>$\mathbb R\setminus\{\pi/2+2k\pi:k\in\mathbb Z\}$</strong>.</p>
+<p><strong>ii)</strong> $\cos^2x+2\cos x-1\ge0$. Le radici in $c=\cos x$ sono $-1\pm\sqrt2$; in $[-1,1]$ resta $c\ge\sqrt2-1$. Posto $\beta=\arccos(\sqrt2-1)$, soluzione <strong>$\bigcup_{k\in\mathbb Z}[-\beta+2k\pi,\beta+2k\pi]$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 19 · Confronti grafici e una radice numerica</summary><div class="soluzione">
+<p><strong>i)</strong> $e^{\sqrt x-x+1}&gt;1$. Dominio $x\ge0$. L’esponenziale è crescente: basta $\sqrt x-x+1&gt;0$. Con $t=\sqrt x\ge0$, $t^2-t-1&lt;0$, quindi $0\le t&lt;(1+\sqrt5)/2$. Soluzione <strong>$[0,(3+\sqrt5)/2)$</strong>.</p>
+<p><strong>ii)</strong> $e^x/(1-x^2)&lt;1$, $x\ne\pm1$. Per $|x|&gt;1$ il quoziente è negativo, quindi la disequazione è vera. Per $-1&lt;x&lt;1$ è equivalente a $h(x)=e^x+x^2-1&lt;0$. Gli zeri sono $0$ e una radice $\alpha\approx-0{,}714556$; $h(-0{,}715)&gt;0$, $h(-0{,}714)&lt;0$, dunque <strong>$-0{,}715&lt;\alpha&lt;-0{,}714$</strong>. Soluzione <strong>$(-\infty,-1)\cup(\alpha,0)\cup(1,\infty)$</strong>.</p>
+<p>Per giustificare che non mancano altre radici, si può usare la stretta convessità di $h$: ha al massimo due zeri, ed è negativa tra essi. Una verifica con gli strumenti dei capitoli successivi è $h''(x)=e^x+2&gt;0$. Il laboratorio 12 mostra il confronto e la bisezione: l’intervallo numerico localizza la radice, non sostituisce l’argomento sul numero di zeri.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 20 · Domini e immagini delle inverse trigonometriche</summary><div class="soluzione">
+<p>$f(x)=2\arcsin(x-1)$: $-1\le x-1\le1$, dunque <strong>dominio $[0,2]$</strong>. L’argomento percorre tutto $[-1,1]$, dunque <strong>immagine $[-\pi,\pi]$</strong>.</p>
+<p>$g(x)=\tfrac12\arccos(2x+1)$: $-1\le2x+1\le1$, dunque <strong>dominio $[-1,0]$</strong> e <strong>immagine $[0,\pi/2]$</strong>. Gli estremi sono inclusi.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 21 · Inversa della tangente iperbolica</summary><div class="soluzione">
+<p>Da $x=\tanh y=(e^{2y}-1)/(e^{2y}+1)$ si ricava $x(e^{2y}+1)=e^{2y}-1$, quindi $(1-x)e^{2y}=1+x$. Per $-1&lt;x&lt;1$ il rapporto è positivo:
+$$y=\tfrac12\ln\frac{1+x}{1-x}.$$
+Dominio dell’inversa $(-1,1)$, immagine $\mathbb R$. La funzione $\tanh$ è strettamente crescente, perciò la soluzione è unica.</p>
+</div></details>
+<h3 id="Laboratorio-12-%C2%B7-Una-radice-senza-formula-elementare">Laboratorio 12 · Una radice senza formula elementare</h3><p>Muovi il numero di passi: ogni bisezione dimezza l’intervallo contenente la radice negativa di $e^x+x^2-1$. I valori mostrati sono calcolati in virgola mobile.</p>
+<div class="laboratorio" data-lab="12" id="laboratorio-12"></div>
+<h2 id="sezione-6">6. I 9 complementi svolti</h2><details class="esercizio"><summary>Complemento 1 · Potenze crescenti per induzione</summary><div class="soluzione">
+<p>Se $0&lt;x_1&lt;x_2$, moltiplicando per $x_1$ e poi per $x_2$ si ottiene $x_1^2&lt;x_1x_2&lt;x_2^2$. Per induzione, supponi $x_1^n&lt;x_2^n$. Allora $x_1^{n+1}&lt;x_1x_2^n&lt;x_2x_2^n=x_2^{n+1}$, perché tutti i fattori sono positivi. Il caso iniziale $n=1$ è immediato. Quindi $x^n$ è strettamente crescente su $(0,\infty)$ per ogni intero $n\ge1$.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 2 · Parte pari e parte dispari</summary><div class="soluzione">
+<p>Per $f:\mathbb R\to\mathbb R$, poni $p(x)=(f(x)+f(-x))/2$, $d(x)=(f(x)-f(-x))/2$. Sostituendo $-x$, $p(-x)=p(x)$ e $d(-x)=-d(x)$; sommando, $p+d=f$. La decomposizione è unica: se $f=p+d$, allora $f(-x)=p(x)-d(x)$, e somma e differenza recuperano le formule. Per $f(x)=e^x$, <strong>$p=\cosh$, $d=\sinh$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 3 · Monotonia sull’unione</summary><div class="soluzione">
+<p>Non basta essere decrescente su ciascun intervallo. $1/x$ è strettamente decrescente su $A=(-\infty,0)$ e su $B=(0,\infty)$, ma $-1&lt;1$ e $f(-1)=-1&lt;f(1)=1$, contro la decrescenza su $A\cup B$. Non è neppure crescente sull’unione, perché per esempio $1&lt;2$ e $f(1)&gt;f(2)$.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 4 · Monotonia della composizione</summary><div class="soluzione">
+<table>
+<thead>
+<tr>
+<th>Funzione interna $g$</th>
+<th>Esterna $f$ crescente</th>
+<th>Esterna $f$ decrescente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crescente</td>
+<td>$f\circ g$ crescente</td>
+<td>$f\circ g$ decrescente</td>
+</tr>
+<tr>
+<td>Decrescente</td>
+<td>$f\circ g$ decrescente</td>
+<td>$f\circ g$ crescente</td>
+</tr>
+</tbody>
+</table>
+<p>Per esempio, se $x_1&lt;x_2$ e $g$ decresce, $g(x_1)\ge g(x_2)$; un’esterna decrescente rovescia ancora il confronto, dando $f(g(x_1))\le f(g(x_2))$. Gli altri casi seguono allo stesso modo. Le due funzioni devono essere monotone sugli insiemi usati dalla composizione. Se entrambe sono strettamente monotone, anche i confronti finali sono stretti.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 5 · Parità della composizione</summary><div class="soluzione">
+<table>
+<thead>
+<tr>
+<th>Interna $g$</th>
+<th>Esterna $f$ pari</th>
+<th>Esterna $f$ dispari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pari</td>
+<td>Composizione pari</td>
+<td>Composizione pari</td>
+</tr>
+<tr>
+<td>Dispari</td>
+<td>Composizione pari</td>
+<td>Composizione dispari</td>
+</tr>
+</tbody>
+</table>
+<p>Se $g$ è pari, $f(g(-x))=f(g(x))$ indipendentemente dalla parità di $f$. Se $g$ è dispari, $f(g(-x))=f(-g(x))$: la parità dell’esterna decide il segno. I domini devono essere compatibili e il dominio della composizione simmetrico. La funzione nulla può appartenere a entrambe le classi.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 6 · Periodicità della composizione</summary><div class="soluzione">
+<p>Se l’interna $g$ ha periodo $T$ e la composizione è definita su un dominio stabile per $T$, allora $f(g(x+T))=f(g(x))$: <strong>$T$ è un periodo della composizione</strong>, qualunque sia l’esterna. Il periodo fondamentale può diminuire o non esistere se la composizione è costante.</p>
+<p>Se $g$ non è periodica, nessuna delle due colonne della tabella determina la risposta:</p>
+<ul>
+<li>Esterna periodica: $f(u)=\sin u$, $g(x)=x$ danno $\sin x$, periodica; con $g(x)=x^3$ danno $\sin(x^3)$, non periodica.</li>
+<li>Esterna non periodica: $f(u)=u$, $g(x)=x^3$ danno una funzione non periodica. Invece $f(u)=\sin(\sqrt[3]u)$ e $g(x)=x^3$, entrambe non periodiche, danno $\sin x$, periodica. Per vedere che la prima non è periodica, i suoi zeri positivi $(n\pi)^3$ hanno distanze strettamente crescenti: una traslazione non può ripetere la successione di intervalli tra zeri consecutivi.</li></ul></div></details>
+
+
+<details class="esercizio"><summary>Complemento 7 · Cinque operazioni su una funzione periodica</summary><div class="soluzione">
+<p><strong>1)</strong> $f(\omega x)$, $\omega&gt;0$, ha periodo $T/\omega$; se $T$ è fondamentale, lo è anche $T/\omega$. <strong>2)</strong> $f(x+c)$ conserva i periodi, quindi anche quello fondamentale. <strong>3)</strong> $|f(x)|$ ha periodo $T$, ma può avere periodo fondamentale più piccolo: $|\sin x|$ ha $\pi$ invece di $2\pi$.</p>
+<p><strong>4)</strong> $f(|x|)$ non è necessariamente periodica: per $f=\sin$, tutti gli zeri sono $k\pi$, quindi un eventuale periodo è un multiplo di $\pi$; gli intervalli immediatamente a sinistra e a destra di zero hanno entrambi segno positivo, mentre lontano da zero i segni alternano. Questa configurazione non si ripete con una traslazione non nulla. Se $f=\cos$, invece, $f(|x|)=\cos x$ è periodica.</p>
+<p><strong>5)</strong> $f(x^2)$ non è necessariamente periodica: $\cos(x^2)$ ha zeri positivi $\sqrt{\pi/2+k\pi}$ con distanze strettamente decrescenti. Come nell’esercizio 11, un periodo dovrebbe mandare intervalli consecutivi tra zeri in intervalli della stessa lunghezza: impossibile.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 8 · Somme di funzioni periodiche</summary><div class="soluzione">
+<p>Un <strong>periodo comune</strong> dei due addendi è un periodo della somma. Se $T_1/T_2=p/q$ è razionale positivo, con $p,q$ interi positivi, $qT_1=pT_2$ è un periodo comune. Il periodo fondamentale della somma può essere più piccolo, e una cancellazione può dare una costante.</p>
+<p>Attenzione: dall’uguaglianza della somma traslata non si può dedurre, da sola, l’uguaglianza di ciascun addendo traslato. Per le somme di sinusoidi qui proposte, le frequenze distinte sono linearmente indipendenti: si può determinare il periodo imponendo che ogni frequenza completi un numero intero di giri.</p>
+<p><strong>a)</strong> $\sin4x+3\cos6x$ ha periodo fondamentale <strong>$\pi$</strong>: $4T,6T\in2\pi\mathbb Z$. $\tan6x-2\cos8x$ ha periodo fondamentale <strong>$\pi/2$</strong>: i poli della tangente obbligano $T$ a essere multiplo di $\pi/6$; il coseno impone $T$ multiplo di $\pi/4$. $5\sin(x/3)+\cos(x/4)$ ha periodo fondamentale <strong>$24\pi$</strong>, comune a $6\pi$ e $8\pi$.</p>
+<p><strong>b)</strong> $\sin x+\sin(\pi x)$ non è periodica. Se $T&gt;0$ fosse un periodo, l’identità ottenuta sottraendo la funzione traslata sarebbe una combinazione nulla di $\sin x,\cos x,\sin\pi x,\cos\pi x$. La loro indipendenza impone $\cos T=1$, $\sin T=0$, $\cos(\pi T)=1$, $\sin(\pi T)=0$. Dunque $T=2k\pi=2m$, impossibile per $k,m$ interi con $T&gt;0$, perché $\pi$ è irrazionale. Una giustificazione dell’indipendenza: moltiplica l’identità per ciascuna sinusoide e fai la media su $[-R,R]$; i prodotti a frequenze diverse hanno media tendente a zero, mentre il quadrato ha media $1/2$. Questi passaggi si formalizzano con limiti e integrali nei capitoli successivi.</p>
+<p>Il laboratorio 10 permette di visualizzare le somme; nessuna finestra finita dimostra la non periodicità.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 9 · Dimostrare le identità iperboliche</summary><div class="soluzione">
+<p>Scrivi $a=e^x$, $b=e^{-x}$, quindi $ab=1$:
+$$\cosh^2x-\sinh^2x=\frac{(a+b)^2-(a-b)^2}{4}=ab=1.$$
+Per l’addizione, espandi direttamente:
+$$\sinh x\cosh y+\cosh x\sinh y=\frac{(e^x-e^{-x})(e^y+e^{-y})+(e^x+e^{-x})(e^y-e^{-y})}{4}=\frac{e^{x+y}-e^{-(x+y)}}2.$$
+Il membro finale è $\sinh(x+y)$. Cambiando il primo meno in più nella somma dei prodotti si ottiene analogamente $\cosh(x+y)$. Dividendo le due identità per $\cosh x\cosh y&gt;0$ si ricava
+$$\tanh(x+y)=\frac{\tanh x+\tanh y}{1+\tanh x\tanh y}.$$
+Il denominatore è positivo, perché $|\tanh x\tanh y|&lt;1$. Ponendo $y=x$, si ottengono $\sinh2x=2\sinh x\cosh x$ e $\cosh2x=\cosh^2x+\sinh^2x$.</p>
+</div></details>
+<h2 id="sezione-7">7. Prima di passare ai limiti</h2><details class="esercizio"><summary>Autoverifica · Sei domande</summary><div class="soluzione">
+<ol>
+<li><strong>Codominio e immagine coincidono sempre?</strong> No: $x^2:\mathbb R\to\mathbb R$ ha immagine $[0,\infty)$.</li>
+<li><strong>Una funzione invertibile deve essere monotona?</strong> No, senza altre ipotesi; vedi lo scambio dei valori in $0$ e $1$.</li>
+<li><strong>$\sqrt{x^2}=x$?</strong> Solo se $x\ge0$; in generale vale $|x|$.</li>
+<li><strong>$\arcsin(\sin x)=x$ per ogni reale?</strong> No: solo per $x\in[-\pi/2,\pi/2]$.</li>
+<li><strong>Il dominio di $\ln(x^2)$?</strong> $\mathbb R\setminus\{0\}$; $\ln(x^2)=2\ln|x|$.</li>
+<li><strong>Un grafico basta a provare la monotonia su tutta la retta?</strong> No: serve un confronto valido per ogni coppia del dominio.</li></ol></div></details>
+
+
+<p><strong>Metodo di studio:</strong> determina prima il dominio, poi immagine e proprietà. Nelle disequazioni conserva i punti esclusi anche dopo una semplificazione. Nelle inverse dichiara sempre il ramo scelto. Per un periodo distingue «è un periodo» da «è il più piccolo periodo».</p>
+<footer>Analisi 1 · Capitolo 2 — Dispensa didattica rielaborata a partire da Bramanti, Pagani e Salsa. Grafici esplorativi: le dimostrazioni restano essenziali.<br><a href="index.html">← Capitolo 1 · Numeri</a> · <a href="#inizio">Torna all’inizio ↑</a></footer></main></div></body></html>
