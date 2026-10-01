@@ -2,7 +2,7 @@
 
 Dispensa a cura di **Michelle Vrapi**, con teoria, esempi, esercizi svolti e grafici interattivi.
 
-**[Apri il sito](https://chasemaneuver.github.io/Analisi-1/)**
+**[Apri il sito](https://chasemaneuver.github.io/Analisi-1/capitolo-1/)**
 
 ## Capitoli
 
@@ -19,9 +19,8 @@ Il menu a sinistra permette di cambiare capitolo. Il pulsante **Stampa / PDF** i
 | `capitolo-1/laboratori.js` | Grafici e slider del capitolo 1. |
 | `capitolo-2/index.html` | Testi, formule ed esercizi del capitolo 2. |
 | `capitolo-2/laboratori.js` | Grafici e slider del capitolo 2. |
-| `stile.css` | Stile e stampa condivisi. |
-| `capitoli.js` | Menu condiviso per scegliere il capitolo. |
-| `index.html`, `capitolo-2.html` | Rimandi che mantengono validi i vecchi indirizzi. |
+| `assets/stile.css` | Stile e stampa condivisi. |
+| `assets/capitoli.js` | Menu condiviso per scegliere il capitolo. |
 | `.nojekyll` | Pubblicazione diretta con GitHub Pages. |
 
 Il sito funziona nel browser senza account degli studenti. Le formule usano MathJax da Internet. Il PDF del libro non è incluso nel repository.
