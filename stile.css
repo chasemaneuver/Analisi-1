@@ -2,3 +2,7 @@
 mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}.diagonale td,.diagonale th{white-space:nowrap;overflow-wrap:normal}.result table{width:100%}
 
 .chapter-picker{margin-bottom:26px}.chapter-picker label{display:block;font-size:10px;font-weight:750;letter-spacing:1.4px;margin-bottom:10px;color:var(--green)}.chapter-picker select{font-weight:650;border-color:#b9cdc0;padding:12px 10px}aside{max-height:calc(100vh - 120px);overflow-y:auto}@media(max-width:900px){aside{max-height:none;overflow:visible}.chapter-picker{max-width:420px;margin-bottom:18px}}
+/* identita-inizio */
+.author-card{margin-top:25px;padding:25px 0 0;border-top:1px solid var(--line);font-size:14px;line-height:1.7}.author-card h3{font-family:Georgia,serif;font-size:28px;color:var(--ink);margin:8px 0}.author-card p{margin:12px 0}.author-links{line-height:2}.license-note{font-size:12px;max-width:700px}.print-credit{display:none}
+@media print{footer,.author-card{break-inside:avoid}.print-credit{display:block;font-size:9pt;line-height:1.5;margin:20pt 0;border-top:1px solid #aaa;padding-top:10pt;overflow-wrap:anywhere}.author-card{font-size:9pt}.author-card h3{font-size:16pt}.author-links a::after{content:" (" attr(href) ")";font-size:8pt}.author-links{overflow-wrap:anywhere}.license-note{font-size:8pt}}
+/* identita-fine */
