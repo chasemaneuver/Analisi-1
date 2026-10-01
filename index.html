@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Dispensa interattiva di Analisi 1: numeri, insiemi, induzione e numeri complessi. Teoria, esercizi svolti e nove laboratori con slider.">
+<title>Numeri · Analisi 1</title><link rel="stylesheet" href="stile.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="laboratori.js"></script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script></head>
+<body><a class="skip" href="#contenuto">Vai al contenuto</a>
+<header><a class="brand" href="#inizio">A<span>1</span> / Analisi</a><span>UNA DISPENSA DA ESPLORARE</span><button id="stampa" type="button">Stampa / PDF</button></header>
+<div class="layout"><aside><details open><summary>In questo capitolo</summary><nav aria-label="Indice del capitolo"><a href="#sezione-1">1. Insiemi e logica</a><a href="#sezione-2">2. Sommatorie e coefficienti binomiali</a><a href="#sezione-3">3. Campi ordinati</a><a href="#sezione-4">4. Reali, estremi, valore assoluto e intervalli</a><a href="#sezione-5">5. Radicali, potenze, logaritmi e approssimazioni</a><a href="#sezione-6">6. Insiemi infiniti</a><a href="#sezione-7">7. Il principio di induzione</a><a href="#sezione-8">8. Numeri complessi</a><a href="#sezione-9">9. Complementi · Svolgimenti (p. 47)</a><a href="#sezione-10">10. Autoverifica</a></nav></details>
+<div class="aside-note">9 laboratori interattivi<br>35 esercizi · 7 complementi<br><small>Apri le soluzioni dopo aver provato su carta.</small></div></aside>
+<main id="contenuto"><div class="hero" id="inizio"><span class="eyebrow">CAPITOLO 01</span><h1>Numeri<span class="punto">.</span></h1><p class="lead">Dagli insiemi ai numeri complessi.<br>Leggi, ragiona, muovi un cursore.</p><div class="tags"><span>Teoria e dimostrazioni</span><a href="#laboratorio-1">Esplora i grafici ↗</a></div></div>
+<noscript><p class="avviso">La teoria è leggibile anche senza JavaScript. Attivalo per le formule impaginate e i laboratori.</p></noscript>
+<section class="introduzione">
+<p><strong>Fonte:</strong> <em>Analisi matematica 1</em>, Zanichelli, ISBN 978-88-08-06485-1, capitolo 1, pagine stampate <strong>1–47</strong> (pagine <strong>9–55 del PDF</strong> fornito). Le pagine del PDF non coincidono con quelle stampate. La pagina PDF 56 apre già il capitolo 2.</p>
+<p>Questo quaderno rielabora il capitolo in forma didattica: include le sei definizioni numerate, gli undici enunciati denominati “Teorema” (il primo è intenzionalmente falso), le due proposizioni, le definizioni e proprietà non numerate, gli esempi matematici e le soluzioni dei <strong>35 esercizi e 7 complementi</strong>. Gli enunciati sono riscritti e gli svolgimenti sono sviluppati per questo quaderno. I laboratori e le domande di esplorazione sono aggiunte didattiche. Le dimostrazioni che richiedono risultati successivi sono esplicitamente segnalate.</p>
+<p>Come studiare: leggi un enunciato, prova l’esempio su carta, poi esplora il grafico. Prima di muovere un cursore, fai una previsione. Un grafico o mille verifiche numeriche non dimostrano una proposizione universale.</p>
+<p><strong>Convenzioni:</strong> $\mathbb N=\{0,1,2,\ldots\}$; $\mathbb N_{&gt;0}=\{1,2,\ldots\}$; $\subseteq$ ammette l'uguaglianza, $\subsetneq$ indica inclusione propria. Gli argomenti principali complessi sono in $(-\pi,\pi]$. Per le radici complesse useremo insiemi di soluzioni, evitando di confonderle con la radice aritmetica positiva.</p>
+</section>
+
+<h2 id="sezione-1">1. Insiemi e logica</h2>
+
+
+<h3 id="1.1-Il-vocabolario-degli-insiemi">1.1 Il vocabolario degli insiemi</h3><p><strong>Insieme, elemento, appartenenza</strong> sono nozioni primitive. Scriviamo $x\in A$ se $x$ è un elemento di $A$, $x\notin A$ altrimenti. Si può specificare un insieme elencandone gli elementi oppure mediante una proprietà: $\{x\in X:p(x)\}$. Ordine e ripetizioni nell'elenco non contano: $\{1,2,5\}=\{5,1,2,1\}$.</p>
+<p><strong>Uguaglianza e inclusione.</strong> $A=B$ significa che i due insiemi hanno esattamente gli stessi elementi. $A\subseteq B$ significa $\forall x\,(x\in A\Rightarrow x\in B)$. Quindi $A=B$ se e solo se $A\subseteq B$ e $B\subseteq A$. L'inclusione propria richiede inoltre $A\ne B$.</p>
+<p><strong>Insieme vuoto e insieme delle parti.</strong> $\varnothing$ non ha elementi; è sottoinsieme di ogni insieme. $\mathcal P(A)=\{B:B\subseteq A\}$. Ad esempio $\mathcal P(\{1,2\})=\{\varnothing,\{1\},\{2\},\{1,2\}\}$. Non confondere $0$, $\varnothing$ e $\{0\}$.</p>
+<p>Per l'esempio del libro $X=\{1,2,3\}$, le otto parti sono $\varnothing$, $\{1\}$, $\{2\}$, $\{3\}$, $\{1,2\}$, $\{1,3\}$, $\{2,3\}$ e $X$: si raggruppano per numero di elementi, $1+3+3+1=8$.</p>
+<p><strong>Esempi del §1.1, con spiegazione.</strong> Le equazioni $(x-1)=0$ e $(x-1)^2=0$ hanno lo stesso insieme di soluzioni $\{1\}$: la molteplicità non cambia gli elementi dell'insieme. Sono vere $3\in\{1,3,4\}$ e $\{3\}\subseteq\{1,3,4\}$. Se $A=\{\{1\},\{2\},\{1,2\}\}$, allora $\{2\}\in A$, ma $\{2\}\not\subseteq A$, perché $2\notin A$.</p>
+<p><strong>Insiemi numerici.</strong> $\mathbb Z=\{\ldots,-1,0,1,\ldots\}$; $\mathbb Q=\{p/q:p\in\mathbb Z,q\in\mathbb Z\setminus\{0\}\}$. I razionali hanno sviluppi decimali finiti o periodici; gli irrazionali hanno sviluppi non periodici. I reali comprendono entrambi. I complessi saranno definiti nel §8. Vale
+$$\mathbb N\subsetneq\mathbb Z\subsetneq\mathbb Q\subsetneq\mathbb R\subsetneq\mathbb C.$$
+Testimoni delle inclusioni proprie sono rispettivamente $-1,1/2,\sqrt2,i$. Il numero $0{,}1010010001\ldots$, con blocchi di zeri sempre più lunghi tra due 1, non è periodico: un periodo contenente un 1 imporrebbe distanze limitate fra gli 1; un periodo di soli zeri imporrebbe un numero finito di 1.</p>
+<p>Altri esempi del testo: $3/4=0{,}75$, $1/3=0{,}\overline3$, e $0{,}\overline9=1$. Per l'ultima uguaglianza, il numero rappresentato differisce da 1 per un valore non negativo minore o uguale a $10^{-n}$ per ogni $n$; la proprietà archimedea impone che la differenza sia zero. Anche $0{,}10110111011110\ldots$, con blocchi di 1 sempre più lunghi separati da uno zero, è irrazionale: una periodicità imporrebbe distanze limitate fra gli zeri, oppure solo un numero finito di zeri, e nessuna delle due possibilità si verifica.</p>
+
+
+<h3 id="Operazioni-e-propriet%C3%A0">Operazioni e proprietà</h3><p>Fissato un universo $X$ e $A,B\subseteq X$:</p>
+<table>
+<thead>
+<tr>
+<th>Operazione</th>
+<th>Definizione mediante appartenenza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intersezione $A\cap B$</td>
+<td>$x\in A$ <strong>e</strong> $x\in B$</td>
+</tr>
+<tr>
+<td>Unione $A\cup B$</td>
+<td>$x\in A$ <strong>o</strong> $x\in B$ (anche entrambi)</td>
+</tr>
+<tr>
+<td>Differenza $A\setminus B$</td>
+<td>$x\in A$ e $x\notin B$</td>
+</tr>
+<tr>
+<td>Complementare $A^c=X\setminus A$</td>
+<td>$x\in X$ e $x\notin A$</td>
+</tr>
+<tr>
+<td>Prodotto $A\times B$</td>
+<td>coppie <strong>ordinate</strong> $(a,b)$ con $a\in A,b\in B$</td>
+</tr>
+</tbody>
+</table>
+<p>$\mathbb R^n$ è l'insieme delle $n$-uple ordinate di reali. In generale $A\times B\ne B\times A$.</p>
+<p>Unione e intersezione sono commutative, associative e idempotenti:
+$$A\cup A=A,\qquad A\cap A=A.$$
+Le leggi distributive e di De Morgan sono
+$$A\cap(B\cup C)=(A\cap B)\cup(A\cap C),\qquad
+A\cup(B\cap C)=(A\cup B)\cap(A\cup C),$$
+$$(A\cup B)^c=A^c\cap B^c,\qquad(A\cap B)^c=A^c\cup B^c,\qquad(A^c)^c=A.$$
+Inoltre $A\cap\varnothing=\varnothing$, $A\cap X=A$, $A\cup\varnothing=A$, $A\cup X=X$, $X^c=\varnothing$, $\varnothing^c=X$, e
+$$A\subseteq B\iff A\cap B=A\iff A\cup B=B.$$
+<strong>Dimostrazione tipo:</strong> $x\in(A\cup B)^c$ equivale a “$x$ non appartiene né ad $A$ né a $B$”, cioè $x\in A^c\cap B^c$. Le altre identità si dimostrano allo stesso modo, confrontando l'appartenenza di un elemento generico.</p>
+
+
+<h3 id="laboratorio-1">Laboratorio 1 · Operazioni fra insiemi</h3><p>Il disegno usa due dischi come insiemi e il rettangolo come universo. <strong>Prevedi:</strong> cambiando la distanza dei centri, quando l'intersezione diventa vuota? Distingui l'interno colorato dai bordi, che sullo schermo hanno spessore artificiale.</p>
+
+<div class="laboratorio" id="lab-1" data-lab="1"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h3 id="1.2-Logica,-quantificatori-e-dimostrazioni">1.2 Logica, quantificatori e dimostrazioni</h3><p>Un <strong>predicato</strong> $p(x)$ dipende da una variabile libera; una <strong>proposizione</strong> ha un valore di verità determinato. $\forall$ significa “per ogni”; $\exists$ significa “esiste almeno un”; $\exists!$ significa “esiste esattamente un”. Il dominio delle variabili va sempre dichiarato.</p>
+<p>$p\Rightarrow q$ è falsa soltanto quando $p$ è vera e $q$ è falsa. In un teorema $p$ è l'ipotesi e $q$ la tesi: $p$ è condizione sufficiente per $q$, e $q$ necessaria per $p$. L'equivalenza $p\iff q$ richiede entrambe le implicazioni. La <strong>controinversa</strong> $\neg q\Rightarrow\neg p$ equivale all'implicazione iniziale; l'inversa $q\Rightarrow p$ in generale no.</p>
+<p>Un <strong>controesempio</strong> a $\forall x\in A\,[p(x)\Rightarrow q(x)]$ è un elemento che soddisfa $p$ e non $q$. Una dimostrazione diretta parte da un elemento generico che soddisfa l'ipotesi; quella per assurdo assume anche la negazione della tesi e deduce una contraddizione.</p>
+<p>Le regole di negazione sono:
+$$\neg(p\land q)\iff\neg p\lor\neg q,\quad
+\neg(p\lor q)\iff\neg p\land\neg q,\quad \neg\neg p\iff p,$$
+$$\neg(\forall x\,p(x))\iff\exists x\,\neg p(x),\quad
+\neg(\exists x\,p(x))\iff\forall x\,\neg p(x),$$
+$$\neg\bigl(\forall x\,[p(x)\Rightarrow q(x)]\bigr)
+\iff\exists x\,[p(x)\land\neg q(x)].$$</p>
+<p><strong>Esempi del testo.</strong> Se $n=2k+1$, allora $n^2=2(2k^2+2k)+1$ è dispari. Ne segue per controinversa che $n^2$ pari implica $n$ pari. L'implicazione “divisibile per 4 $\Rightarrow$ divisibile per 2” equivale a $D_4\subseteq D_2$, dove $D_j=\{n\in\mathbb N:j\mid n\}$.</p>
+<p><strong>Enunciato 1.1, volutamente falso (p. 10).</strong> “Ogni numero primo è dispari”. Il controesempio è $2$, primo e pari. Non va memorizzato come teorema vero.</p>
+<p><strong>Teorema 1.2 · Irrazionalità di $\sqrt2$.</strong> Non esiste $r\in\mathbb Q$ tale che $r^2=2$.</p>
+<p><strong>Dimostrazione.</strong> Supponiamo $r=p/q$ con $q\ne0$ e $p,q$ coprimi. Da $p^2=2q^2$ segue che $p$ è pari, dunque $p=2h$. Sostituendo si ottiene $q^2=2h^2$, così anche $q$ è pari: contraddizione con la coprimalità. Il ragionamento prova l'inesistenza in $\mathbb Q$; l'esistenza della radice in $\mathbb R$ usa la completezza.</p>
+<p><strong>Esempio aggiunto · L'ordine dei quantificatori conta.</strong> $\forall x\in\mathbb R\,\exists y\in\mathbb R:y&gt;x$ è vera (scegli $y=x+1$); $\exists y\in\mathbb R\,\forall x\in\mathbb R:y&gt;x$ è falsa (scegli $x=y$).</p>
+
+
+<h2 id="sezione-2">2. Sommatorie e coefficienti binomiali</h2>
+
+
+<h3 id="2.1-Sommatorie">2.1 Sommatorie</h3><p><strong>Definizione 1.1.</strong> $\sum_{k=1}^n a_k=a_1+\cdots+a_n$. L'indice $k$ è muto: può essere rinominato, purché coerentemente. Gli estremi invece fanno parte del significato. Per esempio $\sum_{i=1}^{10}1/i=1+1/2+\cdots+1/10$, mentre $\sum_{i=3}^n i^2=9+16+\cdots+n^2$ per $n\ge3$.</p>
+<p><strong>Proposizione 1.1 · Regole di calcolo.</strong> Per intervalli di indici interi non vuoti:
+$$\sum_{k=m}^n ca_k=c\sum_{k=m}^n a_k,\qquad
+\sum_{k=m}^n c=(n-m+1)c,$$
+$$\sum_{k=m}^n(a_k+b_k)=\sum_{k=m}^n a_k+\sum_{k=m}^n b_k,$$
+$$\sum_{k=1}^{n+r}a_k=\sum_{k=1}^n a_k+\sum_{k=n+1}^{n+r}a_k,$$
+$$\sum_{k=1}^n a_k=\sum_{j=1+h}^{n+h}a_{j-h}
+=\sum_{k=1}^n a_{n-k+1}=\sum_{k=0}^{n-1}a_{n-k}.$$
+La dimostrazione consiste nell'espandere le somme: la traslazione cambia le etichette degli addendi, la riflessione ne inverte l'ordine. Una somma senza addendi vale $0$.</p>
+<p>Una <strong>progressione geometrica</strong> ha termini $a,aq,aq^2,\ldots$, dove $q$ è la ragione. La descrizione come rapporto tra termini consecutivi richiede che il denominatore non sia nullo; la formula dei termini resta sensata anche per $q=0$.</p>
+<p><strong>Proposizione 1.2.</strong> Per $n\ge0$,
+$$\sum_{k=0}^n q^k=\begin{cases}(1-q^{n+1})/(1-q),&amp;q\ne1,\\n+1,&amp;q=1.\end{cases}$$
+<strong>Dimostrazione.</strong> Se $S=1+q+\cdots+q^n$, sottraendo $qS$ da $S$ rimangono $1-q^{n+1}$. Per primo termine $a$ basta moltiplicare la formula per $a$. Il termine di grado zero vale 1 anche quando $q=0$ (convenzione dei polinomi).</p>
+
+
+<h3 id="2.2-Fattoriale-e-permutazioni">2.2 Fattoriale e permutazioni</h3><p>Per $n\ge1$, $n!=1\cdot2\cdots n$; si pone $0!=1$. Vale $n!=n(n-1)!$ e, per $0\le k\le n$,
+$$\frac{n!}{(n-k)!}=n(n-1)\cdots(n-k+1).$$
+Per $k=0$ il prodotto vuoto è 1. Ci sono $n!$ <strong>permutazioni</strong> di $n$ oggetti distinti: $n$ scelte per il primo posto, $n-1$ per il secondo, e così via. Per tre oggetti: $abc,acb,bac,bca,cab,cba$. Per evitare numeri intermedi enormi, $100!/95!=100\cdot99\cdot98\cdot97\cdot96=9\,034\,502\,400$.</p>
+
+
+<h3 id="2.3-Coefficienti-binomiali">2.3 Coefficienti binomiali</h3><p>Per $0\le k\le n$, $\binom nk=n!/[k!(n-k)!]$: conta i sottoinsiemi di $k$ elementi di un insieme di $n$ elementi. Vale
+$$\binom n0=\binom nn=1,\qquad \binom nk=\binom n{n-k},\qquad
+\binom nk=\binom{n-1}{k-1}+\binom{n-1}k\quad(1\le k\le n-1).$$
+La terza identità genera il <strong>triangolo di Tartaglia</strong>. La formula di Newton è
+$$(a+b)^n=\sum_{k=0}^n\binom nk a^k b^{n-k}.$$
+La dimostrazione per induzione è nel §7 (Teorema 1.9). Ad esempio
+$$(a+b)^5=a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5.$$</p>
+
+
+<h3 id="laboratorio-2">Laboratorio 2 · Somme geometriche e triangolo di Tartaglia</h3><p><strong>Prevedi:</strong> per $q&lt;0$ quali termini cambiano segno? Che cosa succede a $q=1$? Il laboratorio mostra somme <strong>finite</strong>, non dimostra la convergenza di una serie.</p>
+
+<div class="laboratorio" id="lab-2" data-lab="2"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h3 id="Esercizi-1%E2%80%937-%C2%B7-Svolgimenti-(pp.-17%E2%80%9318)">Esercizi 1–7 · Svolgimenti (pp. 17–18)</h3>
+
+<details class="esercizio"><summary>Esercizio 1 · Sviluppare $(1+a)^8$ e $(2a-3b)^7$</summary><div class="soluzione">
+<p>La riga 8 è $1,8,28,56,70,56,28,8,1$, quindi
+$$(1+a)^8=1+8a+28a^2+56a^3+70a^4+56a^5+28a^6+8a^7+a^8.$$
+Per il secondo sviluppo il termine con $b^k$ è $\binom7k(2a)^{7-k}(-3b)^k$. Pertanto
+$$(2a-3b)^7=128a^7-1344a^6b+6048a^5b^2-15120a^4b^3
++22680a^3b^4-20412a^2b^5+10206ab^6-2187b^7.$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 2 · $4\binom x4=15\binom{x-2}3$</summary><div class="soluzione">
+<p>Con la definizione fattoriale del capitolo il dominio è $x\in\mathbb N$, $x\ge5$. Espandendo e semplificando il fattore positivo $(x-2)(x-3)/6$:
+$$x(x-1)=15(x-4)\iff x^2-16x+60=0\iff(x-6)(x-10)=0.$$
+Le soluzioni sono <strong>$x=6,10$</strong>. Un'eventuale convenzione che ponga a zero i binomiali fuori dominio cambierebbe il problema e qui non viene usata.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 3 · Somma dei primi $n$ interi</summary><div class="soluzione">
+<p>Posto $S=\sum_{i=1}^n i$, rifletti l'indice nella seconda copia:
+$$2S=\sum_{i=1}^n[i+(n+1-i)]=n(n+1),\qquad S=\frac{n(n+1)}2.$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 4 · Somma dei dispari</summary><div class="soluzione">
+<p>$$\sum_{k=0}^{n-1}(2k+1)=2\frac{(n-1)n}{2}+n=n^2.$$
+Il numero di addendi è $n$, non $n+1$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 5 · Somma dei quadrati</summary><div class="soluzione">
+<p>Somma $(k+1)^3-k^3=3k^2+3k+1$ per $k=0,\ldots,n$. Il membro sinistro telescopico vale $(n+1)^3$, dunque
+$$3\sum_{k=1}^n k^2=(n+1)^3-3\frac{n(n+1)}2-(n+1).$$
+Raccogliendo $(n+1)$ e semplificando si ottiene $\sum_{k=1}^n k^2=n(n+1)(2n+1)/6$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 6 · Somma telescopica</summary><div class="soluzione">
+<p>$$\sum_{k=1}^{100}\left(\frac1k-\frac1{k+1}\right)
+=(1-\tfrac12)+(\tfrac12-\tfrac13)+\cdots+(\tfrac1{100}-\tfrac1{101})=\frac{100}{101}.$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 7 · Due somme geometriche</summary><div class="soluzione">
+<p>Poiché $(-1)^k2^{3k+1}/3^k=2(-8/3)^k$,
+$$\sum_{k=0}^{30}(-1)^k\frac{2^{3k+1}}{3^k}
+=\frac6{11}\left[1-\left(-\frac83\right)^{31}\right].$$
+Nella seconda poni $j=k-2$, che varia da $0$ a $98$:
+$$\sum_{k=2}^{100}3^{2-k}=\sum_{j=0}^{98}(1/3)^j
+=\frac32(1-3^{-99}).$$</p>
+</div></details>
+
+<h2 id="sezione-3">3. Campi ordinati</h2><p><strong>Definizione 1.2 · Campo e campo ordinato.</strong> Un campo è un insieme $K$ con due operazioni interne $+$ e $\cdot$, con $0\ne1$, tale che:</p>
+<table>
+<thead>
+<tr>
+<th>Somma</th>
+<th>Prodotto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$a+b=b+a$</td>
+<td>$ab=ba$</td>
+</tr>
+<tr>
+<td>$(a+b)+c=a+(b+c)$</td>
+<td>$(ab)c=a(bc)$</td>
+</tr>
+<tr>
+<td>$a+0=a$</td>
+<td>$a1=a$</td>
+</tr>
+<tr>
+<td>ogni $a$ ha opposto $-a$</td>
+<td>ogni $a\ne0$ ha reciproco $a^{-1}$</td>
+</tr>
+</tbody>
+</table>
+<p>Vale inoltre $a(b+c)=ab+ac$. Sottrazione e divisione sono $a-b=a+(-b)$ e $a/b=ab^{-1}$, quest'ultima solo per $b\ne0$.</p>
+<p>Una <strong>relazione d'ordine</strong> è riflessiva, antisimmetrica e transitiva. È <strong>totale</strong> se ogni coppia è confrontabile. Un campo ordinato ha un ordine totale compatibile con le operazioni:
+$$a\le b\Rightarrow a+c\le b+c,\qquad
+a\le b,\ c&gt;0\Rightarrow ac\le bc.$$
+Da qui, moltiplicando per un numero negativo, il verso si inverte. $\mathbb Q$ e $\mathbb R$ sono campi ordinati; $\mathbb Z$ non è un campo perché $2$ non ha reciproco intero.</p>
+<p><strong>Esempio di ordine non totale.</strong> Su $\mathcal P(X)$ l'inclusione è riflessiva, antisimmetrica e transitiva. Se $X$ contiene due elementi distinti $a,b$, né $\{a\}\subseteq\{b\}$ né $\{b\}\subseteq\{a\}$. Per insiemi $X$ con al più un elemento, invece, l'ordine è totale.</p>
+<p><strong>Esempio svolto aggiunto.</strong> $-2x\le6$ equivale a $x\ge-3$, perché si divide per $-2$. Da $x^2\le x$ non si può dividere direttamente per $x$: il segno non è noto e $x=0$ è ammissibile. Si fattorizza $x(x-1)\le0$, ottenendo $x\in[0,1]$.</p>
+
+
+<h2 id="sezione-4">4. Reali, estremi, valore assoluto e intervalli</h2>
+
+
+<h3 id="4.1-Perch%C3%A9-i-razionali-non-bastano">4.1 Perché i razionali non bastano</h3><p>La diagonale del quadrato unitario ha lunghezza $d$ con $d^2=2$. Il Teorema 1.2 impedisce che $d$ sia razionale. Essere un campo ordinato non basta a descrivere tutte le lunghezze della retta.</p>
+
+
+<h3 id="4.2-Maggioranti,-minoranti,-massimi-ed-estremi">4.2 Maggioranti, minoranti, massimi ed estremi</h3><p>Sia $E\subseteq X$, dove $X$ è totalmente ordinato. Un <strong>maggiorante</strong> $M\in X$ soddisfa $x\le M$ per ogni $x\in E$; un <strong>minorante</strong> $m\in X$ soddisfa $m\le x$ per ogni $x\in E$. L'insieme è <strong>limitato superiormente/inferiormente</strong> se esiste un maggiorante/minorante; è <strong>limitato</strong> se valgono entrambe le proprietà.</p>
+<p>Il <strong>massimo</strong> è un maggiorante che appartiene a $E$; il <strong>minimo</strong> un minorante che appartiene a $E$. Possono non esistere, ma se esistono sono unici per antisimmetria.</p>
+<p><strong>Definizione 1.3.</strong> $\sup E$ è il minimo dei maggioranti; $\inf E$ è il massimo dei minoranti, quando questi elementi esistono in $X$. Gli estremi dipendono anche dall'insieme ambiente. Se esiste il massimo, coincide con il supremo; viceversa un supremo è massimo esattamente quando appartiene a $E$.</p>
+<p><strong>Caratterizzazione utile, aggiunta.</strong> Per $\varnothing\ne E\subseteq\mathbb R$ e $s\in\mathbb R$,
+$$s=\sup E\iff
+\begin{cases}x\le s&amp;\forall x\in E,\\
+\forall\varepsilon&gt;0\ \exists x\in E:\ s-\varepsilon&lt;x.&amp;\end{cases}$$
+Infatti la seconda condizione dice che nessun numero minore di $s$ è un maggiorante. Analogamente $t=\inf E$ se $t$ è minorante e per ogni $\varepsilon&gt;0$ esiste $x\in E$ con $x&lt;t+\varepsilon$.</p>
+<p><strong>Definizione 1.4 e assioma di completezza (R4).</strong> $\mathbb R$ è un campo ordinato completo: ogni suo sottoinsieme <strong>non vuoto</strong> e <strong>limitato superiormente</strong> ha estremo superiore reale. Non si richiede che $\mathbb R$ stesso abbia supremo. La proprietà dell'infimo segue applicando R4 a $-E$: $\inf E=-\sup(-E)$.</p>
+<p>Una <strong>partizione</strong> in due parti è una coppia $A,B$ di insiemi non vuoti, disgiunti, con $A\cup B=\mathbb R$. È una <strong>sezione di Dedekind</strong> se $a&lt;b$ per ogni $a\in A,b\in B$. La formulazione equivalente della completezza dice che esiste un unico <strong>separatore</strong> $s$ con $a\le s\le b$ per tutte queste coppie, e $s=\sup A=\inf B$.</p>
+<p><strong>Perché R4 implica il separatore.</strong> $A$ è non vuoto e ogni $b\in B$ è suo maggiorante: poni $s=\sup A$. Allora $a\le s\le b$. Se ci fossero due separatori $s&lt;t$, il punto medio, che deve stare in $A$ oppure in $B$, contraddirebbe una delle due proprietà. <strong>Viceversa</strong>, per $E$ non vuoto e superiormente limitato, separa i numeri che non sono maggioranti da quelli che lo sono; il separatore è il minimo dei maggioranti. Se fosse minore di un elemento di $E$, un numero intermedio non sarebbe maggiorante ma starebbe sopra il separatore, assurdo.</p>
+
+
+<h3 id="Esempi-4.1-del-libro,-completati">Esempi 4.1 del libro, completati</h3><p>Nella tabella “nessuno” significa nessun estremo <strong>reale finito</strong>; $+\infty,-\infty$ sono eventuali convenzioni nei reali estesi, non elementi di $\mathbb R$.</p>
+<table>
+<thead>
+<tr>
+<th>Insieme</th>
+<th>Infimo in $\mathbb R$</th>
+<th>Minimo</th>
+<th>Supremo in $\mathbb R$</th>
+<th>Massimo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathbb N$</td>
+<td>$0$</td>
+<td>$0$</td>
+<td>nessuno</td>
+<td>nessuno</td>
+</tr>
+<tr>
+<td>$2\mathbb Z$</td>
+<td>nessuno</td>
+<td>nessuno</td>
+<td>nessuno</td>
+<td>nessuno</td>
+</tr>
+<tr>
+<td>$\{1/n:n\ge1\}$</td>
+<td>$0$</td>
+<td>nessuno</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$\{(n-1)/(n+1):n\in\mathbb N\}$</td>
+<td>$-1$</td>
+<td>$-1$</td>
+<td>$1$</td>
+<td>nessuno</td>
+</tr>
+<tr>
+<td>$\{x\in\mathbb R:x^3\ge27\}$</td>
+<td>$3$</td>
+<td>$3$</td>
+<td>nessuno</td>
+<td>nessuno</td>
+</tr>
+<tr>
+<td>$\{q\in\mathbb Q:q\ge0,q^2&lt;2\}$</td>
+<td>$0$</td>
+<td>$0$</td>
+<td>$\sqrt2$</td>
+<td>nessuno</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Giustificazioni.</strong> $\mathbb N$ e $2\mathbb Z$ contengono numeri arbitrariamente grandi; il secondo anche arbitrariamente piccoli. Per $1/n$, scegli $n&gt;1/\varepsilon$ per trovare un elemento sotto $\varepsilon$; nessun elemento è zero. Per $(n-1)/(n+1)=1-2/(n+1)$, tutti i termini sono minori di 1, e basta $n+1&gt;2/\varepsilon$ per superare $1-\varepsilon$. La quinta riga è $[3,+\infty)$ perché il cubo è strettamente crescente. Nell'ultima riga i razionali approssimano $\sqrt2$ dal basso: il supremo esiste in $\mathbb R$, <strong>non in $\mathbb Q$</strong>.</p>
+<p>Le scelte di interi arbitrariamente grandi usano la <strong>proprietà archimedea</strong>, conseguenza di R4: se $\mathbb N$ avesse un supremo $s$, esisterebbe $n&gt;s-1$, e allora $n+1&gt;s$. La densità di $\mathbb Q$ segue scegliendo $n$ con $1/n&lt;b-a$ e un intero $m$ con $na&lt;m\le na+1$: $a&lt;m/n&lt;b$.</p>
+
+
+<h3 id="laboratorio-3">Laboratorio 3 · Il supremo non è il massimo del campione</h3><p>Mostriamo gli elementi di indice da 0 a $N$ (in tutto $N+1$ elementi) di $E=\{1-2/(n+1):n\in\mathbb N\}$. Il campione finito ha massimo, l'insieme infinito no. <strong>Compito:</strong> trova sulla carta un indice con $1-\varepsilon&lt;x_n&lt;1$, poi controlla se compare nel campione.</p>
+
+<div class="laboratorio" id="lab-3" data-lab="3"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h3 id="4.3-Valore-assoluto-e-distanza">4.3 Valore assoluto e distanza</h3><p><strong>Definizione.</strong> $|a|=a$ per $a\ge0$ e $|a|=-a$ per $a&lt;0$. Per $r\ge0$, $|x|\le r\iff-r\le x\le r$. Inoltre $|ab|=|a||b|$, $|-a|=|a|$ e $|a-b|$ è la distanza tra $a$ e $b$.</p>
+<p><strong>Disuguaglianza triangolare e conseguenze.</strong>
+$$|x+y|\le|x|+|y|,\qquad
+|a-b|\le|a-c|+|b-c|,$$
+$$\bigl||a|-|b|\bigr|\le|a-b|,\qquad
+\left|\sum_{k=1}^n a_k\right|\le\sum_{k=1}^n|a_k|.$$
+<strong>Dimostrazione.</strong> Somma $-|x|\le x\le|x|$ e $-|y|\le y\le|y|$. Per la forma inversa usa $|a|\le|a-b|+|b|$ e scambia $a,b$. La versione con $n$ addendi segue per induzione. L'esempio $x=2,y=-2$ mostra che l'uguaglianza non vale sempre.</p>
+
+
+<h3 id="4.4-Intervalli">4.4 Intervalli</h3><p>Per $a&lt;b$, $[a,b]=\{x:a\le x\le b\}$ è chiuso, $(a,b)=\{x:a&lt;x&lt;b\}$ è aperto; $[a,b)$ e $(a,b]$ includono un solo estremo. Si considerano anche semirette, ad esempio $(-\infty,b)$ e $[a,+\infty)$, e $\mathbb R=(-\infty,+\infty)$. L'infinito non è un estremo incluso.</p>
+<p><strong>Caratterizzazione.</strong> Un sottoinsieme $I\subseteq\mathbb R$ è un intervallo se contiene ogni punto compreso fra due suoi punti: $x_1&lt;x_2&lt;x_3$, $x_1,x_3\in I\Rightarrow x_2\in I$. Si ammettono anche i casi degeneri vuoto e singoletto. <strong>Idea della prova inversa:</strong> poni $a=\inf I,b=\sup I$, eventualmente infiniti; ogni punto strettamente fra $a,b$ è fra due punti di $I$, quindi appartiene a $I$. L'appartenenza dei due estremi determina il tipo di parentesi.</p>
+<p><strong>Esempi svolti.</strong> $|x-2|&lt;3$ equivale a $-1&lt;x&lt;5$. Il prodotto $[0,1]\times[1,2]$ è un rettangolo; scambiando i fattori si ottiene $[1,2]\times[0,1]$, diverso dal primo. $[0,1]^2$ è il quadrato unitario.</p>
+
+
+<h2 id="sezione-5">5. Radicali, potenze, logaritmi e approssimazioni</h2>
+
+
+<h3 id="5.1-Radici-aritmetiche">5.1 Radici aritmetiche</h3><p><strong>Teorema 1.3.</strong> Per $y&gt;0$ e intero $n\ge1$ esiste un unico $x&gt;0$ con $x^n=y$. Si scrive $x=\sqrt[n]y=y^{1/n}$. Si estende ponendo $\sqrt[n]0=0$. In particolare $\sqrt{a^2}=|a|$, non sempre $a$.</p>
+<p><strong>Giustificazione.</strong> L'unicità discende da $v^n-u^n=(v-u)(v^{n-1}+v^{n-2}u+\cdots+u^{n-1})&gt;0$ per $v&gt;u\ge0$. L'esistenza segue dalla completezza; il testo ne rinvia la dimostrazione con le funzioni continue al capitolo 3. Anticipandola: $t\mapsto t^n$ è continua, vale 0 in 0 e supera $y$ per $t$ abbastanza grande, quindi il teorema dei valori intermedi fornisce la radice. Questa parte usa risultati successivi, non il grafico.</p>
+<p><strong>Esempio del testo · Costruire $\sqrt2$.</strong> $1^2&lt;2&lt;2^2$, $1{,}4^2&lt;2&lt;1{,}5^2$, $1{,}41^2&lt;2&lt;1{,}42^2$, e così via. Le approssimazioni inferiori hanno supremo $\sqrt2$; quelle superiori infimo $\sqrt2$. Un intervallo razionale certificato è più informativo di una cifra fornita senza controllo.</p>
+
+
+<h3 id="5.2-Potenze-reali">5.2 Potenze reali</h3><p>Per $a&gt;0$, $m\in\mathbb Z,n\ge1$, $a^{m/n}=\sqrt[n]{a^m}$; il valore non dipende dalla rappresentazione della frazione. Per $a&gt;1$ e $b\in\mathbb R$ si può definire $a^b=\sup\{a^q:q\in\mathbb Q,q&lt;b\}$; per $0&lt;a&lt;1$ si pone $a^b=(1/a)^{-b}$ e per $a=1$ si pone $1^b=1$.</p>
+<p>Per basi positive e esponenti reali valgono
+$$a^0=1,\quad a^c&gt;0,\quad a^{c+d}=a^ca^d,\quad (ab)^c=a^cb^c,\quad(a^c)^d=a^{cd}.$$
+Per $a&gt;1$ la potenza cresce strettamente con l'esponente; per $0&lt;a&lt;1$ decresce. Per $a=1$ è costante. Se $c&gt;0$ e $0&lt;a\le b$, allora $a^c\le b^c$; se $c&lt;0$ il verso si inverte. In particolare $0&lt;a\le1,c&gt;0\Rightarrow a^c\le1$.</p>
+<p><strong>Basi negative.</strong> Per $a&lt;0$ e $m/n$ ridotta ai minimi termini con $n&gt;0$, la potenza reale è definita tramite la radice reale se $n$ è dispari. Per denominatore pari non è definita nel campo reale. Le identità delle potenze richiedono cautela fuori dalle basi positive. Esempi: $(-2)^{3/5}=-\sqrt[5]8$, $(-2)^{2/5}=\sqrt[5]4$; $(-2)^{3/4}$ non è reale. L'espressione $0^0$ non è qui definita come potenza reale generale; compare solo la convenzione per termini costanti di polinomi.</p>
+
+
+<h3 id="5.3-Logaritmi">5.3 Logaritmi</h3><p><strong>Teorema 1.4 e definizione.</strong> Se $a&gt;0$, $a\ne1$ e $y&gt;0$, esiste un unico $x\in\mathbb R$ con $a^x=y$. Si chiama $\log_a y$. Quindi $a^{\log_a y}=y$ e $\log_a(a^x)=x$. Se $a=1$, l'equazione ha tutte le soluzioni per $y=1$ e nessuna altrimenti; se $y\le0$, non ha soluzioni per nessuna base positiva.</p>
+<p>L'unicità usa la monotonia stretta. L'esistenza può essere dimostrata con continuità e comportamento agli estremi dell'esponenziale, sviluppati più avanti nel corso. Per $x,y&gt;0$, $a,b&gt;0$, $a,b\ne1$, $\alpha\in\mathbb R$:
+$$\log_a(xy)=\log_a x+\log_a y,\quad
+\log_a(x/y)=\log_a x-\log_a y,\quad
+\log_a(x^\alpha)=\alpha\log_a x,$$
+$$\log_a x=\frac1{\log_x a}\ (x\ne1),\qquad
+\log_a x=-\log_{1/a}x,\qquad
+\log_b x=\frac{\log_a x}{\log_a b}.$$
+<strong>Dimostrazione tipo:</strong> scrivi $x=a^u,y=a^v$. Allora $xy=a^{u+v}$ e applica la definizione di logaritmo. Le altre identità seguono dalle corrispondenti identità delle potenze.</p>
+<p><strong>Esempio aggiunto.</strong> $\log_2(x-1)+\log_2(x+1)=3$ richiede $x&gt;1$. Unendo i logaritmi: $x^2-1=8$, quindi $x=3$; la radice $-3$ è esclusa dal dominio.</p>
+
+
+<h3 id="5.4-Approssimazioni">5.4 Approssimazioni</h3><p>Scrivere un irrazionale significa specificarlo esattamente tramite una definizione (ad esempio l'unica radice positiva di $x^2=2$), oppure approssimarlo a precisione richiesta. Non tutti i reali sono calcolabili da un algoritmo: la specificazione algoritmica vale per gli esempi computabili che stiamo usando.</p>
+<p>Con $d$ cifre dopo la virgola, il troncamento di un numero non negativo ha errore minore di $10^{-d}$; l'arrotondamento al più vicino ha errore al più $\tfrac12 10^{-d}$. Per la convenzione scolastica sui positivi: $2{,}4138\mapsto2{,}41$, $2{,}4152\mapsto2{,}42$. Nei casi esattamente a metà bisogna precisare la convenzione: Python può arrotondare al pari. I numeri a virgola mobile non sono l'intero campo reale e nemmeno tutti i razionali.</p>
+
+
+<h3 id="laboratorio-4">Laboratorio 4 · Un intervallo certificato per $\sqrt2$</h3><p>Usiamo interi e frazioni esatte: nessun confronto fra quadrati dipende dagli errori dei <code>float</code>. <strong>Compito:</strong> spiega perché l'ampiezza dell'intervallo certifica l'errore dell'estremo inferiore.</p>
+
+<div class="laboratorio" id="lab-4" data-lab="4"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h2 id="sezione-6">6. Insiemi infiniti</h2>
+
+
+<h3 id="Cardinalit%C3%A0-e-numerabilit%C3%A0">Cardinalità e numerabilità</h3><p><strong>Definizione 1.5.</strong> Due insiemi hanno la stessa <strong>cardinalità</strong> (o potenza) se esiste una corrispondenza biunivoca fra essi: ogni elemento del primo è associato a uno e un solo elemento del secondo e viceversa. Una funzione è <strong>iniettiva</strong> se non identifica elementi distinti, <strong>suriettiva</strong> se raggiunge ogni elemento del codominio, <strong>biiettiva</strong> se ha entrambe le proprietà.</p>
+<p><strong>Definizione 1.6.</strong> Un insieme è <strong>numerabile</strong> se è equipotente a $\mathbb N$. Qui “numerabile” significa infinito numerabile; “al più numerabile” comprende anche gli insiemi finiti.</p>
+<p><strong>Esempio.</strong> La lista $0,1,-1,2,-2,\ldots$ enumera $\mathbb Z$. Esplicitamente $f(0)=0$, $f(2n-1)=n$, $f(2n)=-n$ per $n\ge1$ dà una biiezione $\mathbb N\to\mathbb Z$. Anche i pari naturali sono equipotenti ai naturali tramite $n\mapsto2n$: un'inclusione propria non implica cardinalità strettamente minore.</p>
+<p><strong>Teorema 1.5.</strong> $\mathbb Q$ è numerabile.</p>
+<p><strong>Dimostrazione.</strong> Elenca le coppie di interi positivi $(p,q)$ per somme $p+q=2,3,4,\ldots$, e in ogni diagonale elenca $p/q$ scartando le frazioni non ridotte. Ogni razionale positivo compare esattamente una volta dopo un numero finito di passi. Inserisci poi zero e alterna ogni razionale positivo con il suo opposto.</p>
+<p><strong>Teorema 1.6.</strong> $\mathbb R$ non è numerabile.</p>
+<p><strong>Dimostrazione diagonale.</strong> Supponi di elencare tutti i numeri di $[0,1)$, con sviluppi decimali scelti non terminanti in infiniti 9. Se $a_{nn}$ è la cifra diagonale del numero numero $n$, costruisci $b_n=5$ quando $a_{nn}\le4$, $b_n=4$ altrimenti. Il numero $0{,}b_1b_2\ldots$ appartiene a $[0,1)$ e differisce dal numero numero $n$ nella cifra $n$. Poiché usa solo 4 e 5, non ha l'ambiguità dei decimali terminanti; non è in elenco: contraddizione.</p>
+<p>La cardinalità di $\mathbb R$ si chiama <strong>potenza del continuo</strong>. Ogni intervallo non degenere ha questa cardinalità. Per esempio $t\mapsto\tan(\pi(t-1/2))$ è una biiezione $(0,1)\to\mathbb R$. Anche $[0,1]$, il quadrato e gli spazi $\mathbb R^n$ con $n\ge1$ hanno la stessa cardinalità, benché abbiano dimensioni diverse. I complementi spiegano il caso del quadrato; un punto o un intervallo vuoto sono eccezioni alla frase “ogni intervallo”.</p>
+<p><strong>Teorema 1.7 · Cantor.</strong> Per ogni insieme $A$, $|\mathcal P(A)|&gt;|A|$.</p>
+<p><strong>Dimostrazione.</strong> L'iniezione $a\mapsto\{a\}$ dà $|A|\le|\mathcal P(A)|$. Se una funzione $f:A\to\mathcal P(A)$ fosse suriettiva, il sottoinsieme $D=\{a\in A:a\notin f(a)\}$ sarebbe $f(d)$ per un certo $d$. Ma $d\in D\iff d\notin D$, impossibile. Non esiste quindi alcuna biiezione. Il ragionamento produce gerarchie di cardinalità sempre maggiori.</p>
+
+
+<h3 id="laboratorio-5">Laboratorio 5 · Enumerare i razionali e osservare la diagonale</h3><p>Il primo pannello produce un <strong>prefisso finito</strong> dell'elenco dei razionali positivi. La tabella visualizza il meccanismo diagonale su cifre simulate: nessuna matrice finita dimostra da sola la non numerabilità.</p>
+
+<div class="laboratorio" id="lab-5" data-lab="5"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h2 id="sezione-7">7. Il principio di induzione</h2><p>Per dimostrare $P(n)$ per ogni intero $n\ge n_0$ occorrono:</p>
+<ol>
+<li><strong>Base:</strong> dimostrare $P(n_0)$.</li>
+<li><strong>Passo:</strong> per un generico $n\ge n_0$, assumere $P(n)$ e dedurre $P(n+1)$.</li>
+</ol>
+<p>Si assume la proprietà per <strong>quel generico indice</strong> per provare un'implicazione, non si assume la conclusione universale. In forma insiemistica: se $S\subseteq\mathbb N$, $0\in S$ e $n\in S\Rightarrow n+1\in S$, allora $S=\mathbb N$. È un assioma dei naturali.</p>
+<p><strong>Teorema 1.8 · Bernoulli.</strong> Per $x\ge-1$ e intero $n\ge1$,
+$$(1+x)^n\ge1+nx.$$
+Per $n=0$ l'identità è 1=1 con la convenzione del polinomio costante.</p>
+<p><strong>Dimostrazione.</strong> La base $n=1$ è un'uguaglianza. Supposto vero per $n$, moltiplica per $1+x\ge0$:
+$$(1+x)^{n+1}\ge(1+nx)(1+x)=1+(n+1)x+nx^2\ge1+(n+1)x.$$
+L'ipotesi $x\ge-1$ giustifica il verso della prima disuguaglianza. Per $n\ge2$ l'uguaglianza si ha solo per $x=0$; per $x=-1$ la verifica è diretta.</p>
+<p><strong>Teorema 1.9 · Binomio di Newton.</strong> Per $n\ge0$ e $a,b\in\mathbb R$,
+$$(a+b)^n=\sum_{k=0}^n\binom nk a^k b^{n-k}.$$
+<strong>Dimostrazione.</strong> Per $n=0$ i due membri sono il polinomio costante 1. Moltiplica la formula per $a+b$. Per $1\le k\le n$ il coefficiente di $a^k b^{n+1-k}$ è $\binom n{k-1}+\binom nk=\binom{n+1}k$; i termini estremi sono $b^{n+1}$ e $a^{n+1}$. Questo dà la formula al passo successivo. L'identità dei coefficienti si dimostra algebricamente nell'esercizio 13, quindi non c'è circolarità.</p>
+
+
+<h3 id="Esercizi-8%E2%80%9313-%C2%B7-Svolgimenti-per-induzione-(pp.-34%E2%80%9335)">Esercizi 8–13 · Svolgimenti per induzione (pp. 34–35)</h3>
+
+<details class="esercizio"><summary>Esercizio 8 · $\sum_{k=1}^n k=n(n+1)/2$</summary><div class="soluzione">
+<p>Base $n=1$: $1=1$. Al passo successivo:
+$$\sum_{k=1}^{n+1}k=\frac{n(n+1)}2+(n+1)=\frac{(n+1)(n+2)}2.$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 9 · Somma geometrica</summary><div class="soluzione">
+<p>Per $q\ne1$, la base $n=0$ è $1=(1-q)/(1-q)$. Poi
+$$\sum_{k=0}^{n+1}q^k=\frac{1-q^{n+1}}{1-q}+q^{n+1}
+=\frac{1-q^{n+2}}{1-q}.$$
+Per $q=1$ la formula separata è il numero degli addendi.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 10 · Somma dei pari</summary><div class="soluzione">
+<p>La formula è $\sum_{k=1}^n2k=n(n+1)$. Base: $2=1\cdot2$. Passo:
+$$n(n+1)+2(n+1)=(n+1)(n+2).$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 11 · Somma dei dispari</summary><div class="soluzione">
+<p>La formula è $\sum_{k=0}^{n-1}(2k+1)=n^2$. Base: $1=1$. Il nuovo termine è $2n+1$, dunque $n^2+(2n+1)=(n+1)^2$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 12 · Cardinalità dell&#x27;insieme delle parti</summary><div class="soluzione">
+<p>Per $n=0$, $\mathcal P(\varnothing)=\{\varnothing\}$ ha $1=2^0$ elementi. Aggiungendo un elemento $a$ a un insieme di $n$ elementi, ogni sottoinsieme o non contiene $a$ o si ottiene aggiungendo $a$ a uno dei vecchi sottoinsiemi. Le due classi sono disgiunte e hanno ciascuna $2^n$ elementi: in totale $2^{n+1}$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 13 · Identità di Pascal</summary><div class="soluzione">
+<p>Per $1\le k\le n$:
+$$\binom n{k-1}+\binom nk
+=\frac{n!k+n!(n+1-k)}{k!(n+1-k)!}
+=\frac{(n+1)!}{k!(n+1-k)!}=\binom{n+1}k.$$
+È una dimostrazione algebrica diretta; non serve l'induzione.</p>
+</div></details>
+
+<h3 id="laboratorio-6">Laboratorio 6 · Il margine nella disuguaglianza di Bernoulli</h3><p><strong>Prevedi:</strong> dove la differenza è zero? Prova $n=1$ e $n=2$. Il grafico è una verifica visiva su un intervallo; la dimostrazione è il passo induttivo sopra.</p>
+
+<div class="laboratorio" id="lab-6" data-lab="6"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h2 id="sezione-8">8. Numeri complessi</h2>
+
+
+<h3 id="8.1-Definizione-e-struttura-di-campo">8.1 Definizione e struttura di campo</h3><p>Su $\mathbb R^2$ definiamo
+$$(a,b)+(c,d)=(a+c,b+d),\qquad(a,b)(c,d)=(ac-bd,ad+bc).$$
+Con queste operazioni otteniamo il campo $\mathbb C$: gli elementi neutri sono $(0,0)$ e $(1,0)$, l'opposto di $(a,b)$ è $(-a,-b)$ e, per $(a,b)\ne(0,0)$, il reciproco è
+$$\left(\frac a{a^2+b^2},\frac{-b}{a^2+b^2}\right).$$
+Commutatività, associatività e distributività si verificano espandendo i due membri. Identifichiamo $(a,0)$ con $a\in\mathbb R$ e poniamo $i=(0,1)$: $i^2=-1$. La <strong>forma algebrica</strong> è $z=a+ib$, con <strong>parte reale</strong> $\operatorname{Re}z=a$ e <strong>parte immaginaria</strong> $\operatorname{Im}z=b$, che è un numero reale, non $ib$.</p>
+<p>Il <strong>piano di Gauss</strong> rappresenta $a+ib$ con il punto $(a,b)$. I numeri $ib$ sono immaginari puri. La somma segue la regola del parallelogramma; l'opposto è il punto simmetrico rispetto all'origine.</p>
+<p><strong>Impossibilità di ordinare $\mathbb C$ come campo.</strong> In ogni campo ordinato il quadrato di un elemento non nullo è positivo: se $u&lt;0$, allora $-u&gt;0$ e $u^2=(-u)^2&gt;0$. Ma $i^2=-1&lt;0$, assurdo. Si possono definire ordini sull'insieme $\mathbb C$, ma non compatibili con tutte le proprietà di campo ordinato.</p>
+
+
+<h3 id="8.2-Coniugato-e-modulo">8.2 Coniugato e modulo</h3><p>Il <strong>coniugato</strong> di $z=a+ib$ è $\bar z=a-ib$. Il <strong>modulo</strong> è $|z|=\sqrt{a^2+b^2}$. Valgono
+$$z+\bar z=2\operatorname{Re}z,\quad z-\bar z=2i\operatorname{Im}z,\quad z\bar z=|z|^2,$$
+$$\overline{z+w}=\bar z+\bar w,\quad\overline{zw}=\bar z\bar w,\quad\overline{\bar z}=z.$$
+Inoltre $|z|\ge0$, $|z|=0\iff z=0$, $|\bar z|=|z|$ e
+$$|\operatorname{Re}z|\le|z|,\quad |\operatorname{Im}z|\le|z|,\quad
+|z|\le|\operatorname{Re}z|+|\operatorname{Im}z|,$$
+$$|z+w|\le|z|+|w|,\qquad \bigl||z|-|w|\bigr|\le|z+w|.$$
+Sostituendo $w$ con $-w$ si ottiene anche $\bigl||z|-|w|\bigr|\le|z-w|$. La distanza fra i punti $z,w$ è $|z-w|$.</p>
+<p><strong>Dimostrazione della triangolare.</strong> Poiché $\operatorname{Re}(z\bar w)\le|z\bar w|=|z||w|$,
+$$|z+w|^2=|z|^2+|w|^2+2\operatorname{Re}(z\bar w)\le(|z|+|w|)^2.$$
+Qui $|zw|=|z||w|$ si verifica direttamente da $(zw)\overline{zw}=z\bar z\,w\bar w$. La disuguaglianza inversa segue applicando la triangolare a $z=(z+w)-w$ e poi scambiando $z,w$.</p>
+<p>Per $w=c+id\ne0$:
+$$\frac{a+ib}{c+id}=\frac{(a+ib)(c-id)}{c^2+d^2}
+=\frac{ac+bd}{c^2+d^2}+i\frac{bc-ad}{c^2+d^2}.$$</p>
+
+
+<h3 id="Esempio-8.1-%C2%B7-Un'equazione-con-coniugato-(pp.-39%E2%80%9340)">Esempio 8.1 · Un'equazione con coniugato (pp. 39–40)</h3><p>Risolvere $z^2+i\operatorname{Im}z+2\bar z=0$. Con $z=x+iy$:
+$$x^2-y^2+2x=0,\qquad y(2x-1)=0.$$
+Se $y=0$, $x(x+2)=0$, quindi $z=0,-2$. Se $x=1/2$, $y^2=5/4$, quindi
+$$z=\frac12\pm i\frac{\sqrt5}{2}.$$
+Le quattro soluzioni sono ammissibili. L'equazione coinvolge $\bar z$ e non è un polinomio nel solo $z$: il suo grado apparente non limita il numero delle soluzioni a due.</p>
+
+
+<h3 id="8.3-Forma-trigonometrica-e-formule-di-De-Moivre">8.3 Forma trigonometrica e formule di De Moivre</h3><p>Per $z\ne0$, poni $\rho=|z|&gt;0$ e scegli un <strong>argomento</strong> $\theta$ con $a=\rho\cos\theta$, $b=\rho\sin\theta$. Allora
+$$z=\rho(\cos\theta+i\sin\theta).$$
+Gli argomenti differiscono per multipli di $2\pi$. La scelta in $(-\pi,\pi]$ è l'<strong>argomento principale</strong> $\operatorname{Arg}z$. Per $z=0$ l'argomento non è definito. Non basta $\arctan(b/a)$ senza controllare il quadrante; in Python <code>atan2(b,a)</code> gestisce i quadranti.</p>
+<p><strong>Esempi.</strong> $-i$ ha argomenti $-\pi/2+2k\pi$; $\sqrt3+i=2(\cos(\pi/6)+i\sin(\pi/6))$. I reali positivi hanno argomento principale 0, i reali negativi $\pi$.</p>
+<p>Scrivendo $\mathrm{cis}(\theta)=\cos\theta+i\sin\theta$ solo come abbreviazione:
+$$z_1z_2=\rho_1\rho_2\mathrm{cis}(\theta_1+\theta_2),\qquad
+\frac{z_1}{z_2}=\frac{\rho_1}{\rho_2}\mathrm{cis}(\theta_1-\theta_2),$$
+$$z_1\cdots z_n=(\rho_1\cdots\rho_n)\mathrm{cis}(\theta_1+\cdots+\theta_n),\qquad
+z^n=\rho^n\mathrm{cis}(n\theta).$$
+Il quoziente richiede $z_2\ne0$. La formula per potenze vale per interi positivi; per interi negativi richiede $z\ne0$. Gli argomenti si sommano <strong>modulo $2\pi$</strong>, non necessariamente come argomenti principali. Le formule seguono dalle identità di addizione di seno e coseno; le potenze per induzione.</p>
+<p>Moltiplicare per $\rho\mathrm{cis}(\theta)$ significa ruotare di $\theta$ e dilatare di fattore $\rho$. Per $i$: rotazione di $\pi/2$; per $-1$: di $\pi$; per $1+i$: rotazione di $\pi/4$ e dilatazione di $\sqrt2$.</p>
+
+
+<h3 id="Esempi-8.3%E2%80%938.4-%C2%B7-Potenze-ed-equazioni-(pp.-42%E2%80%9343)">Esempi 8.3–8.4 · Potenze ed equazioni (pp. 42–43)</h3><p><strong>$(1+i)^7$.</strong> $1+i=\sqrt2\mathrm{cis}(\pi/4)$, dunque
+$$(1+i)^7=8\sqrt2\mathrm{cis}(7\pi/4)=8-8i.$$</p>
+<p><strong>$z^3=|z|$.</strong> Prima conserva la soluzione $z=0$. Per $z\ne0$, scrivi $z=\rho\mathrm{cis}(\theta)$: $\rho^3=\rho$ e $3\theta\equiv0\pmod{2\pi}$. Quindi $\rho=1$ e
+$$z\in\left\{0,1,-\frac12+i\frac{\sqrt3}2,-\frac12-i\frac{\sqrt3}2\right\}.$$
+Separare prima lo zero evita di attribuirgli un argomento o perderlo dividendo per il modulo.</p>
+
+
+<h3 id="laboratorio-7">Laboratorio 7 · Il prodotto è una rotazione e una dilatazione</h3><p>Il punto iniziale è $z=1+i/2$. <strong>Compito:</strong> imposta $\rho=1,\theta=\pi/2$ e prevedi le coordinate finali prima di leggere il risultato. Prova poi un angolo negativo.</p>
+
+<div class="laboratorio" id="lab-7" data-lab="7"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h3 id="8.4-Radici-complesse,-equazioni-di-secondo-grado-e-algebra">8.4 Radici complesse, equazioni di secondo grado e algebra</h3><p><strong>Definizione.</strong> Una radice $n$-esima complessa di $w$ è un $z$ tale che $z^n=w$.</p>
+<p><strong>Teorema 1.10.</strong> Per $w=r\mathrm{cis}(\varphi)\ne0$ e intero $n\ge1$ esistono esattamente $n$ radici distinte:
+$$z_k=r^{1/n}\mathrm{cis}\left(\frac{\varphi+2k\pi}{n}\right),\qquad k=0,\ldots,n-1.$$
+<strong>Dimostrazione.</strong> De Moivre verifica che $z_k^n=w$. Viceversa, ogni radice deve avere modulo $r^{1/n}$ e angolo $(\varphi+2h\pi)/n$ con $h\in\mathbb Z$. La divisione euclidea $h=k+mn$ riconduce a uno dei $n$ valori; sono distinti perché le differenze di angoli per $0\le k&lt;n$ non sono multipli non nulli di $2\pi$. Per $w=0$ l'unica radice distinta è 0.</p>
+<p>Per $n\ge3$ le radici sono i vertici di un poligono regolare; per $n=2$ due punti opposti; per $n=1$ un solo punto. Non confondere $\sqrt4=2$ (radice aritmetica) con le soluzioni $\{-2,2\}$ di $z^2=4$.</p>
+<p><strong>Esempi del testo (pp. 44–45).</strong></p>
+<ul>
+<li>$z^3=-1$: $\{\tfrac12+i\tfrac{\sqrt3}2,-1,\tfrac12-i\tfrac{\sqrt3}2\}$.</li>
+<li>$z^6=i$: $z_k=\mathrm{cis}(\pi/12+k\pi/3)$, $k=0,\ldots,5$.</li>
+<li>$z^5=1+i$: $z_k=2^{1/10}\mathrm{cis}(\pi/20+2k\pi/5)$, $k=0,\ldots,4$.</li>
+</ul>
+<p><strong>Equazioni quadratiche.</strong> Per $a\ne0$, $az^2+bz+c=0$ si risolve scegliendo una delle radici $s$ di $s^2=b^2-4ac$ e ponendo $z=(-b\pm s)/(2a)$. Se il discriminante è zero, si ha una radice doppia. Ad esempio
+$$z^2+2iz-\sqrt3 i=0\quad\Rightarrow\quad
+z=-i\pm\sqrt2\mathrm{cis}(\pi/3)
+=\pm\frac{\sqrt2}{2}+i\left(-1\pm\frac{\sqrt6}{2}\right),$$
+con segni coordinati. Si è usato $-1+i\sqrt3=2\mathrm{cis}(2\pi/3)$.</p>
+<p><strong>Teorema 1.11 · Teorema fondamentale dell'algebra.</strong> Un polinomio complesso $P(z)=a_nz^n+\cdots+a_0$, di grado $n\ge1$ ($a_n\ne0$), ha esattamente $n$ radici in $\mathbb C$ contate con molteplicità. Una radice $z_0$ ha <strong>molteplicità</strong> $k$ se $P(z)=(z-z_0)^kQ(z)$ con $Q(z_0)\ne0$. Il teorema è enunciato senza dimostrazione nel capitolo; anche qui non se ne propone una prova, che richiede strumenti ulteriori. Non si applica direttamente alle equazioni con $\bar z$ o $|z|$.</p>
+
+
+<h3 id="laboratorio-8">Laboratorio 8 · Tutte le radici, non solo quella principale</h3><p><strong>Prevedi:</strong> ruotando $w$ di un angolo $\delta$, di quanto ruota il poligono delle radici? Che cosa cambia aumentando $n$? Il laboratorio impone $r&gt;0$, come nel Teorema 1.10.</p>
+
+<div class="laboratorio" id="lab-8" data-lab="8"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h3 id="Esercizi-14%E2%80%9325-%C2%B7-Calcolo-e-geometria-complessa-(p.-46)">Esercizi 14–25 · Calcolo e geometria complessa (p. 46)</h3>
+
+<details class="esercizio"><summary>Esercizio 14 · Tre espressioni in forma algebrica</summary><div class="soluzione">
+<p>Razionalizza il denominatore moltiplicando per il suo coniugato:
+$$\frac{(2+i)(1-i)}{3-2i}=\frac{3-i}{3-2i}
+=\frac{(3-i)(3+2i)}{13}=\frac{11}{13}+\frac3{13}i.$$
+Poiché $i(3+2i)^2=-12+5i$,
+$$\frac1{i(3+2i)^2}=\frac{-12-5i}{169}.$$
+Infine $(\sqrt3+i\sqrt2)^3=-3\sqrt3+7i\sqrt2$, quindi
+$$\frac{(\sqrt3+i\sqrt2)^3}{\sqrt2-i\sqrt3}
+=\frac{(-3\sqrt3+7i\sqrt2)(\sqrt2+i\sqrt3)}5=-2\sqrt6+i.$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 15 · Modulo e argomento</summary><div class="soluzione">
+<table>
+<thead>
+<tr>
+<th>Numero</th>
+<th>Modulo</th>
+<th>Argomento principale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$-3i$</td>
+<td>$3$</td>
+<td>$-\pi/2$</td>
+</tr>
+<tr>
+<td>$-5$</td>
+<td>$5$</td>
+<td>$\pi$</td>
+</tr>
+<tr>
+<td>$-\sqrt3+i$</td>
+<td>$2$</td>
+<td>$5\pi/6$</td>
+</tr>
+</tbody>
+</table>
+<p>Si calcola $\sqrt{a^2+b^2}$ e si individua il quadrante. Tutti gli altri argomenti si ottengono aggiungendo $2k\pi$, $k\in\mathbb Z$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 16 · Moduli e argomenti di quozienti</summary><div class="soluzione">
+<p>Dividi i moduli e sottrai gli argomenti:</p>
+<table>
+<thead>
+<tr>
+<th>Numero</th>
+<th>Modulo</th>
+<th>Argomento principale e calcolo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(1+i\sqrt3)/(1-i)$</td>
+<td>$\sqrt2$</td>
+<td>$\pi/3-(-\pi/4)=7\pi/12$</td>
+</tr>
+<tr>
+<td>$(1+i)/(1-i)$</td>
+<td>$1$</td>
+<td>$\pi/4-(-\pi/4)=\pi/2$</td>
+</tr>
+<tr>
+<td>$(1+i)/(\sqrt3+i)$</td>
+<td>$1/\sqrt2$</td>
+<td>$\pi/4-\pi/6=\pi/12$</td>
+</tr>
+</tbody>
+</table>
+</div></details>
+<details class="esercizio"><summary>Esercizio 17 · Luoghi geometrici</summary><div class="soluzione">
+<p>Scrivi $z=x+iy$.</p>
+<p><strong>i)</strong> $|z|=|z+i|\iff x^2+y^2=x^2+(y+1)^2\iff y=-1/2$: l'asse del segmento fra $0$ e $-i$.</p>
+<p><strong>ii)</strong> $\operatorname{Re}(z^2)&gt;2\iff x^2-y^2&gt;2$. È l'unione delle due regioni $x&gt;\sqrt{y^2+2}$ e $x&lt;-\sqrt{y^2+2}$; l'iperbole di bordo è esclusa.</p>
+<p><strong>iii)</strong> $\operatorname{Im}(1/z)=-1$ richiede $z\ne0$. Poiché $1/z=(x-iy)/(x^2+y^2)$,
+$$-y/(x^2+y^2)=-1\iff x^2+(y-1/2)^2=1/4.$$
+È la circonferenza di centro $(0,1/2)$ e raggio $1/2$, <strong>privata dell'origine</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 18 · Stime sul modulo</summary><div class="soluzione">
+<p>Da $x^2\le x^2+y^2$ segue $x\le|x|\le|z|$; analogamente $y\le|z|$. Inoltre
+$$(|x|+|y|)^2=x^2+y^2+2|xy|\ge|z|^2,$$
+e prendendo radici non negative si ottiene $|z|\le|x|+|y|$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 19 · Potenze e una formula parametrica</summary><div class="soluzione">
+<p>$$\frac{1-i\sqrt3}{1+i}=\frac{1-\sqrt3}{2}-i\frac{1+\sqrt3}{2}.$$
+Per il secondo, $(1-i)/(1+i)=-i$, dunque il cubo vale $i$. Usando De Moivre:
+$$(1+i)^{20}=2^{10}\mathrm{cis}(5\pi)=-1024,$$
+$$(1-i)^{11}=2^{11/2}\mathrm{cis}(-11\pi/4)=-32-32i.$$
+Per ogni intero $n\ge0$,
+$$(1+i\sqrt3)^n-(1-i\sqrt3)^n
+=2^n[\mathrm{cis}(n\pi/3)-\mathrm{cis}(-n\pi/3)]
+=i\,2^{n+1}\sin(n\pi/3).$$
+La parte reale è zero; la parte immaginaria è il numero reale indicato.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 20 · Radici seste di $-1$</summary><div class="soluzione">
+<p>$-1=\mathrm{cis}(\pi)$, quindi gli angoli sono $\pi/6+k\pi/3$, $k=0,\ldots,5$:
+$$\left\{\frac{\sqrt3}2+\frac i2,\ i,\ -\frac{\sqrt3}2+\frac i2,
+-\frac{\sqrt3}2-\frac i2,\ -i,\ \frac{\sqrt3}2-\frac i2\right\}.$$
+Si dispongono su un esagono regolare unitario. Nel laboratorio 8 imposta $n=6,r=1,\mathrm{arg}(w)/\pi=1$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 21 · Due equazioni</summary><div class="soluzione">
+<p><strong>a)</strong> Poni $u=z-2$. Le radici cubiche di $-i=\mathrm{cis}(-\pi/2)$ hanno angoli $-\pi/6,\pi/2,7\pi/6$. Pertanto
+$$z\in\left\{2+\frac{\sqrt3}2-\frac i2,\ 2+i,\ 2-\frac{\sqrt3}2-\frac i2\right\}.$$
+<strong>b)</strong> $z^2-(4+i)z+4+2i=(z-2)(z-(2+i))$, dunque $z=2,2+i$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 22 · Formula per $\cos5\theta$</summary><div class="soluzione">
+<p>Prendi la parte reale di $(\cos\theta+i\sin\theta)^5$:
+$$\cos5\theta=\cos^5\theta-10\cos^3\theta\sin^2\theta+5\cos\theta\sin^4\theta.$$
+I termini con potenze dispari di $i$ sono immaginari; quelli con $i^2,i^4$ hanno segni $-,+$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 23 · Linearizzare $\sin^4\theta$</summary><div class="soluzione">
+<p>Due applicazioni della formula di duplicazione danno
+$$\sin^4\theta=\left(\frac{1-\cos2\theta}{2}\right)^2
+=\frac38-\frac12\cos2\theta+\frac18\cos4\theta.$$
+La costante può essere vista come $\tfrac38\cos(0\theta)$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 24 · Tre insiemi di radici</summary><div class="soluzione">
+<p><strong>a) $z^3=i-1$.</strong> Modulo $\sqrt2$, argomento $3\pi/4$; ponendo $R=2^{1/6}$:
+$$z_k=R\mathrm{cis}(\pi/4+2k\pi/3),\quad k=0,1,2.$$
+In forma algebrica, usando le formule di addizione per $15^\circ$ e $75^\circ$:
+$$\frac R{\sqrt2}(1+i),\qquad
+\frac R4[-(\sqrt6+\sqrt2)+i(\sqrt6-\sqrt2)],\qquad
+\frac R4[(\sqrt6-\sqrt2)-i(\sqrt6+\sqrt2)].$$</p>
+<p><strong>b) $z^2=-1+i\sqrt3$.</strong> Modulo del radicando 2 e argomento $2\pi/3$:
+$$z=\pm\sqrt2\mathrm{cis}(\pi/3)=\pm\left(\frac{\sqrt2}{2}+i\frac{\sqrt6}{2}\right).$$</p>
+<p><strong>c) $z^4=-2-2\sqrt3 i$.</strong> Modulo 4, argomento $-2\pi/3$:
+$$z_k=\sqrt2\mathrm{cis}(-\pi/6+k\pi/2),\quad k=0,1,2,3.$$
+Esplicitamente:
+$$\frac{\sqrt6}{2}-i\frac{\sqrt2}{2},\quad
+\frac{\sqrt2}{2}+i\frac{\sqrt6}{2},\quad
+-\frac{\sqrt6}{2}+i\frac{\sqrt2}{2},\quad
+-\frac{\sqrt2}{2}-i\frac{\sqrt6}{2}.$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 25 · Un settore anulare e la sua rotazione</summary><div class="soluzione">
+<p>$A=\{z:1&lt;|z|&lt;2,\ \pi/6&lt;\arg z&lt;\pi/3\}$ è il settore aperto di una corona circolare fra raggi 1 e 2 e angoli $30^\circ,60^\circ$. Tutti i bordi sono esclusi. $B=\{iz:z\in A\}$ si ottiene ruotando di $90^\circ$:
+$$B=\{w:1&lt;|w|&lt;2,\ 2\pi/3&lt;\arg w&lt;5\pi/6\}.$$</p>
+</div></details>
+
+<h3 id="laboratorio-9">Laboratorio 9 · I luoghi degli esercizi 17 e 25</h3><p>Il punto vuoto evidenzia l'origine esclusa dalla circonferenza. La griglia campiona le regioni; le formule esatte ne determinano i bordi. <strong>Compito:</strong> deduci prima il disegno dalla formula e controlla poi se coincide.</p>
+
+<div class="laboratorio" id="lab-9" data-lab="9"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
+
+<h3 id="Esercizi-26%E2%80%9335-%C2%B7-Tutte-le-soluzioni-(p.-47)">Esercizi 26–35 · Tutte le soluzioni (p. 47)</h3>
+
+<details class="esercizio"><summary>Esercizio 26 · $z^2+2z+3=0$</summary><div class="soluzione">
+<p>Completa il quadrato: $(z+1)^2=-2$. Quindi <strong>$z=-1\pm i\sqrt2$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 27 · $z+3i+(\operatorname{Re}z)(i+(\operatorname{Im}z)^2)=0$</summary><div class="soluzione">
+<p>Con $z=x+iy$, le due parti sono $x(1+y^2)=0$ e $y+3+x=0$. Poiché $1+y^2&gt;0$, $x=0$, quindi $y=-3$. L'unica soluzione è <strong>$z=-3i$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 28 · $z^2+2iz-3=0$</summary><div class="soluzione">
+<p>$(z+i)^2=2$. Le soluzioni sono <strong>$z=-i\pm\sqrt2$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 29 · $iz^3=\bar z$</summary><div class="soluzione">
+<p>$z=0$ è soluzione. Per $z=\rho\mathrm{cis}(\theta)\ne0$, confrontando moduli $\rho^3=\rho$, quindi $\rho=1$; confrontando argomenti $3\theta+\pi/2\equiv-\theta\pmod{2\pi}$. Pertanto
+$$\boxed{z=0\quad\text{oppure}\quad z=\mathrm{cis}(-\pi/8+k\pi/2),\quad k=0,1,2,3.}$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 30 · $iz^2+(1+i)z+1=0$</summary><div class="soluzione">
+<p>Si fattorizza $i(z+1)(z-i)=0$; dunque <strong>$z=-1,i$</strong>. Il controllo dei coefficienti dà $i(1-i)=1+i$ e $i(-i)=1$.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 31 · $z^6+2z^3-3=0$</summary><div class="soluzione">
+<p>Poni $u=z^3$. $u^2+2u-3=(u-1)(u+3)=0$. Sono quindi le tre radici cubiche di 1 e le tre di $-3$:
+$$z=\mathrm{cis}(2k\pi/3)\quad\text{oppure}\quad
+z=\sqrt[3]3\,\mathrm{cis}(\pi/3+2k\pi/3),\quad k=0,1,2.$$
+Le due terne sono disgiunte perché hanno moduli diversi.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 32 · $z^2+\bar z=0$</summary><div class="soluzione">
+<p>Con $z=x+iy$:
+$$x^2-y^2+x=0,\qquad y(2x-1)=0.$$
+Se $y=0$, $x=0,-1$; se $x=1/2$, $y^2=3/4$. Le soluzioni sono
+$$\boxed{0,\ -1,\ \frac12+i\frac{\sqrt3}{2},\ \frac12-i\frac{\sqrt3}{2}.}$$</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 33 · $(\bar z)^4=|z|$</summary><div class="soluzione">
+<p>Conserva $z=0$. Per $z\ne0$, $\rho^4=\rho\Rightarrow\rho=1$ e $-4\theta\equiv0\pmod{2\pi}$. Quindi <strong>$z\in\{0,1,i,-1,-i\}$</strong>.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 34 · $i\operatorname{Re}z+z^2=|z|^2+1$</summary><div class="soluzione">
+<p>La parte reale impone $x^2-y^2=x^2+y^2+1$, cioè $-2y^2=1$, impossibile per $y\in\mathbb R$. <strong>Nessuna soluzione</strong>, indipendentemente dalla parte immaginaria.</p>
+</div></details>
+<details class="esercizio"><summary>Esercizio 35 · $2|z|^2=z^3$</summary><div class="soluzione">
+<p>$z=0$ è soluzione. Per $z\ne0$, $2\rho^2=\rho^3\Rightarrow\rho=2$ e $3\theta\equiv0\pmod{2\pi}$. Dunque
+$$\boxed{z\in\{0,2,-1+i\sqrt3,-1-i\sqrt3\}.}$$</p>
+</div></details>
+
+<h2 id="sezione-9">9. Complementi · Svolgimenti (p. 47)</h2>
+
+<details class="esercizio"><summary>Complemento 1 · Unione e intersezione infinite</summary><div class="soluzione">
+<p>Per $A_n\subseteq X$, $n\ge1$,
+$$\bigcup_{n=1}^{\infty}A_n=\{x\in X:\exists n\ge1,\ x\in A_n\},$$
+$$\bigcap_{n=1}^{\infty}A_n=\{x\in X:\forall n\ge1,\ x\in A_n\}.$$
+L'esistenza traduce “almeno uno”, l'universalità “tutti”. Ad esempio per $A_n=(-1/n,1/n)$, l'unione è $(-1,1)$ e l'intersezione $\{0\}$: se $x\ne0$, scegli $n&gt;1/|x|$ per escluderlo da almeno un $A_n$.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 2 · $\log_2 3$ è irrazionale</summary><div class="soluzione">
+<p>Supponi $\log_2 3=p/q$ con $p,q$ interi positivi (il logaritmo è positivo). Allora $2^p=3^q$. Il primo numero è pari, il secondo dispari: impossibile.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 3 · Proprietà dei coefficienti binomiali</summary><div class="soluzione">
+<p>I valori agli estremi seguono da $0!=1$: $\binom n0=\binom nn=1$. La simmetria si legge nel denominatore $k!(n-k)!$. Per Pascal, con $1\le k\le n-1$:
+$$\binom{n-1}{k-1}+\binom{n-1}k
+=\frac{(n-1)![k+(n-k)]}{k!(n-k)!}
+=\frac{n!}{k!(n-k)!}=\binom nk.$$
+Questa è la versione con indici traslati dell'esercizio 13.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 4 · Bernoulli dal binomio</summary><div class="soluzione">
+<p>Per $x\ge0$ e $n\ge2$,
+$$(1+x)^n=1+nx+\sum_{k=2}^n\binom nk x^k\ge1+nx,$$
+perché ogni addendo residuo è non negativo. Per $n=0,1$ l'identità è immediata. Questa prova non copre $-1\le x&lt;0$, dove i termini possono alternare segno; lì si usa la dimostrazione induttiva.</p>
+</div></details>
+
+<h3 id="Uno-strumento-aggiunto-per-i-complementi-5-e-6">Uno strumento aggiunto per i complementi 5 e 6</h3><p>Il semplice intreccio di decimali, senza convenzioni, può fallire: $0{,}5000\ldots=0{,}4999\ldots$. Per dare prove complete usiamo il <strong>teorema di Cantor–Schröder–Bernstein</strong>: se esistono iniezioni $f:A\to B$ e $g:B\to A$, esiste una biiezione fra $A$ e $B$.</p>
+<p><strong>Dimostrazione e costruzione.</strong> Poni $A_0=A\setminus g(B)$, $A_{n+1}=g(f(A_n))$ e $D=\bigcup_{n\ge0}A_n$. Definisci $h(a)=f(a)$ per $a\in D$ e $h(a)=g^{-1}(a)$ per $a\notin D$. Il secondo ramo è definito perché $a\notin A_0$; l'inversa sul sottoinsieme $g(B)$ è unica per iniettività. Ogni ramo è iniettivo e le loro immagini sono disgiunte: se $f(d)=g^{-1}(a)$ con $d\in D$, allora $a=g(f(d))\in D$, contraddizione. Per la suriettività, dato $b\in B$, se $g(b)\notin D$ usa il secondo ramo; se $g(b)\in D$, non è in $A_0$, quindi è in qualche $A_{n+1}$ e per iniettività di $g$ si ha $b=f(a)$ per un $a\in A_n\subseteq D$. Dunque $h$ è biiettiva.</p>
+
+<details class="esercizio"><summary>Complemento 5 · Segmento e quadrato hanno la stessa cardinalità</summary><div class="soluzione">
+<p>Un'iniezione $[0,1]\to[0,1]^2$ è $t\mapsto(t,0)$. Costruiamo l'altra in modo da evitare ambiguità. Per $(x,y)\in[0,1]^2$ considera gli sviluppi binari <strong>canonici</strong> di $x/2$ e $y/2$, scegliendo quelli non definitivamente uguali a 1:
+$$x/2=\sum_{n\ge1}a_n2^{-n},\qquad y/2=\sum_{n\ge1}b_n2^{-n},\qquad a_n,b_n\in\{0,1\}.$$
+La divisione per 2 assicura che anche gli estremi abbiano una rappresentazione di questo tipo. Associa la coppia al numero
+$$F(x,y)=\sum_{n\ge1}\frac{a_n}{3^{2n-1}}+\frac{b_n}{3^{2n}}\in[0,1].$$
+Le cifre ternarie sono solo 0 e 1; al primo posto $m$ in cui due sequenze differiscono, il contributo $3^{-m}$ è maggiore della massima coda compensatrice $\sum_{j&gt;m}3^{-j}=\tfrac12 3^{-m}$. Quindi la codifica è iniettiva e si possono recuperare entrambe le sequenze. Le due iniezioni e il teorema appena dimostrato danno la biiezione richiesta. La sola codifica $F$ non è dichiarata suriettiva su tutto l'intervallo.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 6 · $\mathcal P(\mathbb N)$ e $[0,1]$</summary><div class="soluzione">
+<p>Per ogni sottoinsieme $S\subseteq\mathbb N$ poni
+$$F(S)=\sum_{n=0}^{\infty}\frac{2\mathbf1_S(n)}{3^{n+1}}\in[0,1],$$
+dove $\mathbf1_S(n)=1$ se $n\in S$, 0 altrimenti. È iniettiva: se la prima differenza è all'indice $m$, il termine diverso ha grandezza $2/3^{m+1}$ e la coda totale è al più $1/3^{m+1}$, insufficiente a cancellarlo.</p>
+<p>Viceversa, per $x\in[0,1]$ prendi lo sviluppo binario canonico $x/2=\sum_{n\ge1}a_n2^{-n}$ e poni $G(x)=\{n-1:a_n=1\}$. È un'iniezione in $\mathcal P(\mathbb N)$, perché dalle cifre si ricostruisce $x$. Cantor–Schröder–Bernstein conclude. La mappa ingenua $S\mapsto\sum\mathbf1_S(n)2^{-n-1}$ non sarebbe iniettiva a causa delle doppie rappresentazioni binarie.</p>
+</div></details>
+<details class="esercizio"><summary>Complemento 7 · Analisi del paradosso diagonale</summary><div class="soluzione">
+<p>Supponi una suriezione $f:A\to\mathcal P(A)$ e poni $D=\{a\in A:a\notin f(a)\}$. Attenzione ai tipi: <strong>$f(a)$ è un sottoinsieme di $A$</strong>, non necessariamente un elemento di $A$. Per suriettività esiste $d\in A$ con $f(d)=D$. Allora
+$$d\in D\iff d\notin f(d)\iff d\notin D.$$
+Se $d$ appartiene a $D$, non vi appartiene; se non vi appartiene, vi appartiene. L'ipotesi di suriettività è impossibile. Con $a\mapsto\{a\}$ si ottiene la disuguaglianza stretta di cardinalità del Teorema 1.7. Il ragionamento vale anche per $A=\varnothing$: in tal caso non può esserci una suriezione su $\{\varnothing\}$.</p>
+</div></details>
+
+<h2 id="sezione-10">10. Autoverifica</h2><p>Prima di guardare le risposte, risolvi questi quesiti su carta.</p>
+<ol>
+<li>Nega $\forall x\in\mathbb R\,\exists y\in\mathbb R:y&gt;x$.</li>
+<li>Trova supremo, infimo, massimo e minimo di $(0,1]\cap\mathbb Q$.</li>
+<li>Perché $\sqrt{x^2}=x$ è falsa come identità su tutti i reali?</li>
+<li>Qual è l'errore nella “dimostrazione” di $P(n)$ che controlla solo $n=1,2,3$?</li>
+<li>Trova tutte le soluzioni di $z^4=16$.</li>
+<li>Se $A\subsetneq B$, deve valere $|A|&lt;|B|$?</li>
+</ol>
+
+<details class="esercizio"><summary>Risposte ragionate</summary><div class="soluzione">
+<ol>
+<li>$\exists x\in\mathbb R\,\forall y\in\mathbb R:y\le x$. Si scambiano entrambi i quantificatori e si nega $&gt;$.</li>
+<li>$\sup=\max=1$, $\inf=0$; il minimo non esiste perché 0 è escluso e per ogni razionale positivo $q$ anche $q/2$ appartiene all'insieme.</li>
+<li>Per $x=-2$ il primo membro è 2, il secondo $-2$. La formula corretta è $|x|$.</li>
+<li>Manca il passo per un indice generico; tre casi non coprono un insieme infinito.</li>
+<li>$\{2,2i,-2,-2i\}$, dai moduli 2 e dagli angoli $k\pi/2$.</li>
+<li>No: $2\mathbb N\subsetneq\mathbb N$, ma $n\mapsto2n$ è una biiezione.</li>
+</ol>
+</div></details>
+
+<h3 id="Riferimenti-e-corrispondenza-con-il-testo">Riferimenti e corrispondenza con il testo</h3><table>
+<thead>
+<tr>
+<th>Contenuti del libro</th>
+<th>Posizione nel quaderno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definizione 1.1, Proposizioni 1.1–1.2</td>
+<td>§2</td>
+</tr>
+<tr>
+<td>Definizione 1.2</td>
+<td>§3</td>
+</tr>
+<tr>
+<td>Definizioni 1.3–1.4</td>
+<td>§4</td>
+</tr>
+<tr>
+<td>Definizioni 1.5–1.6</td>
+<td>§6</td>
+</tr>
+<tr>
+<td>Enunciato falso 1.1 e Teorema 1.2</td>
+<td>§1.2</td>
+</tr>
+<tr>
+<td>Teoremi 1.3–1.4</td>
+<td>§5</td>
+</tr>
+<tr>
+<td>Teoremi 1.5–1.7</td>
+<td>§6</td>
+</tr>
+<tr>
+<td>Teoremi 1.8–1.9</td>
+<td>§7</td>
+</tr>
+<tr>
+<td>Teoremi 1.10–1.11</td>
+<td>§8.4</td>
+</tr>
+<tr>
+<td>Esercizi 1–7, 8–13, 14–25, 26–35</td>
+<td>rispettivamente §§2, 7, 8, 8</td>
+</tr>
+<tr>
+<td>Complementi 1–7</td>
+<td>§9</td>
+</tr>
+</tbody>
+</table>
+<p>I rinvii riguardano l'edizione del PDF fornito. Fra le precisazioni adottate: $0\ne1$ negli assiomi di campo; frazioni ridotte per le potenze di basi negative; intervalli <strong>non degeneri</strong> nelle affermazioni sulla cardinalità; $f(a)\in\mathcal P(A)$ nella diagonale di Cantor; rappresentazioni canoniche per evitare le doppie espansioni decimali/binarie. I simboli alterati dall'OCR sono stati ricostruiti confrontando le pagine degli esercizi.</p>
+
+
+<footer>Analisi 1 · Capitolo 1 — Dispensa didattica rielaborata a partire da Bramanti, Pagani e Salsa. Grafici esplorativi: le dimostrazioni restano essenziali.<br><a href="#inizio">Torna all’inizio ↑</a></footer></main></div></body></html>
