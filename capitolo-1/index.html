@@ -446,18 +446,18 @@ Le quattro soluzioni sono ammissibili. L'equazione coinvolge $\bar z$ e non è u
 $$z=\rho(\cos\theta+i\sin\theta).$$
 Gli argomenti differiscono per multipli di $2\pi$. La scelta in $(-\pi,\pi]$ è l'<strong>argomento principale</strong> $\operatorname{Arg}z$. Per $z=0$ l'argomento non è definito. Non basta $\arctan(b/a)$ senza controllare il quadrante; in Python <code>atan2(b,a)</code> gestisce i quadranti.</p>
 <p><strong>Esempi.</strong> $-i$ ha argomenti $-\pi/2+2k\pi$; $\sqrt3+i=2(\cos(\pi/6)+i\sin(\pi/6))$. I reali positivi hanno argomento principale 0, i reali negativi $\pi$.</p>
-<p>Scrivendo $\mathrm{cis}(\theta)=\cos\theta+i\sin\theta$ solo come abbreviazione:
-$$z_1z_2=\rho_1\rho_2\mathrm{cis}(\theta_1+\theta_2),\qquad
-\frac{z_1}{z_2}=\frac{\rho_1}{\rho_2}\mathrm{cis}(\theta_1-\theta_2),$$
-$$z_1\cdots z_n=(\rho_1\cdots\rho_n)\mathrm{cis}(\theta_1+\cdots+\theta_n),\qquad
-z^n=\rho^n\mathrm{cis}(n\theta).$$
+<p>Le formule di prodotto, quoziente e potenza sono:
+$$z_1z_2=\rho_1\rho_2\left[\cos\left(\theta_1+\theta_2\right)+i\sin\left(\theta_1+\theta_2\right)\right],\qquad
+\frac{z_1}{z_2}=\frac{\rho_1}{\rho_2}\left[\cos\left(\theta_1-\theta_2\right)+i\sin\left(\theta_1-\theta_2\right)\right],$$
+$$z_1\cdots z_n=(\rho_1\cdots\rho_n)\left[\cos\left(\theta_1+\cdots+\theta_n\right)+i\sin\left(\theta_1+\cdots+\theta_n\right)\right],\qquad
+z^n=\rho^n\left[\cos\left(n\theta\right)+i\sin\left(n\theta\right)\right].$$
 Il quoziente richiede $z_2\ne0$. La formula per potenze vale per interi positivi; per interi negativi richiede $z\ne0$. Gli argomenti si sommano <strong>modulo $2\pi$</strong>, non necessariamente come argomenti principali. Le formule seguono dalle identità di addizione di seno e coseno; le potenze per induzione.</p>
-<p>Moltiplicare per $\rho\mathrm{cis}(\theta)$ significa ruotare di $\theta$ e dilatare di fattore $\rho$. Per $i$: rotazione di $\pi/2$; per $-1$: di $\pi$; per $1+i$: rotazione di $\pi/4$ e dilatazione di $\sqrt2$.</p>
+<p>Moltiplicare per $\rho\left[\cos\left(\theta\right)+i\sin\left(\theta\right)\right]$ significa ruotare di $\theta$ e dilatare di fattore $\rho$. Per $i$: rotazione di $\pi/2$; per $-1$: di $\pi$; per $1+i$: rotazione di $\pi/4$ e dilatazione di $\sqrt2$.</p>
 
 
-<h3 id="Esempi-8.3%E2%80%938.4-%C2%B7-Potenze-ed-equazioni-(pp.-42%E2%80%9343)">Esempi 8.3–8.4 · Potenze ed equazioni (pp. 42–43)</h3><p><strong>$(1+i)^7$.</strong> $1+i=\sqrt2\mathrm{cis}(\pi/4)$, dunque
-$$(1+i)^7=8\sqrt2\mathrm{cis}(7\pi/4)=8-8i.$$</p>
-<p><strong>$z^3=|z|$.</strong> Prima conserva la soluzione $z=0$. Per $z\ne0$, scrivi $z=\rho\mathrm{cis}(\theta)$: $\rho^3=\rho$ e $3\theta\equiv0\pmod{2\pi}$. Quindi $\rho=1$ e
+<h3 id="Esempi-8.3%E2%80%938.4-%C2%B7-Potenze-ed-equazioni-(pp.-42%E2%80%9343)">Esempi 8.3–8.4 · Potenze ed equazioni (pp. 42–43)</h3><p><strong>$(1+i)^7$.</strong> $1+i=\sqrt2\left[\cos\left(\pi/4\right)+i\sin\left(\pi/4\right)\right]$, dunque
+$$(1+i)^7=8\sqrt2\left[\cos\left(7\pi/4\right)+i\sin\left(7\pi/4\right)\right]=8-8i.$$</p>
+<p><strong>$z^3=|z|$.</strong> Prima conserva la soluzione $z=0$. Per $z\ne0$, scrivi $z=\rho\left[\cos\left(\theta\right)+i\sin\left(\theta\right)\right]$: $\rho^3=\rho$ e $3\theta\equiv0\pmod{2\pi}$. Quindi $\rho=1$ e
 $$z\in\left\{0,1,-\frac12+i\frac{\sqrt3}2,-\frac12-i\frac{\sqrt3}2\right\}.$$
 Separare prima lo zero evita di attribuirgli un argomento o perderlo dividendo per il modulo.</p>
 
@@ -467,21 +467,21 @@ Separare prima lo zero evita di attribuirgli un argomento o perderlo dividendo p
 <div class="laboratorio" id="lab-7" data-lab="7"><p class="fallback">Attiva JavaScript per esplorare questo grafico.</p></div>
 
 <h3 id="8.4-Radici-complesse,-equazioni-di-secondo-grado-e-algebra">8.4 Radici complesse, equazioni di secondo grado e algebra</h3><p><strong>Definizione.</strong> Una radice $n$-esima complessa di $w$ è un $z$ tale che $z^n=w$.</p>
-<p><strong>Teorema 1.10.</strong> Per $w=r\mathrm{cis}(\varphi)\ne0$ e intero $n\ge1$ esistono esattamente $n$ radici distinte:
-$$z_k=r^{1/n}\mathrm{cis}\left(\frac{\varphi+2k\pi}{n}\right),\qquad k=0,\ldots,n-1.$$
+<p><strong>Teorema 1.10.</strong> Per $w=r\left[\cos\left(\varphi\right)+i\sin\left(\varphi\right)\right]\ne0$ e intero $n\ge1$ esistono esattamente $n$ radici distinte:
+$$z_k=r^{1/n}\left[\cos\left(\frac{\varphi+2k\pi}{n}\right)+i\sin\left(\frac{\varphi+2k\pi}{n}\right)\right],\qquad k=0,\ldots,n-1.$$
 <strong>Dimostrazione.</strong> De Moivre verifica che $z_k^n=w$. Viceversa, ogni radice deve avere modulo $r^{1/n}$ e angolo $(\varphi+2h\pi)/n$ con $h\in\mathbb Z$. La divisione euclidea $h=k+mn$ riconduce a uno dei $n$ valori; sono distinti perché le differenze di angoli per $0\le k&lt;n$ non sono multipli non nulli di $2\pi$. Per $w=0$ l'unica radice distinta è 0.</p>
 <p>Per $n\ge3$ le radici sono i vertici di un poligono regolare; per $n=2$ due punti opposti; per $n=1$ un solo punto. Non confondere $\sqrt4=2$ (radice aritmetica) con le soluzioni $\{-2,2\}$ di $z^2=4$.</p>
 <p><strong>Esempi del testo (pp. 44–45).</strong></p>
 <ul>
 <li>$z^3=-1$: $\{\tfrac12+i\tfrac{\sqrt3}2,-1,\tfrac12-i\tfrac{\sqrt3}2\}$.</li>
-<li>$z^6=i$: $z_k=\mathrm{cis}(\pi/12+k\pi/3)$, $k=0,\ldots,5$.</li>
-<li>$z^5=1+i$: $z_k=2^{1/10}\mathrm{cis}(\pi/20+2k\pi/5)$, $k=0,\ldots,4$.</li>
+<li>$z^6=i$: $z_k=\left[\cos\left(\pi/12+k\pi/3\right)+i\sin\left(\pi/12+k\pi/3\right)\right]$, $k=0,\ldots,5$.</li>
+<li>$z^5=1+i$: $z_k=2^{1/10}\left[\cos\left(\pi/20+2k\pi/5\right)+i\sin\left(\pi/20+2k\pi/5\right)\right]$, $k=0,\ldots,4$.</li>
 </ul>
 <p><strong>Equazioni quadratiche.</strong> Per $a\ne0$, $az^2+bz+c=0$ si risolve scegliendo una delle radici $s$ di $s^2=b^2-4ac$ e ponendo $z=(-b\pm s)/(2a)$. Se il discriminante è zero, si ha una radice doppia. Ad esempio
 $$z^2+2iz-\sqrt3 i=0\quad\Rightarrow\quad
-z=-i\pm\sqrt2\mathrm{cis}(\pi/3)
+z=-i\pm\sqrt2\left[\cos\left(\pi/3\right)+i\sin\left(\pi/3\right)\right]
 =\pm\frac{\sqrt2}{2}+i\left(-1\pm\frac{\sqrt6}{2}\right),$$
-con segni coordinati. Si è usato $-1+i\sqrt3=2\mathrm{cis}(2\pi/3)$.</p>
+con segni coordinati. Si è usato $-1+i\sqrt3=2\left[\cos\left(2\pi/3\right)+i\sin\left(2\pi/3\right)\right]$.</p>
 <p><strong>Teorema 1.11 · Teorema fondamentale dell'algebra.</strong> Un polinomio complesso $P(z)=a_nz^n+\cdots+a_0$, di grado $n\ge1$ ($a_n\ne0$), ha esattamente $n$ radici in $\mathbb C$ contate con molteplicità. Una radice $z_0$ ha <strong>molteplicità</strong> $k$ se $P(z)=(z-z_0)^kQ(z)$ con $Q(z_0)\ne0$. Il teorema è enunciato senza dimostrazione nel capitolo; anche qui non se ne propone una prova, che richiede strumenti ulteriori. Non si applica direttamente alle equazioni con $\bar z$ o $|z|$.</p>
 
 
@@ -575,22 +575,22 @@ e prendendo radici non negative si ottiene $|z|\le|x|+|y|$.</p>
 <details class="esercizio"><summary>Esercizio 19 · Potenze e una formula parametrica</summary><div class="soluzione">
 <p>$$\frac{1-i\sqrt3}{1+i}=\frac{1-\sqrt3}{2}-i\frac{1+\sqrt3}{2}.$$
 Per il secondo, $(1-i)/(1+i)=-i$, dunque il cubo vale $i$. Usando De Moivre:
-$$(1+i)^{20}=2^{10}\mathrm{cis}(5\pi)=-1024,$$
-$$(1-i)^{11}=2^{11/2}\mathrm{cis}(-11\pi/4)=-32-32i.$$
+$$(1+i)^{20}=2^{10}\left[\cos\left(5\pi\right)+i\sin\left(5\pi\right)\right]=-1024,$$
+$$(1-i)^{11}=2^{11/2}\left[\cos\left(-11\pi/4\right)+i\sin\left(-11\pi/4\right)\right]=-32-32i.$$
 Per ogni intero $n\ge0$,
 $$(1+i\sqrt3)^n-(1-i\sqrt3)^n
-=2^n[\mathrm{cis}(n\pi/3)-\mathrm{cis}(-n\pi/3)]
+=2^n[\left[\cos\left(n\pi/3\right)+i\sin\left(n\pi/3\right)\right]-\left[\cos\left(-n\pi/3\right)+i\sin\left(-n\pi/3\right)\right]]
 =i\,2^{n+1}\sin(n\pi/3).$$
 La parte reale è zero; la parte immaginaria è il numero reale indicato.</p>
 </div></details>
 <details class="esercizio"><summary>Esercizio 20 · Radici seste di $-1$</summary><div class="soluzione">
-<p>$-1=\mathrm{cis}(\pi)$, quindi gli angoli sono $\pi/6+k\pi/3$, $k=0,\ldots,5$:
+<p>$-1=\left[\cos\left(\pi\right)+i\sin\left(\pi\right)\right]$, quindi gli angoli sono $\pi/6+k\pi/3$, $k=0,\ldots,5$:
 $$\left\{\frac{\sqrt3}2+\frac i2,\ i,\ -\frac{\sqrt3}2+\frac i2,
 -\frac{\sqrt3}2-\frac i2,\ -i,\ \frac{\sqrt3}2-\frac i2\right\}.$$
 Si dispongono su un esagono regolare unitario. Nel laboratorio 8 imposta $n=6,r=1,\mathrm{arg}(w)/\pi=1$.</p>
 </div></details>
 <details class="esercizio"><summary>Esercizio 21 · Due equazioni</summary><div class="soluzione">
-<p><strong>a)</strong> Poni $u=z-2$. Le radici cubiche di $-i=\mathrm{cis}(-\pi/2)$ hanno angoli $-\pi/6,\pi/2,7\pi/6$. Pertanto
+<p><strong>a)</strong> Poni $u=z-2$. Le radici cubiche di $-i=\left[\cos\left(-\pi/2\right)+i\sin\left(-\pi/2\right)\right]$ hanno angoli $-\pi/6,\pi/2,7\pi/6$. Pertanto
 $$z\in\left\{2+\frac{\sqrt3}2-\frac i2,\ 2+i,\ 2-\frac{\sqrt3}2-\frac i2\right\}.$$
 <strong>b)</strong> $z^2-(4+i)z+4+2i=(z-2)(z-(2+i))$, dunque $z=2,2+i$.</p>
 </div></details>
@@ -607,15 +607,15 @@ La costante può essere vista come $\tfrac38\cos(0\theta)$.</p>
 </div></details>
 <details class="esercizio"><summary>Esercizio 24 · Tre insiemi di radici</summary><div class="soluzione">
 <p><strong>a) $z^3=i-1$.</strong> Modulo $\sqrt2$, argomento $3\pi/4$; ponendo $R=2^{1/6}$:
-$$z_k=R\mathrm{cis}(\pi/4+2k\pi/3),\quad k=0,1,2.$$
+$$z_k=R\left[\cos\left(\pi/4+2k\pi/3\right)+i\sin\left(\pi/4+2k\pi/3\right)\right],\quad k=0,1,2.$$
 In forma algebrica, usando le formule di addizione per $15^\circ$ e $75^\circ$:
 $$\frac R{\sqrt2}(1+i),\qquad
 \frac R4[-(\sqrt6+\sqrt2)+i(\sqrt6-\sqrt2)],\qquad
 \frac R4[(\sqrt6-\sqrt2)-i(\sqrt6+\sqrt2)].$$</p>
 <p><strong>b) $z^2=-1+i\sqrt3$.</strong> Modulo del radicando 2 e argomento $2\pi/3$:
-$$z=\pm\sqrt2\mathrm{cis}(\pi/3)=\pm\left(\frac{\sqrt2}{2}+i\frac{\sqrt6}{2}\right).$$</p>
+$$z=\pm\sqrt2\left[\cos\left(\pi/3\right)+i\sin\left(\pi/3\right)\right]=\pm\left(\frac{\sqrt2}{2}+i\frac{\sqrt6}{2}\right).$$</p>
 <p><strong>c) $z^4=-2-2\sqrt3 i$.</strong> Modulo 4, argomento $-2\pi/3$:
-$$z_k=\sqrt2\mathrm{cis}(-\pi/6+k\pi/2),\quad k=0,1,2,3.$$
+$$z_k=\sqrt2\left[\cos\left(-\pi/6+k\pi/2\right)+i\sin\left(-\pi/6+k\pi/2\right)\right],\quad k=0,1,2,3.$$
 Esplicitamente:
 $$\frac{\sqrt6}{2}-i\frac{\sqrt2}{2},\quad
 \frac{\sqrt2}{2}+i\frac{\sqrt6}{2},\quad
@@ -643,16 +643,16 @@ $$B=\{w:1&lt;|w|&lt;2,\ 2\pi/3&lt;\arg w&lt;5\pi/6\}.$$</p>
 <p>$(z+i)^2=2$. Le soluzioni sono <strong>$z=-i\pm\sqrt2$</strong>.</p>
 </div></details>
 <details class="esercizio"><summary>Esercizio 29 · $iz^3=\bar z$</summary><div class="soluzione">
-<p>$z=0$ è soluzione. Per $z=\rho\mathrm{cis}(\theta)\ne0$, confrontando moduli $\rho^3=\rho$, quindi $\rho=1$; confrontando argomenti $3\theta+\pi/2\equiv-\theta\pmod{2\pi}$. Pertanto
-$$\boxed{z=0\quad\text{oppure}\quad z=\mathrm{cis}(-\pi/8+k\pi/2),\quad k=0,1,2,3.}$$</p>
+<p>$z=0$ è soluzione. Per $z=\rho\left[\cos\left(\theta\right)+i\sin\left(\theta\right)\right]\ne0$, confrontando moduli $\rho^3=\rho$, quindi $\rho=1$; confrontando argomenti $3\theta+\pi/2\equiv-\theta\pmod{2\pi}$. Pertanto
+$$\boxed{z=0\quad\text{oppure}\quad z=\left[\cos\left(-\pi/8+k\pi/2\right)+i\sin\left(-\pi/8+k\pi/2\right)\right],\quad k=0,1,2,3.}$$</p>
 </div></details>
 <details class="esercizio"><summary>Esercizio 30 · $iz^2+(1+i)z+1=0$</summary><div class="soluzione">
 <p>Si fattorizza $i(z+1)(z-i)=0$; dunque <strong>$z=-1,i$</strong>. Il controllo dei coefficienti dà $i(1-i)=1+i$ e $i(-i)=1$.</p>
 </div></details>
 <details class="esercizio"><summary>Esercizio 31 · $z^6+2z^3-3=0$</summary><div class="soluzione">
 <p>Poni $u=z^3$. $u^2+2u-3=(u-1)(u+3)=0$. Sono quindi le tre radici cubiche di 1 e le tre di $-3$:
-$$z=\mathrm{cis}(2k\pi/3)\quad\text{oppure}\quad
-z=\sqrt[3]3\,\mathrm{cis}(\pi/3+2k\pi/3),\quad k=0,1,2.$$
+$$z=\left[\cos\left(2k\pi/3\right)+i\sin\left(2k\pi/3\right)\right]\quad\text{oppure}\quad
+z=\sqrt[3]3\,\left[\cos\left(\pi/3+2k\pi/3\right)+i\sin\left(\pi/3+2k\pi/3\right)\right],\quad k=0,1,2.$$
 Le due terne sono disgiunte perché hanno moduli diversi.</p>
 </div></details>
 <details class="esercizio"><summary>Esercizio 32 · $z^2+\bar z=0$</summary><div class="soluzione">
