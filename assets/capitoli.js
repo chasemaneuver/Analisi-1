@@ -1,4 +1,9 @@
 'use strict';
+// La firma MV diventa anche l'icona della scheda, in tutti i capitoli.
+const mvIcon=document.createElement('link');
+mvIcon.rel='icon';mvIcon.type='image/svg+xml';
+mvIcon.href=new URL('mv.svg',document.currentScript.src).href;
+document.head.append(mvIcon);
 const chapterSelect=document.querySelector('#capitolo');
 if(chapterSelect){
   // Il catalogo condiviso aggiorna il menu anche nei capitoli già pubblicati.
