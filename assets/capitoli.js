@@ -7,7 +7,7 @@ document.head.append(mvIcon);
 const chapterSelect=document.querySelector('#capitolo');
 if(chapterSelect){
   // Il catalogo condiviso aggiorna il menu anche nei capitoli già pubblicati.
-  const chapters=[[1,'Numeri'],[2,'Funzioni'],[3,'Limiti e continuità']];
+  const chapters=[[1,'Numeri'],[2,'Funzioni'],[3,'Limiti e continuità'],[4,'Calcolo differenziale'],[4,'Calcolo differenziale'],[4,'Calcolo differenziale'],[4,'Calcolo differenziale']];
   for(const [number,title] of chapters){
     const value=`../capitolo-${number}/`;
     if(![...chapterSelect.options].some(option=>option.value===value)){
