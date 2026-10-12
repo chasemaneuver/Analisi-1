@@ -10,6 +10,7 @@ Dispensa a cura di **Michelle Vrapi**, con teoria, esempi, esercizi svolti e gra
 - [Capitolo 2 · Funzioni](https://chasemaneuver.github.io/Analisi-1/capitolo-2/): 12 laboratori, 21 esercizi e 9 complementi.
 
 - [Capitolo 3 · Limiti e continuità](https://chasemaneuver.github.io/Analisi-1/capitolo-3/): 15 laboratori, 43 esercizi e 12 complementi (le numerazioni 14 e 7 sono ripetute nel testo).
+- [Capitolo 4 · Calcolo differenziale](https://chasemaneuver.github.io/Analisi-1/capitolo-4/): derivate, estremi, convessità, Taylor e Newton. 18 laboratori, 112 esercizi e 8 complementi.
 
 Il menu a sinistra permette di cambiare capitolo. Il pulsante **Stampa / PDF** include anche le soluzioni chiuse; i grafici vengono stampati nello stato corrente.
 
@@ -23,6 +24,8 @@ Il menu a sinistra permette di cambiare capitolo. Il pulsante **Stampa / PDF** i
 | `capitolo-2/laboratori.js` | Grafici e slider del capitolo 2. |
 | `capitolo-3/index.html` | Testi, formule ed esercizi del capitolo 3. |
 | `capitolo-3/laboratori.js` | Grafici e slider del capitolo 3. |
+| `capitolo-4/index.html` | Testi, formule ed esercizi del capitolo 4. |
+| `capitolo-4/laboratori.js` | Grafici e slider del capitolo 4. |
 | `assets/stile.css` | Stile e stampa condivisi. |
 | `assets/capitoli.js` | Menu condiviso per scegliere il capitolo. |
 | `.nojekyll` | Pubblicazione diretta con GitHub Pages. |
@@ -36,4 +39,6 @@ Per riprodurre la pubblicazione, leggi [Come costruire il tuo sito](Come-costrui
 [Michelle Vrapi](https://chasemaneuver.carrd.co/) · michelle.vrapi@icloud.com
 
 Contributi didattici originali: **CC BY-NC-ND 4.0**. Codice: **MIT**. I materiali di terzi restano esclusi. Vedi [LICENSE](LICENSE).
+
+
 
