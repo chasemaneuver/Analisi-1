@@ -10,9 +10,9 @@ if(chapterSelect){
   const chapters=[[1,'Numeri'],[2,'Funzioni'],[3,'Limiti e continuità'],[4,'Calcolo differenziale'],[4,'Calcolo differenziale'],[4,'Calcolo differenziale'],[4,'Calcolo differenziale']];
   for(const [number,title] of chapters){
     const value=`../capitolo-${number}/`;
-    if(![...chapterSelect.options].some(option=>option.value===value)){
-      const option=document.createElement('option');option.value=value;option.textContent=`${number} · ${title}`;chapterSelect.append(option);
-    }
+    let option=[...chapterSelect.options].find(option=>option.value===value);
+    if(!option){option=document.createElement('option');option.value=value;option.textContent=`${number} · ${title}`;}
+    chapterSelect.append(option);
   }
   chapterSelect.addEventListener('change',()=>{window.location.href=chapterSelect.value;});
 }
