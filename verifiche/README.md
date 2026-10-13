@@ -1,5 +1,7 @@
 # Registro delle verifiche
 
+Ultimo aggiornamento: [attivazione GoatCounter](report-2026-10-13-goatcounter.md).
+
 Prima di un nuovo controllo leggere il [report del 13 ottobre 2026](report-2026-10-13.md) e il [registro delle versioni](stato.json).
 
 Il registro distingue i controlli completi di struttura, rendering e funzionamento dai controlli matematici mirati. Non è una certificazione formale di ogni dimostrazione o di conformità WCAG.

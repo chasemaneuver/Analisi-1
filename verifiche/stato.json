@@ -1,6 +1,6 @@
 {
   "date": "2026-10-13",
-  "report": "verifiche/report-2026-10-13.md",
+  "report": "verifiche/report-2026-10-13-goatcounter.md",
   "hash_normalization": "CRLF to LF",
   "coverage": {
     "structure": "complete for tracked site pages",
@@ -12,7 +12,8 @@
   "dependencies": {
     "assets/stile.css": "all chapters: layout, math overflow, mobile, print",
     "assets/capitoli.js": "all chapters: navigation and icon",
-    "mathjax": "all chapters: formula rendering"
+    "mathjax": "all chapters: formula rendering",
+    "goatcounter": "all chapter heads: analytics; no educational content changes"
   },
   "files": {
     ".nojekyll": {
@@ -34,7 +35,7 @@
       "sha256": "8de6d576ac1c37d49d85e15ec2e041e3d88a7bbea198b61da87373c5c0adf739"
     },
     "capitolo-1/index.html": {
-      "sha256": "bef7c1a0d9370c8da5178c0cb9fc589bcdc14138b6d2f84474380c5a4102d8fc",
+      "sha256": "28ff72483631554a700728aac47d55fd7c1755051c2911ab9dd6289ff7b69668",
       "body_sha256": "db2553a6c797d46f55f288b474d68c330b7eccd23b6dbf0ba196f9ecfbd7b908",
       "sections": {
         "sezione-1": "64a7c2b795cbf9ee04313486dbbc5efbd8968916f55b7a7904ebbed880eced8d",
@@ -53,7 +54,7 @@
       "sha256": "d236b9094d0c9334ab030d1e5b1f383644f04dfeed399d61fc1b95f0db171a96"
     },
     "capitolo-2/index.html": {
-      "sha256": "5aac168843d5e7c43a28efd8001593029908d6de32876f0545a118b2ef88ab12",
+      "sha256": "c0bda6e4ce7250c9d121d31c9b9fd3d48fbfffc6d1fbef3ea50b1051be045b9c",
       "body_sha256": "01ee5528547b30b7c747c073ed67cc5ab0505c5148c49c5e91f23919fb52cbee",
       "sections": {
         "sezione-1": "2cff770e83aa53daf2f6af22e0a44a4677a0bd208578babac1c68952c5ee5086",
@@ -69,7 +70,7 @@
       "sha256": "5a02361b2ab04999c98eb1fd974bedf2cf81997fd02073db72b51cff9930c6ec"
     },
     "capitolo-3/index.html": {
-      "sha256": "c884d70bc856da069f696cd4a34ea9f70dc9f14e2cd13062ff0ec35ebe218eee",
+      "sha256": "eff256918f6e221e69ca3b44940921c47171b3a16a12d2eb09394f626f8dc745",
       "body_sha256": "d3b756b2f6d0c304c7b34eb9409d3a78d56b649d4e56d7a7b626855d0d18ecae",
       "sections": {
         "sezione-1": "be63dce4051bcf2e3a5430dd00b2224771270f1bcf3a7c9cf6fd41e227712a92",
@@ -88,7 +89,7 @@
       "sha256": "26ccd1c005ef2f9615e4b5a173b3b9bfdd3e36e0bc1d331c162aa90ea97912f3"
     },
     "capitolo-4/index.html": {
-      "sha256": "8f7c1215972fb3f2ae176183b12e35a96fb18cc4fbebb40f02aea804395e2759",
+      "sha256": "b95bab321b062d4da33b6840402d3db5db7ae5a27df65420b559bfcfe8153851",
       "body_sha256": "3b6beb0e3f1b9e56906a02696cd8b9fbe7464d5190d3eaec1e61afde2fb56bef",
       "sections": {
         "sezione-1": "fea47e26e3a668dc54bd98e2b188424cf64944c45cc08f6443684ca6a92e4bf4",
@@ -115,7 +116,7 @@
       "sha256": "e25cf333c1fae3d6f3dc9c23c010f3f3a02b49308af883db475defb84876f0b8"
     },
     "documentazione/Come-costruire-il-tuo-sito.md": {
-      "sha256": "8b4b348871ed655ed0a53eecbeb51bf626e676831601bfb3d0de9aa29e759bd9"
+      "sha256": "6eff4509c2b3764b749987896b3165c6fe2c3ee90c62300f9fc13c44703bf6db"
     },
     "index.html": {
       "sha256": "0b8f5d7954fadea16042879253324fdec8b6dce0605b4fed0c67b88f71d56443",
@@ -132,7 +133,7 @@
       "sha256": "7da3accea6a5db27509890e40ed3038a3121ddef547ac9972ad57bd051a7a15b"
     },
     "verifiche/README.md": {
-      "sha256": "08b504a07342e81f828a57549ded6777250db8cd36beda14a96c6d5aa7ddcce1"
+      "sha256": "72c68a5bae398a88fd245cc5f558ee6960966a6becfe944b26789b48101c47e7"
     },
     "verifiche/strumenti/capitolo1.cjs": {
       "sha256": "f9998b2d1ee9038ef01af38b9e4e4c388ec52f861f8c002aab84a8aaa2cbe8ff"

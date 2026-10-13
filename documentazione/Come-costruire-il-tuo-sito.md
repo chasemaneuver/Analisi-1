@@ -174,3 +174,16 @@ Nella radice restano `index.html`, `.nojekyll`, `README.md` e `LICENSE`; i conte
 **Prepara → controlla → salva su GitHub → attendi Actions → verifica sul sito → condividi.**
 
 Configurazione di questo repository: ottobre 2026. Riferimento: [documentazione ufficiale GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+
+## Statistiche gratuite con GoatCounter
+
+I quattro capitoli inviano le visite al pannello https://chasemaneuver.goatcounter.com/ tramite lo script ufficiale GoatCounter, caricato in modo asincrono. Accedi con il tuo account per consultare pagine visitate e provenienza degli accessi. Il pannello richiede autenticazione: non pubblicare password o token nel repository.
+
+Le statistiche iniziano dall’attivazione; quelle precedenti non si possono ricostruire. Ad blocker e filtri del servizio possono escludere alcune visite. Il numero di visitatori non identifica gli studenti. La pagina di ingresso reindirizza al capitolo 1 senza inviare una seconda visita. Non sono tracciati clic sugli slider o contenuti delle risposte.
+
+Quando aggiungi un capitolo, copia lo stesso script GoatCounter nel suo `<head>`, una sola volta. Mantieni il canonical corretto: viene usato per identificare la pagina. Dopo la pubblicazione visita il capitolo e controlla il pannello; evita di confondere le tue prove con visite di studenti.
+
+Per Archimede, aggiungi un sito separato in Settings → Sites usando lo stesso accesso. Usa nel sito Archimede il codice specifico del nuovo pannello per non mescolare le statistiche.
+
+Documentazione: https://www.goatcounter.com/help/js e https://www.goatcounter.com/help/domains.
