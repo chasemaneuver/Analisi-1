@@ -2,7 +2,7 @@
 
 Dispensa a cura di **Michelle Vrapi**, con teoria, esempi, esercizi svolti e grafici interattivi.
 
-**[Apri il sito](https://chasemaneuver.github.io/Analisi-1/capitolo-1/)**
+**[Apri il sito](https://chasemaneuver.github.io/Analisi-1/)**
 
 ## Capitoli
 
@@ -28,11 +28,15 @@ Il menu a sinistra permette di cambiare capitolo. Il pulsante **Stampa / PDF** i
 | `capitolo-4/laboratori.js` | Grafici e slider del capitolo 4. |
 | `assets/stile.css` | Stile e stampa condivisi. |
 | `assets/capitoli.js` | Menu condiviso per scegliere il capitolo. |
+| `index.html` | Ingresso al sito: mantiene il link principale e porta al primo capitolo. |
+| `assets/mv.svg` | Icona MV della scheda del browser. |
+| `assets/anteprima-social.png` | Banner per l’anteprima dei link social. |
+| `documentazione/` | Guide per costruire e aggiornare il sito. |
 | `.nojekyll` | Pubblicazione diretta con GitHub Pages. |
 
 Il sito funziona nel browser senza account degli studenti. Le formule usano MathJax da Internet. Il PDF del libro non è incluso nel repository.
 
-Per riprodurre la pubblicazione, leggi [Come costruire il tuo sito](Come-costruire-il-tuo-sito.md). GitHub Pages usa **main → / (root)**.
+Per riprodurre la pubblicazione, leggi [Come costruire il tuo sito](documentazione/Come-costruire-il-tuo-sito.md). GitHub Pages usa **main → / (root)**.
 
 ## Autrice e licenze
 
@@ -41,4 +45,11 @@ Per riprodurre la pubblicazione, leggi [Come costruire il tuo sito](Come-costrui
 Contributi didattici originali: **CC BY-NC-ND 4.0**. Codice: **MIT**. I materiali di terzi restano esclusi. Vedi [LICENSE](LICENSE).
 
 
+
+
+## Aggiornamenti
+
+Modifica il file nella sua cartella, salva con **Commit changes** su `main`, attendi il nuovo **pages build and deployment** in **Actions** e verifica il sito pubblico. Non occorre riattivare Pages. La [guida](documentazione/Come-costruire-il-tuo-sito.md#7-cosa-fare-quando-aggiorni-un-file) spiega modifica online, caricamento dei file, cache e recupero delle versioni precedenti.
+
+La radice contiene solo ingresso, configurazione e presentazione; le pagine restano in `capitolo-1/`–`capitolo-4/` e le risorse comuni in `assets/`. Mantieni questi percorsi per conservare i link già condivisi.
 
