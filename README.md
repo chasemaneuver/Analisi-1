@@ -53,3 +53,7 @@ Modifica il file nella sua cartella, salva con **Commit changes** su `main`, att
 
 La radice contiene solo ingresso, configurazione e presentazione; le pagine restano in `capitolo-1/`–`capitolo-4/` e le risorse comuni in `assets/`. Mantieni questi percorsi per conservare i link già condivisi.
 
+
+## Qualità e indicizzazione
+
+Leggi il [registro delle verifiche](verifiche/README.md) e il [report del 13 ottobre 2026](verifiche/report-2026-10-13.md) per risultati, correzioni, copertura dei controlli e statistiche disponibili. Le versioni verificate sono registrate con SHA-256. La [sitemap](sitemap.xml) elenca i quattro capitoli canonici.

@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-13",
+  "report": "verifiche/report-2026-10-13.md",
+  "hash_normalization": "CRLF to LF",
+  "coverage": {
+    "structure": "complete for tracked site pages",
+    "math_rendering": "all source formulas in four chapters",
+    "labs": "all 54 labs, sampled parameters and browser controls",
+    "mathematical_correctness": "targeted analytical, numerical and symbolic checks; not exhaustive formal certification",
+    "external_links": "time dependent; access restrictions recorded"
+  },
+  "dependencies": {
+    "assets/stile.css": "all chapters: layout, math overflow, mobile, print",
+    "assets/capitoli.js": "all chapters: navigation and icon",
+    "mathjax": "all chapters: formula rendering"
+  },
+  "files": {
+    ".nojekyll": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AGENTS.md": {
+      "sha256": "926e95d4d90d6eb85fb38676dda37a8eb6217d256b028e9a8cc1edcb176b9d18"
+    },
+    "assets/anteprima-social.png": {
+      "sha256": "65e09bbbce0970afee0b042db81c049f2a109c290cb55c264e8974fe6476071e"
+    },
+    "assets/capitoli.js": {
+      "sha256": "5372f824758001b2b783f516316c95d40de1aa20890d132c777787df81a5455c"
+    },
+    "assets/mv.svg": {
+      "sha256": "e9da46e20c73a0c71fedd75a6b22f6c7ea4ef577d1a99733d5e592444bb4ede2"
+    },
+    "assets/stile.css": {
+      "sha256": "8de6d576ac1c37d49d85e15ec2e041e3d88a7bbea198b61da87373c5c0adf739"
+    },
+    "capitolo-1/index.html": {
+      "sha256": "bef7c1a0d9370c8da5178c0cb9fc589bcdc14138b6d2f84474380c5a4102d8fc",
+      "body_sha256": "db2553a6c797d46f55f288b474d68c330b7eccd23b6dbf0ba196f9ecfbd7b908",
+      "sections": {
+        "sezione-1": "64a7c2b795cbf9ee04313486dbbc5efbd8968916f55b7a7904ebbed880eced8d",
+        "sezione-2": "9ed30485eb31e6c5307e8fd2f7023e7d6de69aaf1319e3c11ec8eff5f9ef50cd",
+        "sezione-3": "a1f69a731229dc47710ee8741f2a2eec4bfb137f74918fb8c1db3303df0c60b5",
+        "sezione-4": "f3a8253ccf7a1bc7bfaacd7952ef795ecade0c4cd09b21248813935c6369d887",
+        "sezione-5": "4030c59ca0ec285b220fa482581b7ca8b7b8f7ea3f003ecb519517c998c9b061",
+        "sezione-6": "61aabc979cdb922186e56fbac493dd9c8aa6444cdec41a6832052dbd2f0f46fb",
+        "sezione-7": "d398e358bc7c738aba6fe9cee25a51063e6740c22727bcf94953bc05a8cd4e2e",
+        "sezione-8": "07b32e56eff764a9976d6d8d686d82c6c291825941a5db8d5fd6aaf466558434",
+        "sezione-9": "96c49d89d79fafb36007b62ff077c8e0a5af26ff208de6b28b8295f9b894098a",
+        "sezione-10": "a1a561ab6e7445e6b57d9fae51a22bcce9fb2ede3875b56a55a40420e69f5afe"
+      }
+    },
+    "capitolo-1/laboratori.js": {
+      "sha256": "d236b9094d0c9334ab030d1e5b1f383644f04dfeed399d61fc1b95f0db171a96"
+    },
+    "capitolo-2/index.html": {
+      "sha256": "5aac168843d5e7c43a28efd8001593029908d6de32876f0545a118b2ef88ab12",
+      "body_sha256": "01ee5528547b30b7c747c073ed67cc5ab0505c5148c49c5e91f23919fb52cbee",
+      "sections": {
+        "sezione-1": "2cff770e83aa53daf2f6af22e0a44a4677a0bd208578babac1c68952c5ee5086",
+        "sezione-2": "d146c867c7be8358c7506e41af83cbf5ffae60274af782a1bf25b077b70f9a82",
+        "sezione-3": "bbf2f589ca35c0ff7d8be3830902a75f09a2ecea728d7e3205ba02a4e6637a1b",
+        "sezione-4": "bb61074d035e31379fe3ae6f11bfdc4760d49fb4412eb2dc30a4df4ad984aa8e",
+        "sezione-5": "40b02c9ca3cadcd6d7313819c368633cb139e7f7d5bafe7533f7828ca09b2e75",
+        "sezione-6": "29f4b669dd634dd7c04f0d6aa50e7a5cb99eee574342de19850bb57deff6e7e9",
+        "sezione-7": "5309d725978eafc9f0ecf9b5fd4c64182c07d06d1510c1f6c1fcc37cb4e49360"
+      }
+    },
+    "capitolo-2/laboratori.js": {
+      "sha256": "5a02361b2ab04999c98eb1fd974bedf2cf81997fd02073db72b51cff9930c6ec"
+    },
+    "capitolo-3/index.html": {
+      "sha256": "c884d70bc856da069f696cd4a34ea9f70dc9f14e2cd13062ff0ec35ebe218eee",
+      "body_sha256": "d3b756b2f6d0c304c7b34eb9409d3a78d56b649d4e56d7a7b626855d0d18ecae",
+      "sections": {
+        "sezione-1": "be63dce4051bcf2e3a5430dd00b2224771270f1bcf3a7c9cf6fd41e227712a92",
+        "sezione-2": "6cd3bd2bf98844332c90699528723552ebc960265dece7fd5b43d30555582fce",
+        "sezione-3": "d7681067e6ec93c824ba26a63546104680694dae15e083977817c95406ab93ab",
+        "sezione-4": "e1f576644aefa894f4cf1ae09646b8f90bcf356606416f9138d7ffe62f032fbf",
+        "sezione-5": "5f1f85e83f7b1d5bfc9c0a64493943028053effa666f521a5c96a049d8358862",
+        "sezione-6": "dae280e2ca9316e68a6b8db12bb889b77a368f29cfcc7e28b25a69bb8fb49d21",
+        "sezione-7": "9474ad32bc959821225402af1e52e923f9f5f8711680824b676fba54ed78ca94",
+        "sezione-8": "a9bc4243fb09c6888300b44b3de8120d63a78d416cf0c66bb3ec84e818d65a7e",
+        "sezione-9": "d5ff6bcec7ae2b7d171edfd1a853d323db43eef279e587c51459eda519728fc8",
+        "sezione-10": "4c9dc14b18193567eaddeb285b0db3b6cdee1cb0a275f333f7e6417b92409b06"
+      }
+    },
+    "capitolo-3/laboratori.js": {
+      "sha256": "26ccd1c005ef2f9615e4b5a173b3b9bfdd3e36e0bc1d331c162aa90ea97912f3"
+    },
+    "capitolo-4/index.html": {
+      "sha256": "8f7c1215972fb3f2ae176183b12e35a96fb18cc4fbebb40f02aea804395e2759",
+      "body_sha256": "3b6beb0e3f1b9e56906a02696cd8b9fbe7464d5190d3eaec1e61afde2fb56bef",
+      "sections": {
+        "sezione-1": "fea47e26e3a668dc54bd98e2b188424cf64944c45cc08f6443684ca6a92e4bf4",
+        "sezione-2": "bca50c6a2739b03e682132916b0d1d6c4ff0aabfca8bd54a7f5c736d0301021a",
+        "sezione-3": "a991d0bdf96e89b172744f3f7b42b96a52557487f65c2994a97ece30c7c9cf45",
+        "sezione-4": "2209d03e68cb2c4399e58b5bc60cdc469e6f2e8623461c7f10f0b0cd67b8efec",
+        "sezione-5": "ecaefa3d655ac09136a43c52d316314f7627c6c8f6a86d4cbfe93c5e38d2284e",
+        "sezione-6": "b276e1940482d4008174cf43b25110d044e31ec2b3c3665e66ea82d78e1384f3",
+        "sezione-7": "44136ad1ca615e54f3aa4d36cf1f689010fe53e3d422035dbbf1e0288e4cb106",
+        "sezione-8": "8c832e30eebbf4ec4a83754bae7af19ce6df666b75f653a207a4d98ff8278a98",
+        "sezione-9": "34cad843fa6698ea8ab1c193e9e23dee429ee84dec5735665f9341a0e0f14e09",
+        "sezione-10": "0f823f7f0f93f117f8c9d2d0949200e9af2728156aa8e3dea280c8fdd438a57b",
+        "sezione-11": "b2ee6f03935cd5947e3709c0265131a365996352ae3790ab0daf581df00dd00c",
+        "sezione-12": "42b9fbecfb7d8fdcd413fac0d85ce035b7f4aedbf0aa6b7521ad61986dfe2e51",
+        "sezione-13": "76b0cc57143d531f35755fd4a8cd512542d98985a13f7014c8e1ddf6f09309fd",
+        "sezione-14": "1e557970878481337e25b92d59f711be5bd99aef445c03f716e2f9b9827449d6",
+        "sezione-15": "c57155c058188d0319034b22bdfb8600614d13e1b36e97df02e27a6384466153",
+        "sezione-16": "9bf0f28445475de3c60b4e8fec94b01c7dc5b0a40deaa30dfa07be690058f632",
+        "sezione-17": "a9b7f56f52cb17b07db511da6f1d1a7e0a55ff61576d779bbf5e0ddde324281c",
+        "sezione-18": "ebbfab249798af1234747da9277d552e15f5333d448e4bda460dd7f6a8f37de8"
+      }
+    },
+    "capitolo-4/laboratori.js": {
+      "sha256": "e25cf333c1fae3d6f3dc9c23c010f3f3a02b49308af883db475defb84876f0b8"
+    },
+    "documentazione/Come-costruire-il-tuo-sito.md": {
+      "sha256": "8b4b348871ed655ed0a53eecbeb51bf626e676831601bfb3d0de9aa29e759bd9"
+    },
+    "index.html": {
+      "sha256": "0b8f5d7954fadea16042879253324fdec8b6dce0605b4fed0c67b88f71d56443",
+      "body_sha256": "cf39072b51ef5cb4378c7916cafc9f609061c9ea04789cdf84f011cdfe71637d",
+      "sections": {}
+    },
+    "LICENSE": {
+      "sha256": "b231268fa935d41295f092438864f61f4216be219da2ac3872617fcbecb217c8"
+    },
+    "README.md": {
+      "sha256": "4b8cb3fef71a6d045cbaca142feae022eda674eb89725dd5baec2cf838ceb16c"
+    },
+    "sitemap.xml": {
+      "sha256": "7da3accea6a5db27509890e40ed3038a3121ddef547ac9972ad57bd051a7a15b"
+    },
+    "verifiche/README.md": {
+      "sha256": "08b504a07342e81f828a57549ded6777250db8cd36beda14a96c6d5aa7ddcce1"
+    },
+    "verifiche/strumenti/capitolo1.cjs": {
+      "sha256": "f9998b2d1ee9038ef01af38b9e4e4c388ec52f861f8c002aab84a8aaa2cbe8ff"
+    },
+    "verifiche/strumenti/capitolo2.cjs": {
+      "sha256": "b6606e5b0f929c0c2d60f8887330aa7c2f0e0af98158044b5b520da1b82a0175"
+    },
+    "verifiche/strumenti/capitolo3.cjs": {
+      "sha256": "131a357c10e47328d7972c8750502a49c3571d0e7818448415d9d8e392e23ae4"
+    },
+    "verifiche/strumenti/capitolo4.cjs": {
+      "sha256": "7d27b5e1c9707c52d0ef76216beb1ca9a16eff307b487221e1582e9c55900f69"
+    },
+    "verifiche/strumenti/formule4.py": {
+      "sha256": "3b2b127be8d323aabe252e91fc668b8fa5e9d29af9196590fb431b307a8193d8"
+    },
+    "verifiche/strumenti/laboratori.cjs": {
+      "sha256": "d51099ef0c4082716d96f5a86058c6d8a5b14e96082f3d4ce862f2c859856115"
+    },
+    "verifiche/strumenti/link_esterni.py": {
+      "sha256": "905e7100a30b7347486fa25fc7d41fc1e0c335dfe8fd2e08c8e7498e3d4fa550"
+    },
+    "verifiche/strumenti/registro.py": {
+      "sha256": "7bde4a025b78ca2b335c025bbedd99331073cb66004c943519e75b33b2366600"
+    },
+    "verifiche/strumenti/struttura.py": {
+      "sha256": "cbc4abaf16f732c41e66e6def1f3167a66f6446c0a259b359f66b6351ecaea67"
+    }
+  }
+}
