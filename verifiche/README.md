@@ -1,6 +1,6 @@
 # Registro delle verifiche
 
-Ultimo aggiornamento: [nuovo pannello GoatCounter](report-2026-10-13-goatcounter-nuovo-pannello.md).
+Ultimo aggiornamento: [capitolo 5 e controllo delle correzioni](report-2026-10-19.md).
 
 Prima di un nuovo controllo leggere il [report del 13 ottobre 2026](report-2026-10-13.md) e il [registro delle versioni](stato.json).
 
@@ -25,10 +25,15 @@ node verifiche/strumenti/capitolo1.cjs
 node verifiche/strumenti/capitolo2.cjs
 node verifiche/strumenti/capitolo3.cjs
 node verifiche/strumenti/capitolo4.cjs
+node verifiche/strumenti/capitolo5.cjs
+node verifiche/strumenti/correzioni.cjs
 python verifiche/strumenti/formule4.py
+python verifiche/strumenti/formule5.py
 python verifiche/strumenti/link_esterni.py
 ```
 
 Il browser completa questi controlli con MathJax, uso dei controlli, ripristino, navigazione, lettura mobile e stampa. I test numerici campionano i parametri: non dimostrano ogni possibile configurazione.
 
 Gli hash del registro usano SHA-256 e normalizzano CRLF in LF, per non invalidare un controllo soltanto a causa delle terminazioni di riga di Windows. Non saltare la verifica di dipendenze condivise, servizi esterni o parti precedentemente non controllate.
+
+Dopo aver concluso le verifiche, aggiornare le impronte con `python verifiche/strumenti/registro.py --date AAAA-MM-GG --report verifiche/report-AAAA-MM-GG.md`. Non eseguirlo prima dei controlli.

@@ -24,7 +24,7 @@ class Page(HTMLParser):
   if self.ld:self.jsonld.append(d)
   if not self.skip:self.text.append(d)
 pages={};errors=[];external=set();references=0;counts=[]
-for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,5)]]:
+for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,6)]]:
  c=Page(p);c.feed(p.read_text(encoding='utf8'));pages[p]=c
  if len(c.ids)!=len(set(c.ids)):errors.append(f'ID duplicati: {p.relative_to(ROOT)}')
  if len(c.canonical)!=1:errors.append(f'Canonical: {p.relative_to(ROOT)}')

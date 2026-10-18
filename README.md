@@ -12,6 +12,8 @@ Dispensa a cura di **Michelle Vrapi**, con teoria, esempi, esercizi svolti e gra
 - [Capitolo 3 · Limiti e continuità](https://chasemaneuver.github.io/Analisi-1/capitolo-3/): 15 laboratori, 43 esercizi e 12 complementi (le numerazioni 14 e 7 sono ripetute nel testo).
 - [Capitolo 4 · Calcolo differenziale](https://chasemaneuver.github.io/Analisi-1/capitolo-4/): 18 laboratori, 112 esercizi e 8 complementi.
 
+- [Capitolo 5 · Serie](https://chasemaneuver.github.io/Analisi-1/capitolo-5/): 12 laboratori, 35 esercizi e 7 complementi.
+
 Il menu a sinistra permette di cambiare capitolo. Il pulsante **Stampa / PDF** include anche le soluzioni chiuse; i grafici vengono stampati nello stato corrente.
 
 ## Organizzazione dei file

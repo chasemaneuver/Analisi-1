@@ -1,19 +1,18 @@
 {
-  "date": "2026-10-13",
-  "report": "verifiche/report-2026-10-13-goatcounter-nuovo-pannello.md",
+  "date": "2026-10-19",
+  "report": "verifiche/report-2026-10-19.md",
   "hash_normalization": "CRLF to LF",
   "coverage": {
     "structure": "complete for tracked site pages",
-    "math_rendering": "all source formulas in four chapters",
-    "labs": "all 54 labs, sampled parameters and browser controls",
+    "math_rendering": "all source formulas in five chapters",
+    "labs": "all 66 labs sampled; new chapter 5 controls in browser, chapter 1-4 prior UI evidence retained",
     "mathematical_correctness": "targeted analytical, numerical and symbolic checks; not exhaustive formal certification",
     "external_links": "time dependent; access restrictions recorded"
   },
   "dependencies": {
     "assets/stile.css": "all chapters: layout, math overflow, mobile, print",
     "assets/capitoli.js": "all chapters: navigation and icon",
-    "mathjax": "all chapters: formula rendering",
-    "goatcounter": "all chapter heads: analytics; no educational content changes"
+    "mathjax": "all chapters: formula rendering"
   },
   "files": {
     ".nojekyll": {
@@ -26,7 +25,7 @@
       "sha256": "65e09bbbce0970afee0b042db81c049f2a109c290cb55c264e8974fe6476071e"
     },
     "assets/capitoli.js": {
-      "sha256": "5372f824758001b2b783f516316c95d40de1aa20890d132c777787df81a5455c"
+      "sha256": "ef40d1043771086731853904aca093ce0502f607c9a2f1f82f825365ab838a02"
     },
     "assets/mv.svg": {
       "sha256": "e9da46e20c73a0c71fedd75a6b22f6c7ea4ef577d1a99733d5e592444bb4ede2"
@@ -35,8 +34,8 @@
       "sha256": "8de6d576ac1c37d49d85e15ec2e041e3d88a7bbea198b61da87373c5c0adf739"
     },
     "capitolo-1/index.html": {
-      "sha256": "6ed84c321dc95e6f2b7cf01970ea6a2d6d3354ebde1f957be5cd7c611c098a50",
-      "body_sha256": "db2553a6c797d46f55f288b474d68c330b7eccd23b6dbf0ba196f9ecfbd7b908",
+      "sha256": "5c682bd64a3f8bd6a00ba991cf1bf7503ab7e87fa1845854c817f88b350e157c",
+      "body_sha256": "dfc607015a416a7567768b1d91ebb876189b5dd346e1557db310169542fb0757",
       "sections": {
         "sezione-1": "64a7c2b795cbf9ee04313486dbbc5efbd8968916f55b7a7904ebbed880eced8d",
         "sezione-2": "9ed30485eb31e6c5307e8fd2f7023e7d6de69aaf1319e3c11ec8eff5f9ef50cd",
@@ -47,15 +46,15 @@
         "sezione-7": "d398e358bc7c738aba6fe9cee25a51063e6740c22727bcf94953bc05a8cd4e2e",
         "sezione-8": "07b32e56eff764a9976d6d8d686d82c6c291825941a5db8d5fd6aaf466558434",
         "sezione-9": "96c49d89d79fafb36007b62ff077c8e0a5af26ff208de6b28b8295f9b894098a",
-        "sezione-10": "a1a561ab6e7445e6b57d9fae51a22bcce9fb2ede3875b56a55a40420e69f5afe"
+        "sezione-10": "6691298c2a6c48f304cc0f633c2aab552d8b85efeb8c54d537ac5a14bc6dd074"
       }
     },
     "capitolo-1/laboratori.js": {
       "sha256": "d236b9094d0c9334ab030d1e5b1f383644f04dfeed399d61fc1b95f0db171a96"
     },
     "capitolo-2/index.html": {
-      "sha256": "0732b207d733a184bf1163bd0180069161300a3e5ed095818cb5d30bb9d1fd14",
-      "body_sha256": "01ee5528547b30b7c747c073ed67cc5ab0505c5148c49c5e91f23919fb52cbee",
+      "sha256": "51d2d66c8ef904dfff52301aae49d850e7c971311b0015bc2654d8248d143758",
+      "body_sha256": "c26cab8e5f45630d60b98dc29d43e643e527227a2b99b837c85f0f25812991fc",
       "sections": {
         "sezione-1": "2cff770e83aa53daf2f6af22e0a44a4677a0bd208578babac1c68952c5ee5086",
         "sezione-2": "d146c867c7be8358c7506e41af83cbf5ffae60274af782a1bf25b077b70f9a82",
@@ -63,15 +62,15 @@
         "sezione-4": "bb61074d035e31379fe3ae6f11bfdc4760d49fb4412eb2dc30a4df4ad984aa8e",
         "sezione-5": "40b02c9ca3cadcd6d7313819c368633cb139e7f7d5bafe7533f7828ca09b2e75",
         "sezione-6": "29f4b669dd634dd7c04f0d6aa50e7a5cb99eee574342de19850bb57deff6e7e9",
-        "sezione-7": "5309d725978eafc9f0ecf9b5fd4c64182c07d06d1510c1f6c1fcc37cb4e49360"
+        "sezione-7": "6a78517067858856b253178bfaaa84cc6628762c7ac2737efb9109eedafa6d30"
       }
     },
     "capitolo-2/laboratori.js": {
       "sha256": "5a02361b2ab04999c98eb1fd974bedf2cf81997fd02073db72b51cff9930c6ec"
     },
     "capitolo-3/index.html": {
-      "sha256": "5e2978539e5be14f2307f7e97eb16b3a731676e647bbe5b0844101826a8326d3",
-      "body_sha256": "d3b756b2f6d0c304c7b34eb9409d3a78d56b649d4e56d7a7b626855d0d18ecae",
+      "sha256": "013030fbc8c5319e648a416696b35809dc7bda6a9951df36fcbe91eea28f2fc5",
+      "body_sha256": "4b786b22dc634ea402dc6ee811b9c4367570c13a232b593dfc739e4428638ae0",
       "sections": {
         "sezione-1": "be63dce4051bcf2e3a5430dd00b2224771270f1bcf3a7c9cf6fd41e227712a92",
         "sezione-2": "6cd3bd2bf98844332c90699528723552ebc960265dece7fd5b43d30555582fce",
@@ -82,15 +81,15 @@
         "sezione-7": "9474ad32bc959821225402af1e52e923f9f5f8711680824b676fba54ed78ca94",
         "sezione-8": "a9bc4243fb09c6888300b44b3de8120d63a78d416cf0c66bb3ec84e818d65a7e",
         "sezione-9": "d5ff6bcec7ae2b7d171edfd1a853d323db43eef279e587c51459eda519728fc8",
-        "sezione-10": "4c9dc14b18193567eaddeb285b0db3b6cdee1cb0a275f333f7e6417b92409b06"
+        "sezione-10": "dda80ffb287c0136e083020bf6a200cc6b611443b5e128a9d08259437cda993f"
       }
     },
     "capitolo-3/laboratori.js": {
       "sha256": "26ccd1c005ef2f9615e4b5a173b3b9bfdd3e36e0bc1d331c162aa90ea97912f3"
     },
     "capitolo-4/index.html": {
-      "sha256": "b0248614fcf0fbb85d61adfbfcade9b143458f623ac002f1534ada2544f365e1",
-      "body_sha256": "3b6beb0e3f1b9e56906a02696cd8b9fbe7464d5190d3eaec1e61afde2fb56bef",
+      "sha256": "ccb7375a00d72e243fb131800893118f197a047cd33ed397c4d78c68c6c39263",
+      "body_sha256": "b8907154d46aadd1a1ccc2648a24445fad71f43b482d2d7f8390552eb7a7596f",
       "sections": {
         "sezione-1": "fea47e26e3a668dc54bd98e2b188424cf64944c45cc08f6443684ca6a92e4bf4",
         "sezione-2": "bca50c6a2739b03e682132916b0d1d6c4ff0aabfca8bd54a7f5c736d0301021a",
@@ -109,14 +108,35 @@
         "sezione-15": "c57155c058188d0319034b22bdfb8600614d13e1b36e97df02e27a6384466153",
         "sezione-16": "9bf0f28445475de3c60b4e8fec94b01c7dc5b0a40deaa30dfa07be690058f632",
         "sezione-17": "a9b7f56f52cb17b07db511da6f1d1a7e0a55ff61576d779bbf5e0ddde324281c",
-        "sezione-18": "ebbfab249798af1234747da9277d552e15f5333d448e4bda460dd7f6a8f37de8"
+        "sezione-18": "34dc72e8b8dd655689c72c72aa77f2323f8f846d1b5368d378e97e4d951006b1"
       }
     },
     "capitolo-4/laboratori.js": {
       "sha256": "e25cf333c1fae3d6f3dc9c23c010f3f3a02b49308af883db475defb84876f0b8"
     },
+    "capitolo-5/index.html": {
+      "sha256": "83135080a343a4d6449335b9d7222731f7bdc6741777612d56b87b86c19c427a",
+      "body_sha256": "1aee483800616dc94fbf51a996b572cafa6fe9b2e9026e1c07b1856ab9d6075c",
+      "sections": {
+        "sezione-1": "2f957c5962031dfec1abed8121c19316b3ec44a7ceb0bc78ed3577d0ec05c149",
+        "sezione-2": "08583e7fbb9ba2b434d0cf1fc3eb1ef9eeba9077d1b3f0819e553737cf709602",
+        "sezione-3": "ad8998f4bba70d2f810b1224b3420e16f27427eb35beeb6993985b0f49ee958e",
+        "sezione-4": "20de478299d9b2fc0a325724c4d1bb04549a6d54ddc49d8ba1c6276eaac36432",
+        "sezione-5": "3deae4a15b2d60808cbc4a21932e793a98d1101fcb4af829d05763b0b282b57d",
+        "sezione-6": "57da79b81698c341db1aa70bc77e8fe9401c4650cb036244dbbdbed0721043e2",
+        "sezione-7": "faf8b38544e1cacc6d4154b361b784f2e83524a5576fd3aa44f857e8c30b9f61",
+        "sezione-8": "921c79bd594da2ab8e5fb83df1fef187b3d1e09ef3a4bbdc0a8c70775a2808ce",
+        "sezione-9": "d461112dff18edd8e37f0025eda5d2698c3dd1e76ed449ba0de848efce94393f",
+        "sezione-10": "2a6d422bb97f5af0e9917afea95dccf1e77719fe329dbea7e68fab2b5e71c4cb",
+        "sezione-11": "d1d0e084c6c1c1d7d6958bbd146c80aa782de24d48be294b3a2aede7f66ae56d",
+        "sezione-12": "cbe9b10fe9d5a18c392708a4e139865a7f537ec6a77d3cbf68cf4fba09703ef8"
+      }
+    },
+    "capitolo-5/laboratori.js": {
+      "sha256": "28aed778dbdb009880caf8644bd862700e339da3c1c445a0dee5fbffcdfbb9dd"
+    },
     "documentazione/Come-costruire-il-tuo-sito.md": {
-      "sha256": "ac3e11abfcc699090ebc4747c241327f27ac5903a469ac29fad44b7c1fe4419b"
+      "sha256": "9cce62aa1dd1f4de76e3218f228c115e73c30908dfc99da0977203cc9c936c5d"
     },
     "index.html": {
       "sha256": "0b8f5d7954fadea16042879253324fdec8b6dce0605b4fed0c67b88f71d56443",
@@ -127,13 +147,13 @@
       "sha256": "b231268fa935d41295f092438864f61f4216be219da2ac3872617fcbecb217c8"
     },
     "README.md": {
-      "sha256": "4b8cb3fef71a6d045cbaca142feae022eda674eb89725dd5baec2cf838ceb16c"
+      "sha256": "d5b567816d06100a8534f6e3fa61dce025dcd9cc304c8d062cb265b9b29e4eae"
     },
     "sitemap.xml": {
-      "sha256": "7da3accea6a5db27509890e40ed3038a3121ddef547ac9972ad57bd051a7a15b"
+      "sha256": "e82b13cd2f90505cb50fadd7c0f43a3a9260e215c259b9736469f72a2d55b3d6"
     },
     "verifiche/README.md": {
-      "sha256": "3a3e66cd9aac63793b76d36416ed99f876d83930df903c9f765fc88b751b3f4e"
+      "sha256": "3fbddbf2442713a4e7065464d9e7a1d4e88077396fe93343b68383be5f717beb"
     },
     "verifiche/strumenti/capitolo1.cjs": {
       "sha256": "f9998b2d1ee9038ef01af38b9e4e4c388ec52f861f8c002aab84a8aaa2cbe8ff"
@@ -147,20 +167,29 @@
     "verifiche/strumenti/capitolo4.cjs": {
       "sha256": "7d27b5e1c9707c52d0ef76216beb1ca9a16eff307b487221e1582e9c55900f69"
     },
+    "verifiche/strumenti/capitolo5.cjs": {
+      "sha256": "8bf6171458ef96003abbbb6728985a5b79e636f01e1a508c1558e9f2dd83c951"
+    },
+    "verifiche/strumenti/correzioni.cjs": {
+      "sha256": "491c27172ea3a5aa08b7fa7b17597ec6acd36698505ad92273fb13036cc85ff6"
+    },
     "verifiche/strumenti/formule4.py": {
       "sha256": "3b2b127be8d323aabe252e91fc668b8fa5e9d29af9196590fb431b307a8193d8"
     },
+    "verifiche/strumenti/formule5.py": {
+      "sha256": "823a1aa0f4a0015afab3d33f4417dba8fca435f74e5ec5fc9dcc646c30380226"
+    },
     "verifiche/strumenti/laboratori.cjs": {
-      "sha256": "d51099ef0c4082716d96f5a86058c6d8a5b14e96082f3d4ce862f2c859856115"
+      "sha256": "b62b641cdbe9a9951f04afdb9c90cbc343d4f558525798f25607b7e780b98a9f"
     },
     "verifiche/strumenti/link_esterni.py": {
       "sha256": "905e7100a30b7347486fa25fc7d41fc1e0c335dfe8fd2e08c8e7498e3d4fa550"
     },
     "verifiche/strumenti/registro.py": {
-      "sha256": "7bde4a025b78ca2b335c025bbedd99331073cb66004c943519e75b33b2366600"
+      "sha256": "0ca38538631890508d64e8357a1444636aaeb20adc9884eeb916e7c164e220f7"
     },
     "verifiche/strumenti/struttura.py": {
-      "sha256": "cbc4abaf16f732c41e66e6def1f3167a66f6446c0a259b359f66b6351ecaea67"
+      "sha256": "194c19808625b99361d2b834cae4b528fe3e5121be75a91902e37f3761eeb1de"
     }
   }
 }

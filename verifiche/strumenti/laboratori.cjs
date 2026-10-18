@@ -2,7 +2,7 @@
 // Eseguire dalla radice: node verifiche/strumenti/laboratori.cjs
 const assert=require('node:assert/strict'),path=require('node:path');
 let total=0;const chapters=[];
-for(let n=1;n<=4;n++){
+for(let n=1;n<=5;n++){
  const {labs}=require(path.join(__dirname,`../../capitolo-${n}/laboratori.js`));
  let configurations=0;
  for(const [id,lab]of Object.entries(labs)){

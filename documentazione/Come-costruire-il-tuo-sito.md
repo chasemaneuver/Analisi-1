@@ -178,7 +178,7 @@ Configurazione di questo repository: ottobre 2026. Riferimento: [documentazione 
 
 ## Statistiche gratuite con GoatCounter
 
-I quattro capitoli inviano le visite al pannello https://analisi1-mv.goatcounter.com/ tramite lo script ufficiale GoatCounter, caricato in modo asincrono. Accedi con il tuo account per consultare pagine visitate e provenienza degli accessi. Il pannello richiede autenticazione: non pubblicare password o token nel repository.
+I cinque capitoli inviano le visite al pannello https://analisi1-mv.goatcounter.com/ tramite lo script ufficiale GoatCounter, caricato in modo asincrono. Accedi con il tuo account per consultare pagine visitate e provenienza degli accessi. Il pannello richiede autenticazione: non pubblicare password o token nel repository.
 
 Le statistiche iniziano dall’attivazione; quelle precedenti non si possono ricostruire. Ad blocker e filtri del servizio possono escludere alcune visite. Il numero di visitatori non identifica gli studenti. La pagina di ingresso reindirizza al capitolo 1 senza inviare una seconda visita. Non sono tracciati clic sugli slider o contenuti delle risposte.
 
