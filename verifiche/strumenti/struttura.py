@@ -24,7 +24,7 @@ class Page(HTMLParser):
   if self.ld:self.jsonld.append(d)
   if not self.skip:self.text.append(d)
 pages={};errors=[];external=set();references=0;counts=[]
-for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,6)]]:
+for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,7)]]:
  c=Page(p);c.feed(p.read_text(encoding='utf8'));pages[p]=c
  if len(c.ids)!=len(set(c.ids)):errors.append(f'ID duplicati: {p.relative_to(ROOT)}')
  if len(c.canonical)!=1:errors.append(f'Canonical: {p.relative_to(ROOT)}')
@@ -32,7 +32,10 @@ for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,6
   n=int(p.parent.name.split('-')[1]);s=p.read_text(encoding='utf8')
   if c.h1!=1:errors.append(f'H1: capitolo {n}')
   if not c.meta.get('description'):errors.append(f'Descrizione: capitolo {n}')
-  for raw in c.jsonld:json.loads(raw)
+  for raw in c.jsonld:
+   ld=json.loads(raw)
+   if f'Capitolo {n} ' not in ld.get('name',''):errors.append(f'Numero capitolo JSON-LD: {n}')
+   if ld.get('url')!=f'https://chasemaneuver.github.io/Analisi-1/capitolo-{n}/':errors.append(f'URL JSON-LD: {n}')
   text=''.join(c.text)
   bad=re.findall(r'\b(?:TODO|FIXME|SEL1|SEL2|cis)\b|\ufffd',text)
   if bad:errors.append(f'Residui: capitolo {n}: {bad}')
@@ -49,10 +52,16 @@ for p,c in pages.items():
   references+=1
   if not q.exists():errors.append(f'File assente: {p.relative_to(ROOT)} → {ref}')
   elif u.fragment and q in pages and unquote(u.fragment) not in pages[q].ids and u.fragment not in pages[q].ids:errors.append(f'Ancora assente: {ref}')
-manifest=ROOT/'verifiche/stato.json';changed=[]
+manifest=ROOT/'verifiche/stato.json';changed=[];unregistered=[]
 if manifest.exists():
- for name,item in json.loads(manifest.read_text(encoding='utf8'))['files'].items():
+ registered=json.loads(manifest.read_text(encoding='utf8'))['files']
+ for name,item in registered.items():
   p=ROOT/name
   if not p.exists() or digest(p)!=item['sha256']:changed.append(name)
-print(json.dumps({'chapters':counts,'local_references':references,'external_urls':sorted(external),'errors':errors,'changed_since_report':changed},ensure_ascii=False,indent=2))
+ for p in ROOT.rglob('*'):
+  if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts or p.suffix=='.pyc':continue
+  name=p.relative_to(ROOT).as_posix()
+  if name.startswith('verifiche/report-') or name=='verifiche/stato.json':continue
+  if name not in registered:unregistered.append(name)
+print(json.dumps({'chapters':counts,'local_references':references,'external_urls':sorted(external),'errors':errors,'changed_since_report':changed,'unregistered_files':sorted(unregistered)},ensure_ascii=False,indent=2))
 if errors:sys.exit(1)

@@ -14,6 +14,8 @@ Dispensa a cura di **Michelle Vrapi**, con teoria, esempi, esercizi svolti e gra
 
 - [Capitolo 5 · Serie](https://chasemaneuver.github.io/Analisi-1/capitolo-5/): 12 laboratori, 35 esercizi e 7 complementi.
 
+- [Capitolo 6 · Calcolo integrale](https://chasemaneuver.github.io/Analisi-1/capitolo-6/): 17 laboratori, 89 esercizi e 9 complementi.
+
 Il menu a sinistra permette di cambiare capitolo. Il pulsante **Stampa / PDF** include anche le soluzioni chiuse; i grafici vengono stampati nello stato corrente.
 
 ## Organizzazione dei file
@@ -28,6 +30,10 @@ Il menu a sinistra permette di cambiare capitolo. Il pulsante **Stampa / PDF** i
 | `capitolo-3/laboratori.js` | Grafici e slider del capitolo 3. |
 | `capitolo-4/index.html` | Testi, formule ed esercizi del capitolo 4. |
 | `capitolo-4/laboratori.js` | Grafici e slider del capitolo 4. |
+| `capitolo-5/index.html` | Testi, formule ed esercizi del capitolo 5. |
+| `capitolo-5/laboratori.js` | Grafici e slider del capitolo 5. |
+| `capitolo-6/index.html` | Testi, formule ed esercizi del capitolo 6. |
+| `capitolo-6/laboratori.js` | Grafici e slider del capitolo 6. |
 | `assets/stile.css` | Stile e stampa condivisi. |
 | `assets/capitoli.js` | Menu condiviso per scegliere il capitolo. |
 | `index.html` | Ingresso al sito: mantiene il link principale e porta al primo capitolo. |
@@ -53,9 +59,9 @@ Contributi didattici originali: **CC BY-NC-ND 4.0**. Codice: **MIT**. I material
 
 Modifica il file nella sua cartella, salva con **Commit changes** su `main`, attendi il nuovo **pages build and deployment** in **Actions** e verifica il sito pubblico. Non occorre riattivare Pages. La [guida](documentazione/Come-costruire-il-tuo-sito.md#7-cosa-fare-quando-aggiorni-un-file) spiega modifica online, caricamento dei file, cache e recupero delle versioni precedenti.
 
-La radice contiene solo ingresso, configurazione e presentazione; le pagine restano in `capitolo-1/`–`capitolo-4/` e le risorse comuni in `assets/`. Mantieni questi percorsi per conservare i link già condivisi.
+La radice contiene solo ingresso, configurazione e presentazione; le pagine restano in `capitolo-1/`–`capitolo-6/` e le risorse comuni in `assets/`. Mantieni questi percorsi per conservare i link già condivisi.
 
 
 ## Qualità e indicizzazione
 
-Leggi il [registro delle verifiche](verifiche/README.md) e il [report del 13 ottobre 2026](verifiche/report-2026-10-13.md) per risultati, correzioni, copertura dei controlli e statistiche disponibili. Le versioni verificate sono registrate con SHA-256. La [sitemap](sitemap.xml) elenca i quattro capitoli canonici.
+Leggi il [registro delle verifiche](verifiche/README.md) e il [report del 27 ottobre 2026](verifiche/report-2026-10-27.md) per risultati, correzioni, copertura dei controlli e statistiche disponibili. Le versioni verificate sono registrate con SHA-256. La [sitemap](sitemap.xml) elenca i sei capitoli canonici.

@@ -1,14 +1,14 @@
 # Registro delle verifiche
 
-Ultimo aggiornamento: [capitolo 5 e controllo delle correzioni](report-2026-10-19.md).
+Ultimo aggiornamento: [capitolo 6 e controllo delle correzioni](report-2026-10-27.md).
 
-Prima di un nuovo controllo leggere il [report del 13 ottobre 2026](report-2026-10-13.md) e il [registro delle versioni](stato.json).
+Prima di un nuovo controllo leggere il [report del 27 ottobre 2026](report-2026-10-27.md) e il [registro delle versioni](stato.json).
 
 Il registro distingue i controlli completi di struttura, rendering e funzionamento dai controlli matematici mirati. Non è una certificazione formale di ogni dimostrazione o di conformità WCAG.
 
 ## Controlli successivi
 
-1. Eseguire `python verifiche/strumenti/struttura.py`: confronta gli SHA-256 e segnala file modificati o mancanti.
+1. Eseguire `python verifiche/strumenti/struttura.py`: confronta gli SHA-256 e segnala file modificati, mancanti e non ancora registrati.
 2. Per i file invariati riutilizzare soltanto i risultati coperti dal report; le parti parziali restano parziali.
 3. HTML o laboratori modificati: controllare quel capitolo. Stile o MathJax modificati: verificare formule, visualizzazione e stampa in tutti i capitoli. Menu condiviso modificato: verificare la navigazione completa.
 4. Ripetere sempre il controllo dell’ultima pubblicazione. Ripetere i link esterni e le statistiche a ogni audit: il loro stato non dipende solo dai file.
@@ -16,7 +16,7 @@ Il registro distingue i controlli completi di struttura, rendering e funzionamen
 
 ## Strumenti riproducibili
 
-Richiedono Node.js e Python 3; solo `formule4.py` richiede anche SymPy.
+Richiedono Node.js e Python 3; `formule4.py`, `formule5.py` e `formule6.py` richiedono anche SymPy; `formule6.py` usa inoltre mpmath.
 
 ```text
 python verifiche/strumenti/struttura.py
@@ -26,9 +26,11 @@ node verifiche/strumenti/capitolo2.cjs
 node verifiche/strumenti/capitolo3.cjs
 node verifiche/strumenti/capitolo4.cjs
 node verifiche/strumenti/capitolo5.cjs
+node verifiche/strumenti/capitolo6.cjs
 node verifiche/strumenti/correzioni.cjs
 python verifiche/strumenti/formule4.py
 python verifiche/strumenti/formule5.py
+python verifiche/strumenti/formule6.py
 python verifiche/strumenti/link_esterni.py
 ```
 

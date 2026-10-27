@@ -1,0 +1,401 @@
+[
+  {
+    "exercise": 1,
+    "f": "x**3/(x**2 + 1)",
+    "F": "x**2/2 - log(x**2 + 1)/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 2,
+    "f": "(2*x - 1)/(x**2 + 2*x + 4)",
+    "F": "log(x**2 + 2*x + 4) - sqrt(3)*atan(sqrt(3)*x/3 + sqrt(3)/3)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 3,
+    "f": "(x + 2)/(x**2 + 4*x + 3)",
+    "F": "log(x**2 + 4*x + 3)/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 4,
+    "f": "(x + 5)/(x**2*(x + 1))",
+    "F": "-4*log(x) + 4*log(x + 1) - 5/x",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 5,
+    "f": "(2*x**2 + 1)/(x**4 - 1)",
+    "F": "3*log(x - 1)/4 - 3*log(x + 1)/4 + atan(x)/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 6,
+    "f": "(1 - 2*x)/((x + 1)**2*(x**2 + 1))",
+    "F": "log(x + 1)/2 - log(x**2 + 1)/4 - atan(x) - 3/(2*x + 2)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 9,
+    "f": "(x**3 + 2)/(x**2 + 1)",
+    "F": "x**2/2 - log(x**2 + 1)/2 + 2*atan(x)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 11,
+    "f": "(2*x + 3)/(3*x + 2)**2",
+    "F": "2*log(3*x + 2)/9 - 5/(27*x + 18)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 13,
+    "f": "(1 - x**6)/(1 - x)",
+    "F": "x**6/6 + x**5/5 + x**4/4 + x**3/3 + x**2/2 + x",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 14,
+    "f": "(3*x + 1)/(x**2 + 4*x + 4)",
+    "F": "3*log(x + 2) + 5/(x + 2)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 7,
+    "f": "1/(x**3 + 1)",
+    "F": "log(x + 1)/3 - log(x**2 - x + 1)/6 + sqrt(3)*atan(sqrt(3)*(2*x - 1)/3)/3",
+    "a": "0",
+    "b": "1",
+    "value": "log(2)/3 + sqrt(3)*pi/9",
+    "kind": "definite"
+  },
+  {
+    "exercise": 8,
+    "f": "(1 + exp(-x))/cosh(x)",
+    "F": "2*x - log(exp(2*x) + 1) + 2*atan(exp(x))",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 10,
+    "f": "(x + 2)/(2*x**2 + 1)",
+    "F": "log(2*x**2 + 1)/4 + sqrt(2)*atan(sqrt(2)*x)",
+    "a": "0",
+    "b": "sqrt(2)",
+    "value": "log(5)/4 + sqrt(2)*atan(2)",
+    "kind": "definite"
+  },
+  {
+    "exercise": 12,
+    "f": "(2*x + 3)/(x**2 + x - 2)",
+    "F": "5*log(x - 1)/3 + log(x + 2)/3",
+    "a": "2",
+    "b": "5",
+    "value": "log(4*28**(1/3))",
+    "kind": "definite"
+  },
+  {
+    "exercise": 16,
+    "f": "x**(5/6) + 2 - 3/x + 2/x**2",
+    "F": "6*x**(11/6)/11 + 2*x - 3*log(x) - 2/x",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 17,
+    "f": "sin(x)**2",
+    "F": "x/2 - sin(2*x)/4",
+    "a": "0",
+    "b": "3*pi/2",
+    "value": "3*pi/4",
+    "kind": "definite"
+  },
+  {
+    "exercise": 19,
+    "f": "sin(x)*cos(2*x)",
+    "F": "-2*cos(x)**3/3 + cos(x)",
+    "a": "0",
+    "b": "pi/4",
+    "value": "-1/3 + sqrt(2)/3",
+    "kind": "definite"
+  },
+  {
+    "exercise": 20,
+    "f": "sqrt(x) + (x + 2)**(1/3) + x**(-2)",
+    "F": "2*x**(3/2)/3 + 3*(x + 2)**(4/3)/4 - 1/x",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 21,
+    "f": "x**2*(3*x**3 + 1)**2",
+    "F": "(3*x**3 + 1)**3/27",
+    "a": "0",
+    "b": "1",
+    "value": "7/3",
+    "kind": "definite"
+  },
+  {
+    "exercise": 22,
+    "f": "(sin(x)**2 + 1)**3*sin(2*x)",
+    "F": "(sin(x)**2 + 1)**4/4",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 23,
+    "f": "1/(x*log(x)**2)",
+    "F": "-1/log(x)",
+    "a": "E",
+    "b": "exp(2)",
+    "value": "1/2",
+    "kind": "definite"
+  },
+  {
+    "exercise": 25,
+    "f": "x/(x**2 + 1)",
+    "F": "log(x**2 + 1)/2",
+    "a": "-1",
+    "b": "1",
+    "value": "0",
+    "kind": "definite"
+  },
+  {
+    "exercise": 26,
+    "f": "exp(2*x)/3 - exp(-x)/3",
+    "F": "exp(2*x)/6 + exp(-x)/3",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 28,
+    "f": "x*exp(-x**2)",
+    "F": "-exp(-x**2)/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 29,
+    "f": "(x**2 + 5*x + 4)*exp(x)",
+    "F": "(x**2 + 3*x + 1)*exp(x)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 30,
+    "f": "1/(x*log(x))",
+    "F": "log(Abs(log(x)))",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 31,
+    "f": "x*exp(3*x)",
+    "F": "(x/3 - 1/9)*exp(3*x)",
+    "a": "0",
+    "b": "1",
+    "value": "1/9 + 2*exp(3)/9",
+    "kind": "definite"
+  },
+  {
+    "exercise": 32,
+    "f": "sqrt(sin(x) + 2)*cos(x)",
+    "F": "2*(sin(x) + 2)**(3/2)/3",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 33,
+    "f": "x**2*log(x)",
+    "F": "x**3*log(x)/3 - x**3/9",
+    "a": "1",
+    "b": "3",
+    "value": "-26/9 + log(19683)",
+    "kind": "definite"
+  },
+  {
+    "exercise": 34,
+    "f": "1/(x*(log(x)**2 + 1))",
+    "F": "atan(log(x))",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 35,
+    "f": "x*cos(x)",
+    "F": "x*sin(x) + cos(x)",
+    "a": "0",
+    "b": "pi",
+    "value": "-2",
+    "kind": "definite"
+  },
+  {
+    "exercise": 36,
+    "f": "1/(x*(x + 1))",
+    "F": "log(x) - log(x + 1)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 37,
+    "f": "exp(x)*sin(x)**2",
+    "F": "-(2*sin(2*x) + cos(2*x))*exp(x)/10 + exp(x)/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 38,
+    "f": "(x + 1)**(-2)",
+    "F": "-1/(x + 1)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 39,
+    "f": "x**3*exp(-x**2)",
+    "F": "(-x**2 - 1)*exp(-x**2)/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 40,
+    "f": "cos(x)**2",
+    "F": "x/2 + sin(2*x)/4",
+    "a": "0",
+    "b": "pi/4",
+    "value": "1/4 + pi/8",
+    "kind": "definite"
+  },
+  {
+    "exercise": 41,
+    "f": "sinh(x)**2*cosh(x)**2",
+    "F": "-x/8 + sinh(4*x)/32",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 42,
+    "f": "sin(x)**3",
+    "F": "cos(x)**3/3 - cos(x)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 43,
+    "f": "sin(x)**4",
+    "F": "3*x/8 - sin(2*x)/4 + sin(4*x)/32",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 44,
+    "f": "sin(x)**2*cos(x)**2",
+    "F": "x/8 - sin(4*x)/32",
+    "a": "0",
+    "b": "pi/8",
+    "value": "-1/32 + pi/64",
+    "kind": "definite"
+  },
+  {
+    "exercise": 45,
+    "f": "(sin(x) + 2*cos(x))/(sin(x) + 2)",
+    "F": "x + 2*log(sin(x) + 2) - 4*sqrt(3)*atan(sqrt(3)*(2*tan(x/2) + 1)/3)/3",
+    "a": "0",
+    "b": "pi/2",
+    "value": "-2*sqrt(3)*pi/9 + 2*log(3/2) + pi/2",
+    "kind": "definite"
+  },
+  {
+    "exercise": 46,
+    "f": "sin(x)**2*sin(2*x)",
+    "F": "sin(x)**4/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 47,
+    "f": "sin(2*x)*cos(3*x)",
+    "F": "cos(x)/2 - cos(5*x)/10",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 48,
+    "f": "x**3/sqrt(2 - x**2)",
+    "F": "(2 - x**2)**(3/2)/3 - 2*sqrt(2 - x**2)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 49,
+    "f": "sqrt(x**2 + 3)/x**2",
+    "F": "asinh(sqrt(3)*x/3) - sqrt(x**2 + 3)/x",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 50,
+    "f": "sqrt(x**2 - 2)/x**2",
+    "F": "acosh(sqrt(2)*x/2) - sqrt(x**2 - 2)/x",
+    "a": "2",
+    "b": "3",
+    "value": "-sqrt(7)/3 - acosh(sqrt(2)) + sqrt(2)/2 + acosh(3*sqrt(2)/2)",
+    "kind": "definite"
+  },
+  {
+    "exercise": 51,
+    "f": "x**2/sqrt(x**2 - 1)",
+    "F": "x*sqrt(x**2 - 1)/2 + log(x + sqrt(x**2 - 1))/2",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 53,
+    "f": "(1 - x)/sqrt(x + 1)",
+    "F": "-2*(x + 1)**(3/2)/3 + 4*sqrt(x + 1)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 54,
+    "f": "(x**(1/3) + sqrt(x) + 1)/x**(1/4)",
+    "F": "12*x**(13/12)/13 + 4*x**(5/4)/5 + 4*x**(3/4)/3",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 55,
+    "f": "(1 - x**2)**(3/2)",
+    "F": "x*sqrt(1 - x**2)*(5 - 2*x**2)/8 + 3*asin(x)/8",
+    "a": "0",
+    "b": "1",
+    "value": "3*pi/16",
+    "kind": "definite"
+  },
+  {
+    "exercise": 56,
+    "f": "(-x**(1/3) + sqrt(x))/(x*(x**(1/4) + 1))",
+    "F": "-12*x**(1/12) + 4*x**(1/4) - 6*log(-x**(1/12) + x**(1/6) + 1) + 4*sqrt(3)*atan(sqrt(3)*(2*x**(1/12) - 1)/3)",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 57,
+    "f": "x*sqrt(4 - x**2)",
+    "F": "-(4 - x**2)**(3/2)/3",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 58,
+    "f": "sqrt(sin(x)**2 + 1)*cos(x)",
+    "F": "sqrt(sin(x)**2 + 1)*sin(x)/2 + asinh(sin(x))/2",
+    "a": "0",
+    "b": "pi/2",
+    "value": "log(1 + sqrt(2))/2 + sqrt(2)/2",
+    "kind": "definite"
+  },
+  {
+    "exercise": 59,
+    "f": "x*asin(x)",
+    "F": "x*sqrt(1 - x**2)/4 + (2*x**2 - 1)*asin(x)/4",
+    "kind": "primitive"
+  },
+  {
+    "exercise": 60,
+    "f": "atan(x)",
+    "F": "x*atan(x) - log(x**2 + 1)/2",
+    "a": "0",
+    "b": "1",
+    "value": "-log(2)/2 + pi/4",
+    "kind": "definite"
+  },
+  {
+    "exercise": 61,
+    "f": "x*log(x)**2",
+    "F": "x**2*(log(x)**2/2 - log(x)/2 + 1/4)",
+    "a": "1",
+    "b": "2",
+    "value": "-log(4) + 3/4 + 2*log(2)**2",
+    "kind": "definite"
+  },
+  {
+    "exercise": 62,
+    "f": "x*atan(x + 1)",
+    "F": "x**2*atan(x + 1)/2 - x/2 + log(x**2 + 2*x + 2)/2",
+    "kind": "primitive"
+  }
+]

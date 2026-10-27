@@ -42,6 +42,16 @@ Analisi-1/
 ├── capitolo-4/
 │   ├── index.html
 │   └── laboratori.js
+├── capitolo-5/
+│   ├── index.html
+│   └── laboratori.js
+├── capitolo-6/
+│   ├── index.html
+│   └── laboratori.js
+├── verifiche/
+│   ├── README.md
+│   ├── stato.json
+│   └── strumenti/
 └── documentazione/
     └── Come-costruire-il-tuo-sito.md
 ```
@@ -141,7 +151,7 @@ Attenzione: `index.html` nella radice e `capitolo-2/index.html`, per esempio, so
 2. Attendi **Success**. Se fallisce, apri il processo e il passaggio in errore.
 3. Apri il sito pubblico e verifica il testo o l’interazione modificata. Il salvataggio su GitHub e la pubblicazione sul sito sono due passaggi distinti.
 4. Se vedi ancora la vecchia versione, usa **Ctrl + F5** o **Ctrl + Shift + R** su Windows. Puoi confrontare anche con una finestra privata.
-5. Se hai modificato un file CSS o JavaScript e il browser continua a conservarne una vecchia copia, aggiorna il parametro di versione nei riferimenti HTML che lo caricano. Per esempio cambia `stile.css?v=20261013-formule` in `stile.css?v=20261014`. Il file continua a chiamarsi `stile.css`: il parametro va nel collegamento, non nel nome del file. Per lo stile condiviso aggiorna il riferimento nei quattro capitoli.
+5. Se hai modificato un file CSS o JavaScript e il browser continua a conservarne una vecchia copia, aggiorna il parametro di versione nei riferimenti HTML che lo caricano. Per esempio cambia `stile.css?v=20261013-formule` in `stile.css?v=20261014`. Il file continua a chiamarsi `stile.css`: il parametro va nel collegamento, non nel nome del file. Per lo stile condiviso aggiorna il riferimento in tutti i capitoli.
 6. Prova almeno un grafico, una soluzione e **Stampa / PDF** se la modifica riguarda aspetto o contenuti.
 
 Il link resta uguale. **Non devi riattivare Pages né cambiare le impostazioni a ogni aggiornamento.** Se sostituisci il banner social, le app possono conservare la vecchia anteprima anche dopo che il sito è aggiornato; usa un nuovo nome per l’immagine e aggiorna i relativi riferimenti nelle pagine.
@@ -152,8 +162,8 @@ Apri il file, entra in **History**, trova la versione precedente e recupera il s
 
 ## 8. Aggiungi un capitolo o riordina i file
 
-1. Crea `capitolo-5/` con `index.html` e `laboratori.js`, seguendo il formato esistente.
-2. Aggiorna il menu nelle pagine e la gestione condivisa in `assets/capitoli.js`.
+1. Per il prossimo capitolo crea `capitolo-7/` con `index.html` e `laboratori.js`, seguendo il formato esistente.
+2. Aggiorna la sitemap `sitemap.xml` con il nuovo indirizzo, il titolo e i metadati della nuova pagina. Aggiorna il menu nelle pagine e la gestione condivisa in `assets/capitoli.js`.
 3. Aggiungi il capitolo al README e verifica il suo link pubblico.
 4. Mantieni i capitoli esistenti nei loro percorsi: spostare o rinominare una cartella cambia l’indirizzo pubblico.
 5. Se sposti un’immagine, un foglio di stile o un file JavaScript, aggiorna tutti i collegamenti che lo usano prima di pubblicare.
@@ -178,7 +188,7 @@ Configurazione di questo repository: ottobre 2026. Riferimento: [documentazione 
 
 ## Statistiche gratuite con GoatCounter
 
-I cinque capitoli inviano le visite al pannello https://analisi1-mv.goatcounter.com/ tramite lo script ufficiale GoatCounter, caricato in modo asincrono. Accedi con il tuo account per consultare pagine visitate e provenienza degli accessi. Il pannello richiede autenticazione: non pubblicare password o token nel repository.
+I sei capitoli inviano le visite al pannello https://analisi1-mv.goatcounter.com/ tramite lo script ufficiale GoatCounter, caricato in modo asincrono. Accedi con il tuo account per consultare pagine visitate e provenienza degli accessi. Il pannello richiede autenticazione: non pubblicare password o token nel repository.
 
 Le statistiche iniziano dall’attivazione; quelle precedenti non si possono ricostruire. Ad blocker e filtri del servizio possono escludere alcune visite. Il numero di visitatori non identifica gli studenti. La pagina di ingresso reindirizza al capitolo 1 senza inviare una seconda visita. Non sono tracciati clic sugli slider o contenuti delle risposte.
 

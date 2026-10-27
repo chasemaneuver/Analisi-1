@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Calcolo integrale, integrali impropri e convoluzione. Analisi 1 con 89 esercizi svolti, 9 complementi e 17 laboratori interattivi di Michelle Vrapi.">
+<title>Analisi 1: Calcolo integrale | Michelle Vrapi</title><link rel="stylesheet" href="../assets/stile.css?v=20261013-formule">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="../assets/capitoli.js"></script><script defer src="laboratori.js"></script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><meta name="author" content="Michelle Vrapi"><link rel="icon" type="image/svg+xml" href="../assets/mv.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Analisi 1 · Michelle Vrapi">
+<meta property="og:title" content="Analisi 1: Calcolo integrale | Michelle Vrapi">
+<meta property="og:description" content="Calcolo integrale, integrali impropri e convoluzione. Analisi 1 con 89 esercizi svolti, 9 complementi e 17 laboratori interattivi di Michelle Vrapi.">
+<meta property="og:image" content="https://chasemaneuver.github.io/Analisi-1/assets/anteprima-social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="A1 / Analisi 1, monogramma MV e @chasemaneuver su fondo avorio.">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chasemaneuver.github.io/Analisi-1/assets/anteprima-social.png">
+<meta property="og:url" content="https://chasemaneuver.github.io/Analisi-1/capitolo-6/">
+<link rel="canonical" href="https://chasemaneuver.github.io/Analisi-1/capitolo-6/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="twitter:title" content="Analisi 1: Calcolo integrale | Michelle Vrapi">
+<meta name="twitter:description" content="Calcolo integrale, integrali impropri e convoluzione. Analisi 1 con 89 esercizi svolti, 9 complementi e 17 laboratori interattivi di Michelle Vrapi.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "@id": "https://chasemaneuver.github.io/Analisi-1/capitolo-6/#dispensa", "url": "https://chasemaneuver.github.io/Analisi-1/capitolo-6/", "name": "Analisi 1 · Capitolo 6 · Calcolo integrale", "description": "Calcolo integrale, integrali impropri e convoluzione. Analisi 1 con 89 esercizi svolti, 9 complementi e 17 laboratori interattivi di Michelle Vrapi.", "inLanguage": "it", "learningResourceType": "Dispensa interattiva", "isAccessibleForFree": true, "author": {"@type": "Person", "name": "Michelle Vrapi", "url": "https://chasemaneuver.carrd.co/"}, "educationalLevel": "Università", "about": {"@type": "Thing", "name": "Calcolo integrale"}, "isPartOf": {"@type": "WebSite", "name": "Analisi 1 · Michelle Vrapi", "url": "https://chasemaneuver.github.io/Analisi-1/"}}</script>
+<script data-goatcounter="https://analisi1-mv.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body><a class="skip" href="#contenuto">Vai al contenuto</a><header><a class="brand" href="../capitolo-1/">A<span>1</span> / Analisi</a><span>UNA DISPENSA PER STUDENTI DI INGEGNERIA</span><button id="stampa" type="button">Stampa / PDF</button></header><div class="layout"><aside><div class="chapter-picker"><label for="capitolo">SCEGLI IL CAPITOLO</label><select id="capitolo" aria-label="Scegli il capitolo"><option value="../capitolo-1/">1 · Numeri</option><option value="../capitolo-2/">2 · Funzioni</option><option value="../capitolo-3/">3 · Limiti e continuità</option><option value="../capitolo-4/">4 · Calcolo differenziale</option><option value="../capitolo-5/">5 · Serie</option><option value="../capitolo-6/" selected>6 · Calcolo integrale</option></select></div><details open><summary>In questo capitolo</summary><nav aria-label="Indice del capitolo"><a href="#sezione-1">1. Dalle aree alle somme di Riemann</a><a href="#sezione-2">2. Integrabilità e proprietà</a><a href="#sezione-3">3. Valor medio e valore efficace</a><a href="#sezione-4">4. Primitive e teorema fondamentale</a><a href="#sezione-5">5. Scomposizione, sostituzione e integrali razionali</a><a href="#sezione-6">6. Integrazione per parti</a><a href="#sezione-7">7. Integrali trigonometrici</a><a href="#sezione-8">8. Radicali e discontinuità</a><a href="#sezione-9">9. Applicazioni fisiche e geometriche</a><a href="#sezione-10">10. Calcolo numerico e controllo dell’errore</a><a href="#sezione-11">11. Integrali impropri: estremi singolari e infinito</a><a href="#sezione-12">12. Funzioni integrali</a><a href="#sezione-13">13. Convoluzione e sistemi lineari</a><a href="#sezione-14">14. Fondamenti: successioni e continuità uniforme</a></nav></details><div class="aside-note">17 laboratori interattivi<br>89 esercizi · 9 complementi<br><small>Apri le soluzioni dopo aver provato su carta.</small></div></aside><main id="contenuto"><div class="hero" id="inizio"><!-- firma-cover-inizio --><a class="cover-signature" href="https://chasemaneuver.carrd.co/" aria-label="Michelle Vrapi · @chasemaneuver"><span class="monogram" aria-hidden="true">MV</span><span>@chasemaneuver</span></a><!-- firma-cover-fine --><span class="eyebrow">CAPITOLO 06</span><h1>Calcolo integrale<span class="punto">.</span></h1><p class="lead">Dalle somme di aree alle funzioni integrali e alla convoluzione.</p><div class="tags"><span>Teoria e dimostrazioni</span><a href="#laboratorio-1">Esplora i grafici ↗</a></div></div><!-- firma-stampa-inizio --><p class="print-credit">Dispensa a cura di <strong>Michelle Vrapi</strong><br>michelle.vrapi@icloud.com · https://chasemaneuver.carrd.co/<br>Contributi originali: CC BY-NC-ND 4.0 · https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it</p><!-- firma-stampa-fine --><noscript><p class="avviso">Attiva JavaScript per le formule impaginate e i laboratori.</p></noscript><section class="introduzione"><p><strong>Fonte:</strong> <em>Analisi matematica 1</em>, Bramanti, Pagani, Salsa · Zanichelli, ISBN 978-88-08-06485-1, capitolo 6, pp. 257–321.</p><p><strong>Convenzioni:</strong> $\log=\ln$; angoli in radianti; $C$ è una costante reale, diversa sui diversi intervalli del dominio; gli integrali impropri convergono se il limite è finito; i valori numerici dei laboratori sono approssimazioni.</p></section>
+<h2 id="sezione-1">1. Dalle aree alle somme di Riemann</h2>
+<p>La quadratura di una regione curva e la lunghezza di una curva richiedono di passare da figure elementari a un limite. Dividiamo $[a,b]$, con $a&lt;b$, in $n$ parti di ampiezza $h=(b-a)/n$, con $x_j=a+jh$. Scegliamo un punto $\xi_j\in[x_{j-1},x_j]$ in ciascuna parte: la somma di Cauchy–Riemann è</p>
+<p>$$S_n=h\sum_{j=1}^n f(\xi_j).$$</p>
+<h3>Definizione 6.1 · Integrale definito</h3>
+<p>Una funzione <strong>limitata</strong> $f:[a,b]\to\mathbb R$ è integrabile secondo Riemann se, per ogni scelta dei punti $\xi_j$, le somme $S_n$ tendono allo <strong>stesso limite finito</strong> $I$. Si scrive $I=\int_a^b f(x)\,dx$. La variabile $x$ è muta: cambiarla in $t$ non cambia il numero. La convergenza di una sola scelta di rettangoli non basta a dimostrare l’integrabilità.</p>
+<h3>Esempio · La parabola</h3>
+<p>Per $f(x)=x^2$ su $[0,1]$, i rettangoli sinistri e destri danno rispettivamente $(n-1)(2n-1)/(6n^2)$ e $(n+1)(2n+1)/(6n^2)$; entrambi tendono a $1/3$. Essendo $x^2$ crescente, ogni somma con punti intermedi sta tra queste due: per confronto l’integrale è $1/3$.</p>
+<div class="lab" id="laboratorio-1" data-lab="1"></div>
+<h3>Area con segno, spostamento e lavoro</h3>
+<p>Se $f\ge0$, l’integrale è l’area del sottografico. In generale conta positivamente l’area sopra l’asse e negativamente quella sotto: l’area geometrica è $\int_a^b|f|$, non $|\int_a^b f|$. Ad esempio $\int_0^{2\pi}\sin x\,dx=0$ mentre $\int_0^{2\pi}|\sin x|\,dx=4$.</p>
+<p>Se $v$ è una velocità lungo un asse, $\int_a^b v(t)\,dt$ è lo spostamento e $\int_a^b|v(t)|\,dt$ la distanza percorsa. Per una pressione $p(V)$ il lavoro di espansione è $\int_{V_1}^{V_2}p(V)\,dV$, con segno dipendente dall’orientazione.</p>
+<div class="lab" id="laboratorio-2" data-lab="2"></div>
+<h2 id="sezione-2">2. Integrabilità e proprietà</h2>
+<h3>Teoremi 6.1, 6.2 e 6.3 · Classi integrabili</h3>
+<p><strong>6.1.</strong> Ogni funzione continua su $[a,b]$ è integrabile. <strong>6.2.</strong> Ogni funzione monotona e limitata su $[a,b]$ è integrabile. Per la monotonia, la differenza tra somma superiore e inferiore è $h|f(b)-f(a)|\to0$: tutte le somme sono intrappolate tra due estremi con la stessa destinazione.</p>
+<p><strong>6.3.</strong> Se una funzione è integrabile sui due intervalli adiacenti $[a,c]$ e $[c,b]$, lo è su $[a,b]$. Valori diversi assegnati nel solo punto di raccordo non influiscono sull’integrale. Ne segue l’integrabilità delle funzioni limitate continue a tratti con un numero finito di salti e limiti laterali finiti. Cambiare un numero finito di valori non cambia un integrale proprio.</p>
+<p>La continuità su un intervallo aperto non assicura né limitatezza né integrabilità propria: $1/x$ su $(0,1]$ richiede un esame separato.</p>
+<h3>Controesempio · Dirichlet</h3>
+<p>La funzione che vale $1$ sui razionali e $0$ sugli irrazionali di $[0,1]$ è limitata ma non integrabile: ogni intervallino contiene punti di entrambi i tipi. Scegliendo sempre punti razionali si ottiene $S_n=1$, scegliendoli irrazionali si ottiene $S_n=0$. La densità dei due insiemi, non un disegno con un numero finito di punti, prova la conclusione.</p>
+<h3>Teorema 6.4 · Algebra e confronto</h3>
+<p>Per funzioni integrabili $f,g$ e $\alpha,\beta\in\mathbb R$, valgono</p>
+<p>$$\int_a^b(\alpha f+\beta g)=\alpha\int_a^b f+\beta\int_a^b g,\qquad \int_a^b f=\int_a^c f+\int_c^b f.$$</p>
+<p>Si pongono $\int_a^a f=0$ e $\int_b^a f=-\int_a^b f$. Se $a&lt;b$ e $f\le g$, allora $\int_a^b f\le\int_a^b g$. Inoltre $|f|$ è integrabile e</p>
+<p>$$\left|\int_a^b f(x)\,dx\right|\le\int_a^b|f(x)|\,dx.$$</p>
+<p>La linearità segue sommando le somme di Riemann; la positività passando al limite di somme non negative; il confronto applicandola a $g-f$. La disuguaglianza triangolare segue da $-|f|\le f\le|f|$. Per l’additività si separano le somme ai lati di $c$: l’unica cella che può attraversarlo ha contributo che tende a zero. La funzione $|f|$ è integrabile perché $||u|-|v||\le|u-v|$, e quindi non aumenta l’oscillazione su una cella.</p>
+<p>Se $f\ge0$ l’integrale è non negativo; non è necessariamente positivo. Per una funzione continua che è positiva in almeno un punto di $[a,b]$, invece, una piccola regione positiva assicura $\int_a^b f&gt;0$.</p>
+<h2 id="sezione-3">3. Valor medio e valore efficace</h2>
+<h3>Teorema 6.5 · Media integrale</h3>
+<p>Se $f$ è continua su $[a,b]$, $a&lt;b$, esiste $c\in[a,b]$ tale che</p>
+<p>$$\frac1{b-a}\int_a^b f(x)\,dx=f(c).$$</p>
+<p><strong>Dimostrazione.</strong> Weierstrass dà minimo $m$ e massimo $M$. Il confronto fornisce $m\le\frac1{b-a}\int f\le M$; il teorema dei valori intermedi assicura che $f$ assuma tale valore. Senza continuità la media può non essere un valore assunto: un gradino con valori $0$ e $1$ può avere media $1/2$.</p>
+<p>Il <strong>valor medio</strong> è $f_M=(b-a)^{-1}\int_a^b f$; il <strong>valore efficace</strong> o RMS è $f_{\rm eff}=\sqrt{(b-a)^{-1}\int_a^b f^2}$, sempre non negativo. Per $I(t)=I_0\sin(\omega t)$, $\omega\ne0$, su un periodo $T=2\pi/|\omega|$ si ha $I_M=0$ e $I_{\rm eff}=|I_0|/\sqrt2$.</p>
+<div class="lab" id="laboratorio-3" data-lab="3"></div>
+<h2 id="sezione-4">4. Primitive e teorema fondamentale</h2>
+<h3>Definizione 6.2 · Primitiva</h3>
+<p>Una funzione $G$ è una primitiva di $f$ su un intervallo $I$ se è derivabile e $G'=f$ in $I$. Due primitive su uno stesso intervallo differiscono per una costante: la loro differenza ha derivata nulla, quindi è costante per Lagrange. Su un dominio con più componenti le costanti possono essere diverse.</p>
+<p>L’<strong>integrale indefinito</strong> $\int f(x)\,dx=G(x)+C$ rappresenta la famiglia delle primitive. L’integrale definito è un numero. Una funzione integrabile con un salto non ha una primitiva su un intervallo che contiene quel salto: le derivate hanno la proprietà dei valori intermedi (Darboux). Una funzione continua ha sempre una primitiva, ma non necessariamente esprimibile con funzioni elementari: è il caso di $e^{-x^2}$.</p>
+<h3>Teorema 6.6 · Newton–Leibniz</h3>
+<p>Se $f$ è continua su $[a,b]$ e $G'=f$, allora</p>
+<p>$$\int_a^b f(x)\,dx=G(b)-G(a)=[G(x)]_a^b.$$</p>
+<p><strong>Dimostrazione.</strong> La somma telescopica degli incrementi di $G$ sui sottointervalli è $G(b)-G(a)$. Per Lagrange ciascun incremento vale $hG'(\xi_j)=hf(\xi_j)$. La somma è quindi una somma di Riemann di $f$, già nota integrabile per continuità. Passando al limite si ottiene la formula.</p>
+<div class="lab" id="laboratorio-4" data-lab="4"></div>
+<h2 id="sezione-5">5. Scomposizione, sostituzione e integrali razionali</h2>
+<h3>Tabella delle primitive elementari</h3>
+<p>Ogni riga va letta su un intervallo dove l’integranda è definita; si aggiunge sempre $C$.</p>
+<table><thead><tr><th>Integranda</th><th>Una primitiva</th><th>Condizioni</th></tr></thead><tbody><tr><td>$k$</td><td>$kx$</td><td>$k\in\mathbb R$</td></tr><tr><td>$x^\alpha$</td><td>$x^{\alpha+1}/(\alpha+1)$</td><td>$\alpha\ne-1$, per ogni $\alpha\in\mathbb R$ su $x&gt;0$</td></tr><tr><td>$1/x$</td><td>$\log|x|$</td><td>$x\ne0$</td></tr><tr><td>$e^x$</td><td>$e^x$</td><td>$x\in\mathbb R$</td></tr><tr><td>$a^x$</td><td>$a^x/\log a$</td><td>$a&gt;0$, $a\ne1$</td></tr><tr><td>$\sin x$, $\cos x$</td><td>$-\cos x$, $\sin x$</td><td>$x\in\mathbb R$</td></tr><tr><td>$1/\cos^2x$, $1/\sin^2x$</td><td>$\tan x$, $-\cot x$</td><td>denominatore non nullo</td></tr><tr><td>$1/(1+x^2)$</td><td>$\arctan x$</td><td>$x\in\mathbb R$</td></tr><tr><td>$1/\sqrt{1-x^2}$</td><td>$\arcsin x$</td><td>$|x|&lt;1$</td></tr><tr><td>$\sinh x$, $\cosh x$</td><td>$\cosh x$, $\sinh x$</td><td>$x\in\mathbb R$</td></tr><tr><td>$1/\cosh^2x$, $1/\sinh^2x$</td><td>$\tanh x$, $-\coth x$</td><td>per la seconda $x\ne0$</td></tr></tbody></table>
+<p>La linearità permette di integrare somme termine a termine. Ad esempio $\int(4x^2+5x+1)\,dx=4x^3/3+5x^2/2+x+C$.</p>
+<h3>Sostituzione</h3>
+<p>Se $G'=f$ e $\varphi$ è $C^1$, con immagine nell’intervallo di definizione di $f$, la regola della catena dà</p>
+<p>$$\int f(\varphi(x))\varphi'(x)\,dx=G(\varphi(x))+C.$$</p>
+<p>Per $f$ continua si ha anche $\int_a^b f(\varphi(t))\varphi'(t)\,dt=\int_{\varphi(a)}^{\varphi(b)}f(x)\,dx$. Questa identità non richiede che $\varphi$ sia iniettiva. Quando si cambia variabile in un integrale arbitrario usando una funzione inversa, invece, occorre scegliere un ramo valido. Gli estremi trasformati mantengono il loro ordine orientato.</p>
+<p><strong>Esempi.</strong> Con $t=e^x$, $dx=dt/t$, $\int_0^1 dx/(e^x+e^{-x})=\arctan e-\pi/4$. Con $t=\cos x$, $\int\tan x\,dx=-\log|\cos x|+C$. Più in generale $\int f'/f=\log|f|+C$ dove $f\ne0$, e $\int f^\alpha f'=f^{\alpha+1}/(\alpha+1)+C$ dove le potenze sono definite e $\alpha\ne-1$. Si ottiene così $\int x^2\sqrt[3]{2+x^3}\,dx=(2+x^3)^{4/3}/4+C$, interpretando la potenza mediante la radice cubica reale.</p>
+<div class="lab" id="laboratorio-5" data-lab="5"></div>
+<h3>Simmetrie e valori assoluti</h3>
+<p>Per una funzione integrabile su $[-k,k]$, se $f$ è pari l’integrale è $2\int_0^k f$; se è dispari è zero. Si prova sostituendo $x=-t$ nella metà negativa. Perciò $\int_{-\pi/2}^{\pi/2}\cos x=2$, $\int_{-\pi/2}^{\pi/2}\sin x=0$ e $\int_{-1}^1e^{-|x|}\,dx=2(1-e^{-1})$.</p>
+<p>Per integrare un modulo si divide agli zeri del suo argomento: $\int_0^2|(x-1)(x+3)|\,dx=\int_0^1(1-x)(x+3)\,dx+\int_1^2(x-1)(x+3)\,dx=4$.</p>
+<h3>Funzioni razionali</h3>
+<p>Per $P/Q$, prima si effettua la divisione polinomiale se $\deg P\ge\deg Q$; poi si fattorizza $Q$ in fattori reali lineari e quadratici irriducibili. I fratti semplici associati a $(x-r)^m$ hanno la forma $A_j/(x-r)^j$, $1\le j\le m$; quelli associati a un quadratico irriducibile $q^m$ hanno la forma $(B_jx+C_j)/q^j$. Si trovano i coefficienti imponendo l’identità dei polinomi dopo aver moltiplicato per $Q$.</p>
+<p><strong>Esempi.</strong> $\frac{x+2}{(x-2)(x+3)}=\frac{4/5}{x-2}+\frac{1/5}{x+3}$, quindi una primitiva è $\frac45\log|x-2|+\frac15\log|x+3|$. Per una radice doppia, $\int\frac{x+1}{(3x+2)^2}\,dx=\frac19[\log|3x+2|-1/(3x+2)]+C$. Se il quadratico non si annulla, si separa la derivata del denominatore e si completa il quadrato:</p>
+<p>$$\int\frac{x}{x^2+2x+4}\,dx=\tfrac12\log(x^2+2x+4)-\frac1{\sqrt3}\arctan\frac{x+1}{\sqrt3}+C.$$</p>
+<p>In particolare $\int dx/(x^2+a^2)=a^{-1}\arctan(x/a)+C$, per $a&gt;0$. La divisione $x^3+x=(x^2+x+1)(x-1)+(x+1)$ e la scomposizione $\frac{2x^2+3x-1}{(x+2)(x^2+1)}=\frac1{5(x+2)}+\frac{9x-3}{5(x^2+1)}$ illustrano il metodo per gradi maggiori. Per $\frac{x+1}{x^2(x+3)}$ i coefficienti sono $2/(9x)+1/(3x^2)-2/[9(x+3)]$. Per $\frac{x^2+1}{(x+1)^2(x^2-x+1)}$ la scomposizione è $2/[3(x+1)^2]+1/[3(x^2-x+1)]$.</p>
+<p>Una funzione razionale di $e^x$ diventa razionale ponendo $t=e^x$: ad esempio $\int dx/\cosh x=2\arctan(e^x)+C$.</p>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 1 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{x^{3}}{x^{2} + 1}\,dx$.</p>
+<p>La divisione e la scomposizione danno $x - \frac{x}{x^{2} + 1}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{x^{3}}{x^{2} + 1}\,dx=\frac{x^{2}}{2} - \frac{\log{\left(x^{2} + 1 \right)}}{2}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 2 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{2 x - 1}{x^{2} + 2 x + 4}\,dx$.</p>
+<p>La divisione e la scomposizione danno $\frac{2 x - 1}{x^{2} + 2 x + 4}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{2 x - 1}{x^{2} + 2 x + 4}\,dx=\log{\left(x^{2} + 2 x + 4 \right)} - \sqrt{3} \operatorname{atan}{\left(\frac{\sqrt{3} x}{3} + \frac{\sqrt{3}}{3} \right)}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 3 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{x + 2}{x^{2} + 4 x + 3}\,dx$.</p>
+<p>La divisione e la scomposizione danno $\frac{1}{2 \left(x + 3\right)} + \frac{1}{2 \left(x + 1\right)}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{x + 2}{x^{2} + 4 x + 3}\,dx=\frac{\log{\left(x^{2} + 4 x + 3 \right)}}{2}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 4 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{x + 5}{x^{2} \left(x + 1\right)}\,dx$.</p>
+<p>La divisione e la scomposizione danno $\frac{4}{x + 1} - \frac{4}{x} + \frac{5}{x^{2}}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{x + 5}{x^{2} \left(x + 1\right)}\,dx=- 4 \log{\left(x \right)} + 4 \log{\left(x + 1 \right)} - \frac{5}{x}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 5 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{2 x^{2} + 1}{x^{4} - 1}\,dx$.</p>
+<p>La divisione e la scomposizione danno $\frac{1}{2 \left(x^{2} + 1\right)} - \frac{3}{4 \left(x + 1\right)} + \frac{3}{4 \left(x - 1\right)}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{2 x^{2} + 1}{x^{4} - 1}\,dx=- \frac{3 \log{\left(x + 1 \right)}}{4} + \frac{3 \log{\left(\left|{x - 1}\right| \right)}}{4} + \frac{\operatorname{atan}{\left(x \right)}}{2}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 6 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1 - 2 x}{\left(x + 1\right)^{2} \left(x^{2} + 1\right)}\,dx$.</p>
+<p>La divisione e la scomposizione danno $- \frac{x + 2}{2 \left(x^{2} + 1\right)} + \frac{1}{2 \left(x + 1\right)} + \frac{3}{2 \left(x + 1\right)^{2}}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{1 - 2 x}{\left(x + 1\right)^{2} \left(x^{2} + 1\right)}\,dx=\frac{\log{\left(x + 1 \right)}}{2} - \frac{\log{\left(x^{2} + 1 \right)}}{4} - \operatorname{atan}{\left(x \right)} - \frac{3}{2 x + 2}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 7 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{1}\frac{1}{x^{3} + 1}\,dx$.</p>
+<p>Scomporre $1/(x^3+1)=1/[3(x+1)]+(-x+2)/[3(x^2-x+1)]$. Il quadratico è positivo.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{\log{\left(x + 1 \right)}}{3} - \frac{\log{\left(x^{2} - x + 1 \right)}}{6} + \frac{\sqrt{3} \operatorname{atan}{\left(\frac{\sqrt{3} \left(2 x - 1\right)}{3} \right)}}{3}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{1}=\frac{\log{\left(2 \right)}}{3} + \frac{\sqrt{3} \pi}{9}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 8 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1 + e^{- x}}{\cosh{\left(x \right)}}\,dx$.</p>
+<p>Con $t=e^x$ e $dx=dt/t$, l’integranda diventa $2(t+1)/[t(1+t^2)]$. Separare $2/t+2/(1+t^2)-2t/(1+t^2)$.</p>
+<p>$$\int \frac{1 + e^{- x}}{\cosh{\left(x \right)}}\,dx=2 x - \log{\left(e^{2 x} + 1 \right)} + 2 \operatorname{atan}{\left(e^{x} \right)}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 9 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{x^{3} + 2}{x^{2} + 1}\,dx$.</p>
+<p>La divisione e la scomposizione danno $x - \frac{x - 2}{x^{2} + 1}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{x^{3} + 2}{x^{2} + 1}\,dx=\frac{x^{2}}{2} - \frac{\log{\left(x^{2} + 1 \right)}}{2} + 2 \operatorname{atan}{\left(x \right)}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 10 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\sqrt{2}}\frac{x + 2}{2 x^{2} + 1}\,dx$.</p>
+<p>Separare il numeratore in $x$ e $2$: il primo termine dà un logaritmo, il secondo un’arcotangente.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{\log{\left(2 x^{2} + 1 \right)}}{4} + \sqrt{2} \operatorname{atan}{\left(\sqrt{2} x \right)}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\sqrt{2}}=\frac{\log{\left(5 \right)}}{4} + \sqrt{2} \operatorname{atan}{\left(2 \right)}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 11 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{2 x + 3}{\left(3 x + 2\right)^{2}}\,dx$.</p>
+<p>La divisione e la scomposizione danno $\frac{2}{3 \left(3 x + 2\right)} + \frac{5}{3 \left(3 x + 2\right)^{2}}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{2 x + 3}{\left(3 x + 2\right)^{2}}\,dx=\frac{2 \log{\left(3 x + 2 \right)}}{9} - \frac{5}{27 x + 18}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 12 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{2}^{5}\frac{2 x + 3}{x^{2} + x - 2}\,dx$.</p>
+<p>Fattorizzare $(x-1)(x+2)$; i coefficienti dei fratti sono $5/3$ e $1/3$. Sul tratto entrambi gli argomenti dei logaritmi sono positivi.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{5 \log{\left(x - 1 \right)}}{3} + \frac{\log{\left(x + 2 \right)}}{3}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{2}^{5}=\log{\left(4 \sqrt[3]{28} \right)}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 13 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1 - x^{6}}{1 - x}\,dx$.</p>
+<p>La divisione e la scomposizione danno $x^{5} + x^{4} + x^{3} + x^{2} + x + 1$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{1 - x^{6}}{1 - x}\,dx=\frac{x^{6}}{6} + \frac{x^{5}}{5} + \frac{x^{4}}{4} + \frac{x^{3}}{3} + \frac{x^{2}}{2} + x+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 14 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{3 x + 1}{x^{2} + 4 x + 4}\,dx$.</p>
+<p>La divisione e la scomposizione danno $\frac{3}{x + 2} - \frac{5}{\left(x + 2\right)^{2}}$. Si integrano le potenze e i fratti semplici: i fattori lineari al denominatore producono logaritmi del valore assoluto, quelli quadratici irriducibili arcotangenti.</p>
+<p>$$\int \frac{3 x + 1}{x^{2} + 4 x + 4}\,dx=3 \log{\left(x + 2 \right)} + \frac{5}{x + 2}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<h2 id="sezione-6">6. Integrazione per parti</h2>
+<p>Per $u,v\in C^1$, la derivata del prodotto dà</p>
+<p>$$\int u(x)v'(x)\,dx=u(x)v(x)-\int u'(x)v(x)\,dx,$$</p>
+<p>$$\int_a^b uv'=[uv]_a^b-\int_a^b u'v.$$</p>
+<p>Conviene derivare il fattore che si semplifica. Per un polinomio moltiplicato per seno, coseno o esponenziale, il grado scende a ogni passaggio. Due integrazioni per parti possono riportare all’integrale iniziale, che si ricava algebricamente.</p>
+<p><strong>Esempi.</strong> $\int x\sin x=-x\cos x+\sin x+C$; $\int e^x\sin x=\frac12e^x(\sin x-\cos x)+C$; $\int\log x=x\log x-x+C$ per $x&gt;0$; $\int\arctan x=x\arctan x-\frac12\log(1+x^2)+C$. Inoltre $\int\cosh^2x=(\sinh x\cosh x+x)/2+C$ e $\int\sinh^2x=(\sinh x\cosh x-x)/2+C$.</p>
+<p>Per $m\ne-1$, la riduzione $\int x^m(\log x)^n=\frac{x^{m+1}}{m+1}(\log x)^n-\frac{n}{m+1}\int x^m(\log x)^{n-1}$ abbassa la potenza del logaritmo. Per $m=-1$ è più semplice $t=\log x$. Analogamente $\int x^n\arctan x=\frac{x^{n+1}}{n+1}\arctan x-\frac1{n+1}\int\frac{x^{n+1}}{1+x^2}\,dx$, per $n\ge0$ intero.</p>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 15 · Scegliere la sostituzione</summary><div class="soluzione"><p>Calcolare i tre integrali.</p>
+<p>Con $t=3x+1$, $dt=3dx$, si ottiene $\int(3x+1)^3dx=(3x+1)^4/12+C$.</p>
+<p>In $\int(3x^2+1)^3dx$ manca il fattore $x$: si sviluppa $27x^6+27x^4+9x^2+1$, quindi la primitiva è $27x^7/7+27x^5/5+3x^3+x+C$.</p>
+<p>Con $t=3x^2+1$, $dt=6x\,dx$, si ottiene $\int x(3x^2+1)^3dx=(3x^2+1)^4/24+C$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 16 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int x^{\frac{5}{6}} + 2 - \frac{3}{x} + \frac{2}{x^{2}}\,dx$.</p>
+<p>Integrare separatamente ogni potenza; per $x^{-1}$ usare il logaritmo.</p>
+<p>$$\int x^{\frac{5}{6}} + 2 - \frac{3}{x} + \frac{2}{x^{2}}\,dx=\frac{6 x^{\frac{11}{6}}}{11} + 2 x - 3 \log{\left(x \right)} - \frac{2}{x}+C.$$</p>
+<p>Dominio reale dell’integranda: $x&gt;0$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 17 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\frac{3 \pi}{2}}\sin^{2}{\left(x \right)}\,dx$.</p>
+<p>Usare $\sin^2x=(1-\cos2x)/2$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{x}{2} - \frac{\sin{\left(2 x \right)}}{4}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\frac{3 \pi}{2}}=\frac{3 \pi}{4}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 18 · Cotangente e tangente iperbolica</summary><div class="soluzione"><p>Scrivere ciascuna funzione come derivata logaritmica:</p>
+<p>$$\int\cot x\,dx=\log|\sin x|+C,\qquad \int\tanh x\,dx=\log(\cosh x)+C.$$</p>
+<p>Per la prima escludere i multipli di $\pi$; per la seconda $\cosh x&gt;0$ su tutto $\mathbb R$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 19 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\frac{\pi}{4}}\sin{\left(x \right)} \cos{\left(2 x \right)}\,dx$.</p>
+<p>Con $t=\cos x$, $dt=-\sin x\,dx$, $\cos2x=2t^2-1$. Gli estremi diventano $1$ e $1/\sqrt2$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=- \frac{2 \cos^{3}{\left(x \right)}}{3} + \cos{\left(x \right)}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\frac{\pi}{4}}=- \frac{1}{3} + \frac{\sqrt{2}}{3}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 20 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \sqrt{x} + \sqrt[3]{x + 2} + \frac{1}{x^{2}}\,dx$.</p>
+<p>Usare la regola delle potenze e $t=x+2$ nel secondo termine.</p>
+<p>$$\int \sqrt{x} + \sqrt[3]{x + 2} + \frac{1}{x^{2}}\,dx=\frac{2 x^{\frac{3}{2}}}{3} + \frac{3 \left(x + 2\right)^{\frac{4}{3}}}{4} - \frac{1}{x}+C.$$</p>
+<p>Dominio: $x&gt;0$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 21 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{1}x^{2} \left(3 x^{3} + 1\right)^{2}\,dx$.</p>
+<p>Con $t=3x^3+1$, $dt=9x^2dx$, gli estremi sono $1$ e $4$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{\left(3 x^{3} + 1\right)^{3}}{27}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{1}=\frac{7}{3}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 22 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \left(\sin^{2}{\left(x \right)} + 1\right)^{3} \sin{\left(2 x \right)}\,dx$.</p>
+<p>Con $t=1+\sin^2x$, $dt=\sin2x\,dx$, resta $\int t^3dt$.</p>
+<p>$$\int \left(\sin^{2}{\left(x \right)} + 1\right)^{3} \sin{\left(2 x \right)}\,dx=\frac{\left(\sin^{2}{\left(x \right)} + 1\right)^{4}}{4}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 23 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{e}^{e^{2}}\frac{1}{x \log{\left(x \right)}^{2}}\,dx$.</p>
+<p>Con $t=\log x$, $dt=dx/x$, si integra $t^{-2}$ tra $1$ e $2$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=- \frac{1}{\log{\left(x \right)}}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{e}^{e^{2}}=\frac{1}{2}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 24 · Due quadrati</summary><div class="soluzione"><p>Usare $\tan^2x=1/\cos^2x-1$ e $\tanh^2x=1-1/\cosh^2x$:</p>
+<p>$$\int\tan^2x\,dx=\tan x-x+C,\qquad \int\tanh^2x\,dx=x-\tanh x+C.$$</p>
+<p>La prima vale sui tratti senza poli della tangente; la seconda su $\mathbb R$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 25 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{-1}^{1}\frac{x}{x^{2} + 1}\,dx$.</p>
+<p>La funzione è dispari su un intervallo simmetrico, quindi l’integrale è zero. La primitiva conferma il risultato.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{\log{\left(x^{2} + 1 \right)}}{2}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{-1}^{1}=0.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 26 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{e^{2 x}}{3} - \frac{e^{- x}}{3}\,dx$.</p>
+<p>La derivata di $e^{ax}$ introduce un fattore $a$: dividere per tale coefficiente.</p>
+<p>$$\int \frac{e^{2 x}}{3} - \frac{e^{- x}}{3}\,dx=\frac{e^{2 x}}{6} + \frac{e^{- x}}{3}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 27 · Esponenziale con modulo</summary><div class="soluzione"><p>Calcolare $\int_{-1}^1e^{-|x|}dx$. Per parità vale $2\int_0^1e^{-x}dx=2[-e^{-x}]_0^1=2(1-e^{-1})$. Sul semiasse positivo $|x|=x$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 28 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int x e^{- x^{2}}\,dx$.</p>
+<p>Porre $t=-x^2$, $dt=-2x\,dx$.</p>
+<p>$$\int x e^{- x^{2}}\,dx=- \frac{e^{- x^{2}}}{2}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 29 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \left(x^{2} + 5 x + 4\right) e^{x}\,dx$.</p>
+<p>Integrare per parti due volte; per $P(x)e^x$ la primitiva è $e^x(P-P\prime+P\prime\prime)$ quando $P$ è quadratico.</p>
+<p>$$\int \left(x^{2} + 5 x + 4\right) e^{x}\,dx=\left(x^{2} + 3 x + 1\right) e^{x}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 30 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1}{x \log{\left(x \right)}}\,dx$.</p>
+<p>Porre $t=\log x$ e integrare $dt/t$.</p>
+<p>$$\int \frac{1}{x \log{\left(x \right)}}\,dx=\log{\left(\left|{\log{\left(x \right)}}\right| \right)}+C.$$</p>
+<p>Dominio: $(0,1)$ oppure $(1,+\infty)$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 31 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{1}x e^{3 x}\,dx$.</p>
+<p>Per parti scegliere $u=x$, $dv=e^{3x}dx$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\left(\frac{x}{3} - \frac{1}{9}\right) e^{3 x}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{1}=\frac{1}{9} + \frac{2 e^{3}}{9}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 32 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \sqrt{\sin{\left(x \right)} + 2} \cos{\left(x \right)}\,dx$.</p>
+<p>Porre $t=2+\sin x$, $dt=\cos x\,dx$. Il radicando è sempre positivo.</p>
+<p>$$\int \sqrt{\sin{\left(x \right)} + 2} \cos{\left(x \right)}\,dx=\frac{2 \left(\sin{\left(x \right)} + 2\right)^{\frac{3}{2}}}{3}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 33 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{1}^{3}x^{2} \log{\left(x \right)}\,dx$.</p>
+<p>Per parti con $u=\log x$ e $dv=x^2dx$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{x^{3} \log{\left(x \right)}}{3} - \frac{x^{3}}{9}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{1}^{3}=- \frac{26}{9} + \log{\left(19683 \right)}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 34 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1}{x \left(\log{\left(x \right)}^{2} + 1\right)}\,dx$.</p>
+<p>Porre $t=\log x$: resta $\int dt/(1+t^2)$.</p>
+<p>$$\int \frac{1}{x \left(\log{\left(x \right)}^{2} + 1\right)}\,dx=\operatorname{atan}{\left(\log{\left(x \right)} \right)}+C.$$</p>
+<p>Dominio: $x&gt;0$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 35 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\pi}x \cos{\left(x \right)}\,dx$.</p>
+<p>Per parti con $u=x$ e $dv=\cos x\,dx$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=x \sin{\left(x \right)} + \cos{\left(x \right)}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\pi}=-2.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 36 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1}{x \left(x + 1\right)}\,dx$.</p>
+<p>Scomporre $1/[x(x+1)]=1/x-1/(x+1)$.</p>
+<p>$$\int \frac{1}{x \left(x + 1\right)}\,dx=\log{\left(x \right)} - \log{\left(x + 1 \right)}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 37 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int e^{x} \sin^{2}{\left(x \right)}\,dx$.</p>
+<p>Abbassare il grado $\sin^2x=(1-\cos2x)/2$; per $\int e^x\cos2x$ applicare due volte l’integrazione per parti.</p>
+<p>$$\int e^{x} \sin^{2}{\left(x \right)}\,dx=- \frac{\left(2 \sin{\left(2 x \right)} + \cos{\left(2 x \right)}\right) e^{x}}{10} + \frac{e^{x}}{2}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 38 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1}{\left(x + 1\right)^{2}}\,dx$.</p>
+<p>Integrare la potenza $(x+1)^{-2}$.</p>
+<p>$$\int \frac{1}{\left(x + 1\right)^{2}}\,dx=- \frac{1}{x + 1}+C.$$</p>
+<p>Ogni intervallo reale del dominio; le costanti sui diversi intervalli sono indipendenti. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 39 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int x^{3} e^{- x^{2}}\,dx$.</p>
+<p>Porre $t=x^2$, ottenendo $\frac12\int te^{-t}dt$, e poi integrare per parti.</p>
+<p>$$\int x^{3} e^{- x^{2}}\,dx=\frac{\left(- x^{2} - 1\right) e^{- x^{2}}}{2}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 40 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\frac{\pi}{4}}\cos^{2}{\left(x \right)}\,dx$.</p>
+<p>Usare $\cos^2x=(1+\cos2x)/2$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{x}{2} + \frac{\sin{\left(2 x \right)}}{4}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\frac{\pi}{4}}=\frac{1}{4} + \frac{\pi}{8}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 41 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \sinh^{2}{\left(x \right)} \cosh^{2}{\left(x \right)}\,dx$.</p>
+<p>Usare $\sinh2x=2\sinh x\cosh x$ e $\sinh^22x=(\cosh4x-1)/2$.</p>
+<p>$$\int \sinh^{2}{\left(x \right)} \cosh^{2}{\left(x \right)}\,dx=- \frac{x}{8} + \frac{\sinh{\left(4 x \right)}}{32}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<h2 id="sezione-7">7. Integrali trigonometrici</h2>
+<p>Per $\sin^n x\cos^m x$, con esponenti interi non negativi, se uno è dispari si conserva un fattore $\sin x$ o $\cos x$ e si usa $\sin^2x+\cos^2x=1$; se entrambi sono pari si abbassa il grado con $\sin^2x=(1-\cos2x)/2$ e $\cos^2x=(1+\cos2x)/2$.</p>
+<p><strong>Esempi.</strong> Con $t=\cos x$, $\int_0^{\pi/3}\sin^3x\cos^2x\,dx=\int_{1/2}^1(t^2-t^4)\,dt=47/480$. Inoltre</p>
+<p>$$\int\sin^2x\cos^4x\,dx=\frac{12x+3\sin2x-3\sin4x-\sin6x}{192}+C,$$</p>
+<p>$$\int\sin^2x\,dx=\frac{x-\sin x\cos x}{2}+C,\qquad \int\cos^2x\,dx=\frac{x+\sin x\cos x}{2}+C.$$</p>
+<p>Su $[0,k\pi/2]$, $k$ intero positivo, entrambi gli integrali definiti delle due potenze seconde valgono $k\pi/4$. I prodotti di seni e coseni con frequenze diverse si riscrivono come somme con le formule di prostaferesi. Su $[0,2\pi]$, per $m,n$ interi positivi, $\int\sin nx\cos mx=0$; i prodotti seno–seno e coseno–coseno hanno integrale zero se $m\ne n$ e $\pi$ se $m=n$. Per la frequenza zero, invece, $\cos0=1$ e $\int_0^{2\pi}1\,dx=2\pi$.</p>
+<div class="lab" id="laboratorio-6" data-lab="6"></div>
+<p>Una funzione razionale di $\sin x$ e $\cos x$ diventa razionale con $t=\tan(x/2)$, $\sin x=2t/(1+t^2)$, $\cos x=(1-t^2)/(1+t^2)$, $dx=2\,dt/(1+t^2)$. La carta va usata su intervalli che non attraversino un polo di $\tan(x/2)$; le primitive locali vanno raccordate con le costanti corrette.</p>
+<p><strong>Esempio.</strong> Separando $\frac{\sin x-5\cos x}{3+\sin x}=1-\frac3{3+\sin x}-5\frac{\cos x}{3+\sin x}$, si ottiene su ogni carta</p>
+<p>$$x-\frac3{\sqrt2}\arctan\frac{3\tan(x/2)+1}{2\sqrt2}-5\log(3+\sin x)+C.$$</p>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 42 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \sin^{3}{\left(x \right)}\,dx$.</p>
+<p>Scrivere $\sin^3x=\sin x(1-\cos^2x)$ e porre $t=\cos x$.</p>
+<p>$$\int \sin^{3}{\left(x \right)}\,dx=\frac{\cos^{3}{\left(x \right)}}{3} - \cos{\left(x \right)}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 43 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \sin^{4}{\left(x \right)}\,dx$.</p>
+<p>Abbassare due volte il grado: $\sin^4x=(3-4\cos2x+\cos4x)/8$.</p>
+<p>$$\int \sin^{4}{\left(x \right)}\,dx=\frac{3 x}{8} - \frac{\sin{\left(2 x \right)}}{4} + \frac{\sin{\left(4 x \right)}}{32}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 44 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\frac{\pi}{8}}\sin^{2}{\left(x \right)} \cos^{2}{\left(x \right)}\,dx$.</p>
+<p>Usare $\sin^2x\cos^2x=(1-\cos4x)/8$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{x}{8} - \frac{\sin{\left(4 x \right)}}{32}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\frac{\pi}{8}}=- \frac{1}{32} + \frac{\pi}{64}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 45 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\frac{\pi}{2}}\frac{\sin{\left(x \right)} + 2 \cos{\left(x \right)}}{\sin{\left(x \right)} + 2}\,dx$.</p>
+<p>Separare $1-2/(2+\sin x)+2\cos x/(2+\sin x)$. Nell’integrale restante porre $t=\tan(x/2)$, con estremi $0,1$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=x + 2 \log{\left(\sin{\left(x \right)} + 2 \right)} - \frac{4 \sqrt{3} \operatorname{atan}{\left(\frac{\sqrt{3} \left(2 \tan{\left(\frac{x}{2} \right)} + 1\right)}{3} \right)}}{3}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\frac{\pi}{2}}=- \frac{2 \sqrt{3} \pi}{9} + 2 \log{\left(\frac{3}{2} \right)} + \frac{\pi}{2}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 46 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \sin^{2}{\left(x \right)} \sin{\left(2 x \right)}\,dx$.</p>
+<p>Con $t=\sin^2x$, $dt=\sin2x\,dx$, resta $\int t\,dt$.</p>
+<p>$$\int \sin^{2}{\left(x \right)} \sin{\left(2 x \right)}\,dx=\frac{\sin^{4}{\left(x \right)}}{2}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 47 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \sin{\left(2 x \right)} \cos{\left(3 x \right)}\,dx$.</p>
+<p>La prostaferesi dà $\sin2x\cos3x=(\sin5x-\sin x)/2$.</p>
+<p>$$\int \sin{\left(2 x \right)} \cos{\left(3 x \right)}\,dx=\frac{\cos{\left(x \right)}}{2} - \frac{\cos{\left(5 x \right)}}{10}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<h2 id="sezione-8">8. Radicali e discontinuità</h2>
+<p>Per $a&gt;0$, le sostituzioni tipiche sono $x=a\sin t$ per $\sqrt{a^2-x^2}$, con $t\in[-\pi/2,\pi/2]$ e radice $a\cos t$; $x=a\sinh t$ per $\sqrt{a^2+x^2}=a\cosh t$; $x=a\cosh t$ per $\sqrt{x^2-a^2}$ sul ramo $x\ge a$, scegliendo $t\ge0$. Sul ramo $x\le-a$ si usa $x=-a\cosh t$. Non si elimina un valore assoluto senza stabilire il segno.</p>
+<p>Si ricordino $\operatorname{arsinh}u=\log(u+\sqrt{u^2+1})$ e $\operatorname{arcosh}u=\log(u+\sqrt{u^2-1})$ per $u\ge1$. Per potenze razionali di $x&gt;0$, la sostituzione $x=t^N$ con $N$ minimo comune multiplo dei denominatori razionalizza gli esponenti: ad esempio</p>
+<p>$$\int\frac{\sqrt x}{x(2\sqrt[3]x+3)}\,dx=3x^{1/6}-3\sqrt{\tfrac32}\arctan\bigl(\sqrt{\tfrac23}\,x^{1/6}\bigr)+C.$$</p>
+<h3>Esempi · Ellisse e radicale iperbolico</h3>
+<p>L’ellisse $x^2/a^2+y^2/b^2=1$, $a,b&gt;0$, ha area $4b\int_0^a\sqrt{1-x^2/a^2}\,dx=4ab\int_0^{\pi/2}\cos^2t\,dt=\pi ab$. Inoltre $\int_{\sqrt2}^2 dx/[x^2\sqrt{x^2-1}]=[\sqrt{x^2-1}/x]_{\sqrt2}^2=\sqrt3/2-1/\sqrt2$.</p>
+<div class="lab" id="laboratorio-7" data-lab="7"></div>
+<p>Una funzione limitata con un numero finito di salti si integra separando i tratti. Il valore nei punti isolati è irrilevante: $\sin x/x$ si prolunga in $0$ con valore $1$; $x/|x|$ e $\arctan(1/x)$ hanno salti ma sono limitate e integrabili su intervalli compatti dopo aver assegnato un valore in $0$. $e^{-1/x}$ è integrabile su $[0,1]$ dopo prolungamento con $0$, ma è illimitata vicino a $0^-$ e l’integrale su $[-1,0]$ diverge.</p>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 48 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{x^{3}}{\sqrt{2 - x^{2}}}\,dx$.</p>
+<p>Porre $t=2-x^2$: $x^2=2-t$ e $x\,dx=-dt/2$.</p>
+<p>$$\int \frac{x^{3}}{\sqrt{2 - x^{2}}}\,dx=\frac{\left(2 - x^{2}\right)^{\frac{3}{2}}}{3} - 2 \sqrt{2 - x^{2}}+C.$$</p>
+<p>Dominio: $-\sqrt2&lt;x&lt;\sqrt2$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 49 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{\sqrt{x^{2} + 3}}{x^{2}}\,dx$.</p>
+<p>Per parti con $u=\sqrt{3+x^2}$ e $dv=x^{-2}dx$; resta $\int dx/\sqrt{3+x^2}=\operatorname{arsinh}(x/\sqrt3)$.</p>
+<p>$$\int \frac{\sqrt{x^{2} + 3}}{x^{2}}\,dx=\operatorname{asinh}{\left(\frac{\sqrt{3} x}{3} \right)} - \frac{\sqrt{x^{2} + 3}}{x}+C.$$</p>
+<p>Dominio: $x\ne0$, su ciascun intervallo. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 50 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{2}^{3}\frac{\sqrt{x^{2} - 2}}{x^{2}}\,dx$.</p>
+<p>Con $x=\sqrt2\cosh t$ si ottiene $\int\tanh^2t\,dt=t-\tanh t$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\operatorname{acosh}{\left(\frac{\sqrt{2} x}{2} \right)} - \frac{\sqrt{x^{2} - 2}}{x}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{2}^{3}=- \frac{\sqrt{7}}{3} - \operatorname{acosh}{\left(\sqrt{2} \right)} + \frac{\sqrt{2}}{2} + \operatorname{acosh}{\left(\frac{3 \sqrt{2}}{2} \right)}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 51 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{x^{2}}{\sqrt{x^{2} - 1}}\,dx$.</p>
+<p>Separare $x^2=(x^2-1)+1$; usare $x=\cosh t$ sul ramo positivo. Sul ramo negativo il logaritmo richiede il modulo.</p>
+<p>$$\int \frac{x^{2}}{\sqrt{x^{2} - 1}}\,dx=\frac{x \sqrt{x^{2} - 1}}{2} + \frac{\log{\left(x + \sqrt{x^{2} - 1} \right)}}{2}+C.$$</p>
+<p>Per $x&gt;1$ vale la formula esposta; per $x&lt;-1$ sostituire $\log(x+\sqrt{x^2-1})$ con $\log|x+\sqrt{x^2-1}|$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 52 · Prima il dominio</summary><div class="soluzione"><p>L’integrale stampato $\int_1^2\sqrt{x^2-2}\,dx/x$ non è definito in campo reale: il radicando è negativo per $1\le x&lt;\sqrt2$. Non è una singolarità isolata da risolvere con un limite improprio.</p>
+<p>Nella variante reale $\int_{\sqrt2}^2\sqrt{x^2-2}\,dx/x$, porre $u=\sqrt{x^2-2}$. Si ha $dx/x=u\,du/(u^2+2)$, quindi l’integrale diventa $\int_0^{\sqrt2}u^2/(u^2+2)\,du$:</p>
+<p>$$[u-\sqrt2\arctan(u/\sqrt2)]_0^{\sqrt2}=\sqrt2(1-\pi/4).$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 53 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{1 - x}{\sqrt{x + 1}}\,dx$.</p>
+<p>Porre $t=1+x$, così il numeratore diventa $2-t$.</p>
+<p>$$\int \frac{1 - x}{\sqrt{x + 1}}\,dx=- \frac{2 \left(x + 1\right)^{\frac{3}{2}}}{3} + 4 \sqrt{x + 1}+C.$$</p>
+<p>Dominio: $x&gt;-1$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 54 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{\sqrt[3]{x} + \sqrt{x} + 1}{\sqrt[4]{x}}\,dx$.</p>
+<p>Dividere ogni addendo per $x^{1/4}$ e usare la regola delle potenze.</p>
+<p>$$\int \frac{\sqrt[3]{x} + \sqrt{x} + 1}{\sqrt[4]{x}}\,dx=\frac{12 x^{\frac{13}{12}}}{13} + \frac{4 x^{\frac{5}{4}}}{5} + \frac{4 x^{\frac{3}{4}}}{3}+C.$$</p>
+<p>Dominio: $x&gt;0$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 55 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{1}\left(1 - x^{2}\right)^{\frac{3}{2}}\,dx$.</p>
+<p>Con $x=\sin t$, $dx=\cos t\,dt$, l’integrale diventa $\int_0^{\pi/2}\cos^4t\,dt=3\pi/16$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{x \sqrt{1 - x^{2}} \left(5 - 2 x^{2}\right)}{8} + \frac{3 \operatorname{asin}{\left(x \right)}}{8}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{1}=\frac{3 \pi}{16}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 56 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int \frac{- \sqrt[3]{x} + \sqrt{x}}{x \left(\sqrt[4]{x} + 1\right)}\,dx$.</p>
+<p>Porre $x=t^{12}$, con $t&gt;0$. Si ottiene $12(t^5-t^3)/(1+t^3)$; la divisione dà $12[t^2-1+(-t^2+1)/(1+t^3)]$. Integrare il razionale con fratti semplici.</p>
+<p>$$\int \frac{- \sqrt[3]{x} + \sqrt{x}}{x \left(\sqrt[4]{x} + 1\right)}\,dx=- 12 \sqrt[12]{x} + 4 \sqrt[4]{x} - 6 \log{\left(- \sqrt[12]{x} + \sqrt[6]{x} + 1 \right)} + 4 \sqrt{3} \operatorname{atan}{\left(\frac{\sqrt{3} \left(2 \sqrt[12]{x} - 1\right)}{3} \right)}+C.$$</p>
+<p>Dominio: $x&gt;0$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 57 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int x \sqrt{4 - x^{2}}\,dx$.</p>
+<p>Con $t=4-x^2$, $dt=-2x\,dx$.</p>
+<p>$$\int x \sqrt{4 - x^{2}}\,dx=- \frac{\left(4 - x^{2}\right)^{\frac{3}{2}}}{3}+C.$$</p>
+<p>La formula vale sull’interno $(-2,2)$ e si prolunga agli estremi. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 58 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{\frac{\pi}{2}}\sqrt{\sin^{2}{\left(x \right)} + 1} \cos{\left(x \right)}\,dx$.</p>
+<p>Porre $u=\sin x$, poi integrare $\sqrt{1+u^2}$ con una sostituzione iperbolica.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=\frac{\sqrt{\sin^{2}{\left(x \right)} + 1} \sin{\left(x \right)}}{2} + \frac{\operatorname{asinh}{\left(\sin{\left(x \right)} \right)}}{2}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{\frac{\pi}{2}}=\frac{\log{\left(1 + \sqrt{2} \right)}}{2} + \frac{\sqrt{2}}{2}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 59 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int x \operatorname{asin}{\left(x \right)}\,dx$.</p>
+<p>Per parti con $u=\arcsin x$, $dv=x\,dx$; nell’integrale residuo porre $x=\sin t$.</p>
+<p>$$\int x \operatorname{asin}{\left(x \right)}\,dx=\frac{x \sqrt{1 - x^{2}}}{4} + \frac{\left(2 x^{2} - 1\right) \operatorname{asin}{\left(x \right)}}{4}+C.$$</p>
+<p>Dominio della derivata: $-1&lt;x&lt;1$; prolungamento continuo agli estremi. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 60 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{0}^{1}\operatorname{atan}{\left(x \right)}\,dx$.</p>
+<p>Per parti con $u=\arctan x$, $dv=dx$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=x \operatorname{atan}{\left(x \right)} - \frac{\log{\left(x^{2} + 1 \right)}}{2}$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{0}^{1}=- \frac{\log{\left(2 \right)}}{2} + \frac{\pi}{4}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 61 · Integrale definito</summary><div class="soluzione"><p>Calcolare $\int_{1}^{2}x \log{\left(x \right)}^{2}\,dx$.</p>
+<p>Due integrazioni per parti abbassano la potenza del logaritmo da $2$ a $0$.</p>
+<p>Una primitiva utilizzabile sul tratto è $G(x)=x^{2} \left(\frac{\log{\left(x \right)}^{2}}{2} - \frac{\log{\left(x \right)}}{2} + \frac{1}{4}\right)$. Applicando Newton–Leibniz:</p>
+<p>$$[G(x)]_{1}^{2}=- \log{\left(4 \right)} + \frac{3}{4} + 2 \log{\left(2 \right)}^{2}.$$</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 62 · Una primitiva</summary><div class="soluzione"><p>Calcolare $\int x \operatorname{atan}{\left(x + 1 \right)}\,dx$.</p>
+<p>Per parti con $u=\arctan(x+1)$ e $dv=x\,dx$. Dividere $x^2$ per $x^2+2x+2$ nell’integrale residuo.</p>
+<p>$$\int x \operatorname{atan}{\left(x + 1 \right)}\,dx=\frac{x^{2} \operatorname{atan}{\left(x + 1 \right)}}{2} - \frac{x}{2} + \frac{\log{\left(x^{2} + 2 x + 2 \right)}}{2}+C.$$</p>
+<p>Dominio: $\mathbb R$. Verifica: derivando il risultato si ritrova l’integranda.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 63 · Un limite come integrale</summary><div class="soluzione"><p>Per $S_n=\sum_{k=1}^n n/(n^2+k^2)$, riscrivere ogni addendo come $\frac1n\frac1{1+(k/n)^2}$. Sono i rettangoli destri per $f(x)=1/(1+x^2)$ su $[0,1]$, funzione continua. Quindi $\lim S_n=\int_0^1dx/(1+x^2)=[\arctan x]_0^1=\pi/4$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 64 · Media ed efficace di un polinomio trigonometrico</summary><div class="soluzione"><p>Sia $f(t)=a_0+\sum_{k=1}^N(a_k\cos k\omega t+b_k\sin k\omega t)$ con $\omega\ne0$. Su un periodo $T=2\pi/|\omega|$, l’integrale di ogni seno o coseno è zero, quindi $f_M=a_0$. Sviluppando il quadrato, l’ortogonalità annulla i termini misti e ciascuna potenza seconda ha media $1/2$:</p>
+<p>$$f_{\rm eff}=\sqrt{a_0^2+\tfrac12\sum_{k=1}^N(a_k^2+b_k^2)}.$$</p>
+<p>Per una sola armonica si pone $N=1$. Se $\omega=0$ la funzione è costante $a_0+\sum a_k$: la formula precedente non si applica e l’efficace è il valore assoluto di tale costante.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 65 · Cinque primitive</summary><div class="soluzione"><p>a) $\int x/(x^2-4)\,dx=\tfrac12\log|x^2-4|+C$, ponendo $u=x^2-4$; escludere $x=\pm2$.</p>
+<p>b) $\int e^{-x}(x^2+x)\,dx=-e^{-x}(x^2+3x+3)+C$, con due integrazioni per parti.</p>
+<p>c) $\int e^x\sin2x\,dx=e^x(\sin2x-2\cos2x)/5+C$, con due integrazioni per parti e risoluzione per l’integrale iniziale.</p>
+<p>d) $\int dx/[\sqrt x(1+x)]=2\arctan\sqrt x+C$, ponendo $u=\sqrt x$; $x&gt;0$.</p>
+<p>e) $\int\sqrt{2x+1}\,dx/x=2u+\log|(u-1)/(u+1)|+C$, con $u=\sqrt{2x+1}$: l’integrale diventa $\int2u^2/(u^2-1)\,du$. Formula sugli intervalli interni del dominio $[-1/2,0)\cup(0,+\infty)$, con prolungamento in $-1/2$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 66 · Quattro integrali definiti</summary><div class="soluzione"><p>a) $\int_0^\pi x\sin2x\,dx=[-x\cos2x/2+\sin2x/4]_0^\pi=-\pi/2$, per parti.</p>
+<p>b) $\int_1^2dx/[x(\log x+1)]=[\log(\log x+1)]_1^2=\log(1+\log2)$, con $u=\log x+1$.</p>
+<p>c) Per $\int_1^2\sqrt{x+1}\,dx/x$, porre $u=\sqrt{x+1}$. Si ottiene $\int2u^2/(u^2-1)\,du$ tra $\sqrt2$ e $\sqrt3$, dunque $[2u+\log|(u-1)/(u+1)|]_{\sqrt2}^{\sqrt3}$.</p>
+<p>d) Per $\int_0^9\sqrt{1+\sqrt x}\,dx$, porre $u=\sqrt{1+\sqrt x}$: $x=(u^2-1)^2$, $dx=4u(u^2-1)du$, estremi $1,2$. Si trova $4[u^5/5-u^3/3]_1^2=232/15$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 67 · Dall’integrale alla serie</summary><div class="soluzione"><p>Per $a_n=\int_0^n(x-1)/(x+1)^3\,dx$, riscrivere l’integranda come $(x+1)^{-2}-2(x+1)^{-3}$. Una primitiva è $-1/(x+1)+1/(x+1)^2$, nulla in $0$, quindi</p>
+<p>$$a_n=-\frac{n}{(n+1)^2}.$$</p>
+<p>Poiché $a_n\sim-1/n$, la serie $\sum_{n=1}^{\infty}a_n$ diverge a $-\infty$. L’integranda cambia segno, ma il suo integrale fino a $n$ è negativo: non basta guardare soltanto il tratto $x&gt;1$.</p></div></details>
+<h2 id="sezione-9">9. Applicazioni fisiche e geometriche</h2>
+<p>Per una forza lungo un asse, il lavoro da $a$ a $b$ è $W=\int_a^b F(x)\,dx$. Per una molla $F=-kx$, $k&gt;0$, il lavoro della forza elastica da $0$ a $x$ è $-kx^2/2$, mentre l’aumento di energia potenziale è $U(x)-U(0)=+kx^2/2$. Il lavoro della forza esterna che allunga lentamente la molla è anch’esso positivo: non va confuso con quello della forza di richiamo.</p>
+<h3>Lunghezza di un grafico</h3>
+<p>Se $f\in C^1([a,b])$, la lunghezza del suo grafico è</p>
+<p>$$L=\int_a^b\sqrt{1+f'(x)^2}\,dx.$$</p>
+<p>Infatti la poligonale sui punti $(x_j,f(x_j))$ ha lunghezza $\sum_j\sqrt{h^2+(f(x_j)-f(x_{j-1}))^2}$. Lagrange la trasforma in una somma di Riemann di $\sqrt{1+f'^2}$, continua. Per $y=x^{3/2}$ su $[0,a]$, $L=\frac8{27}[(1+9a/4)^{3/2}-1]$. Per $y=x^2$, $L=\frac14[2a\sqrt{1+4a^2}+\log(2a+\sqrt{1+4a^2})]$. La sola continuità non garantisce lunghezza finita: il grafico di $x\sin(1/x)$, prolungato con $0$ nell’origine, ha lunghezza infinita (i successivi massimi e minimi producono una somma di escursioni confrontabile con l’armonica). L’arco di ellisse richiede in generale un integrale non elementare.</p>
+<div class="lab" id="laboratorio-8" data-lab="8"></div>
+<h3>Solidi di rotazione</h3>
+<p>Ruotando il sottografico di una funzione continua $f\ge0$ attorno all’asse $x$, i dischi di raggio $f(x)$ danno $V=\pi\int_a^b f(x)^2\,dx$. Con due raggi $R\ge r\ge0$ si usa $\pi\int(R^2-r^2)$. Per rotazioni attorno all’asse $y$, si integra rispetto a $y$ usando il raggio orizzontale. L’ellissoide di rotazione con semiassi $a,b,b$ ha volume $4\pi ab^2/3$; per $a=b=r$ si ritrova la sfera.</p>
+<div class="lab" id="laboratorio-9" data-lab="9"></div>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 68 · Lavoro di una forza inversa</summary><div class="soluzione"><p>Per $F(x)=k/x$, $0&lt;a&lt;b$, il lavoro è $W=\int_a^b k\,dx/x=k\log(b/a)$. Il segno è quello di $k$ per lo spostamento indicato; invertire gli estremi cambia il segno.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 69 · Rotazione della parabola attorno a y</summary><div class="soluzione"><p>Per $y=x^2$, $0\le x\le r$, con $r\ge0$, il solido chiuso dal piano $y=r^2$ ha raggio orizzontale $x=\sqrt y$. Quindi $V=\pi\int_0^{r^2}y\,dy=\pi r^4/2$. Integrare $x^4$ rispetto a $x$ descriverebbe una rotazione attorno a un altro asse.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 70 · Radice cubica e due assi</summary><div class="soluzione"><p>Per $y=\sqrt[3]x$ tra $0$ e $1$, il solido attorno all’asse $x$ chiuso ai due estremi ha volume $V_x=\pi\int_0^1x^{2/3}dx=3\pi/5$. Per il solido attorno all’asse $y$ delimitato dalla curva e dai piani $y=0,1$, si usa $x=y^3$, dunque $V_y=\pi\int_0^1y^6dy=\pi/7$.</p>
+<p>Se invece si ruota attorno a $y$ la regione sotto $y=\sqrt[3]x$ nel quadrato unitario, le sezioni sono corone, non dischi: il volume è $\pi\int_0^1(1-y^6)dy=6\pi/7$. Occorre specificare quale regione si ruota.</p></div></details>
+<h2 id="sezione-10">10. Calcolo numerico e controllo dell’errore</h2>
+<h3>Teorema 6.7 · Metodo del punto medio</h3>
+<p>Sia $f\in C^2([a,b])$ e $|f''|\le K$. Con $h=(b-a)/n$, $m_j=a+(j-1/2)h$ e $M_n=h\sum_{j=1}^n f(m_j)$,</p>
+<p>$$\left|\int_a^b f(x)\,dx-M_n\right|\le\frac{K(b-a)^3}{24n^2}.$$</p>
+<p><strong>Dimostrazione.</strong> Lo sviluppo al primo ordine in ogni punto medio ha resto limitato da $K(x-m_j)^2/2$. Integrando sulla cella, il termine lineare ha integrale nullo per simmetria e il resto è al più $Kh^3/24$. Sommando $n$ celle si ha $nKh^3/24=K(b-a)^3/(24n^2)$. Il denominatore è $n^2$: segue dal calcolo e non $n^4$ come appare nel refuso della scansione.</p>
+<p>Per garantire errore non superiore a $\varepsilon&gt;0$ basta $n\ge\sqrt{K(b-a)^3/(24\varepsilon)}$, arrotondando per eccesso. Per $e^{-x^2}$ su $[0,1]$, $f''=(4x^2-2)e^{-x^2}$ e si può prendere $K=2$. Per errore $10^{-4}$ bastano $n=29$ rettangoli. Un grafico convincente o l’accordo tra due approssimazioni non sostituiscono questa stima.</p>
+<div class="lab" id="laboratorio-10" data-lab="10"></div>
+<h2 id="sezione-11">11. Integrali impropri: estremi singolari e infinito</h2>
+<h3>Definizioni 6.3 e 6.4 · Integrali generalizzati</h3>
+<p>Se $f$ è continua su $[a,b)$ e può essere illimitata presso $b$, si definisce $\int_a^b f=\lim_{\varepsilon\downarrow0}\int_a^{b-\varepsilon}f$. Per una singolarità in $a$ si usa $\lim_{\varepsilon\downarrow0}\int_{a+\varepsilon}^b f$. Su $[a,+\infty)$ si definisce $\int_a^{+\infty}f=\lim_{R\to+\infty}\int_a^R f$. L’integrale <strong>converge</strong> se il limite è finito, <strong>diverge</strong> se è $+\infty$ o $-\infty$; se il limite non esiste, l’integrale non esiste neppure come valore esteso.</p>
+<p>Con più estremi problematici si spezza l’intervallo e ogni limite va considerato indipendentemente. In particolare $\int_{-\infty}^{+\infty}f=\int_{-\infty}^c f+\int_c^{+\infty}f$ richiede due integrali convergenti. Non si cancella $+\infty$ con $-\infty$: il valore principale simmetrico è una nozione diversa.</p>
+<h3>Integrali campione</h3>
+<p>$$\int_0^1 x^{-\alpha}\,dx=\frac1{1-\alpha}\quad(\alpha&lt;1),\qquad \int_1^{+\infty}x^{-\alpha}\,dx=\frac1{\alpha-1}\quad(\alpha&gt;1).$$</p>
+<p>Negli altri casi questi integrali positivi divergono a $+\infty$. Per $\alpha=1$ interviene il logaritmo. In generale $\int_a^b(b-x)^{-\alpha}\,dx=(b-a)^{1-\alpha}/(1-\alpha)$ per $\alpha&lt;1$. Le soglie al finito e all’infinito hanno verso opposto.</p>
+<div class="lab" id="laboratorio-11" data-lab="11"></div>
+<div class="lab" id="laboratorio-12" data-lab="12"></div>
+<h3>Confronto e confronto asintotico</h3>
+<p>Per funzioni non negative, localmente integrabili, se $0\le f\le g$ vicino all’estremo problematico, la convergenza di $\int g$ implica quella di $\int f$, e la divergenza di $\int f$ implica quella di $\int g$. Se $f/g\to\ell$ con $0&lt;\ell&lt;+\infty$, i due integrali hanno lo stesso carattere. In particolare ciò vale per $f\sim g$. La prova confronta gli integrali troncati e usa la monotonia; nel caso asintotico si intrappola $f/g$ tra due costanti positive.</p>
+<p><strong>Esempi.</strong> $1/\sqrt[3]{1-x^2}\sim2^{-1/3}(1-x)^{-1/3}$ presso $1$, quindi è integrabile su $[0,1]$. $1/(x^2-5x+4)$ ha un polo semplice in $1$, perciò l’integrale su $[1,3]$ diverge a $-\infty$. Su $[0,+\infty)$, $(x^2+1)/(x^4+x+1)\sim1/x^2$ e converge; $1/\sqrt{x^2+1}\sim1/x$ e diverge. La gaussiana $e^{-x^2}$ è integrabile perché per $x\ge1$ è al più $e^{-x}$, e su $[0,1]$ è continua.</p>
+<h3>Teoremi 6.8 e 6.9 · Convergenza assoluta</h3>
+<p>Sia al finito sia all’infinito, se $\int|f|$ converge, anche $\int f$ converge: si dice che $f$ è <strong>assolutamente integrabile</strong>. Scrivendo $f=f^+-f^-$, con $f^+=\max(f,0)$ e $f^-=\max(-f,0)$, si ha $0\le f^\pm\le|f|$, quindi entrambe le parti hanno integrale finito. La reciproca può fallire per funzioni oscillanti. Ad esempio $\sin(1/x)/\sqrt x$ è assolutamente integrabile su $(0,1]$ per confronto con $1/\sqrt x$.</p>
+<h3>Serie e criterio integrale</h3>
+<p>Per $f$ positiva decrescente, i rettangoli forniscono $\int_1^{N+1}f\le\sum_{n=1}^N f(n)\le f(1)+\int_1^N f$. Quindi serie e integrale hanno lo stesso carattere. Applicando $f(x)=x^{-\alpha}$ si dimostra la convergenza della serie armonica generalizzata per $\alpha&gt;1$ e la divergenza per $0&lt;\alpha\le1$; per $\alpha\le0$ i termini non tendono a zero. Per $\alpha&gt;1$, il resto dopo $N$ termini è tra $(N+1)^{1-\alpha}/(\alpha-1)$ e $N^{1-\alpha}/(\alpha-1)$.</p>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 71 · Logaritmo presso zero</summary><div class="soluzione"><p>Calcolare $\int_0^1x\log x\,dx$. Per parti $G=x^2\log x/2-x^2/4$. Poiché $x^2\log x\to0$ per $x\downarrow0$, l’integrale converge ed è $G(1)-G(0)=-1/4$. L’integranda si prolunga con valore zero, quindi dopo tale prolungamento è anche un integrale proprio.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 72 · Due estremi e una sostituzione</summary><div class="soluzione"><p>Per $\int_0^{+\infty}e^{-\sqrt x}\,dx/\sqrt x$, porre $u=\sqrt x$, $dx=2u\,du$. Su intervalli troncati diventa $2\int e^{-u}du$; separando i due estremi si conclude la convergenza e il valore $2$. Vicino a zero il confronto è con $x^{-1/2}$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 73 · Una singolarità non integrabile</summary><div class="soluzione"><p>Per $\int_0^1\sin x\,dx/x^2$, poiché $\sin x\sim x$ per $x\downarrow0$, l’integranda positiva è equivalente a $1/x$. L’integrale diverge a $+\infty$: una primitiva non è necessaria per deciderlo.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 74 · Esponenziale dentro il seno</summary><div class="soluzione"><p>Per $\int_0^{+\infty}e^{-2x}\sin(e^{-x})dx$, porre $u=e^{-x}$. Gli estremi diventano $1,0$ e $dx=-du/u$, quindi il risultato è $\int_0^1u\sin u\,du=[-u\cos u+\sin u]_0^1=\sin1-\cos1$. Converge assolutamente, per esempio perché $|\sin(e^{-x})|\le1$ e $e^{-2x}$ è integrabile.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 75 · Un salto limitato</summary><div class="soluzione"><p>Per $\int_2^4\arctan(x/(x-3))dx$ l’integranda ha limiti $-\pi/2$ e $\pi/2$ presso $3$, ma è limitata: assegnando qualsiasi valore in $3$ è integrabile propriamente. Separare i tratti in $3$.</p>
+<p>Per parti, la derivata dell’arcotangente è $-3/(2x^2-6x+9)$; una primitiva su ciascun lato è</p>
+<p>$$G(x)=x\arctan\frac{x}{x-3}+\frac34\log(2x^2-6x+9)+\frac32\arctan\frac{2x-3}{3}.$$</p>
+<p>Il salto di $G$ è $3\pi$, quindi il valore è $G(4)-G(2)-3\pi$, ossia</p>
+<p>$$4\arctan4+2\arctan2-3\pi+\tfrac34\log(17/5)+\tfrac32(\arctan(5/3)-\arctan(1/3)).$$</p>
+<p>Applicare una sola differenza agli estremi senza correggere il salto della primitiva darebbe un risultato errato.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 76 · Soglia logaritmica all’infinito</summary><div class="soluzione"><p>Con $u=\log x$, $\int_2^{+\infty}dx/(x\log x)=\int_{\log2}^{+\infty}du/u=+\infty$. La primitiva $\log\log x$ cresce senza limite.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 77 · Un’esponenziale che cancella una singolarità</summary><div class="soluzione"><p>Per $\int_0^1(1-e^{-x})\,dx/x^{3/2}$, vale $1-e^{-x}\sim x$, quindi l’integranda è equivalente a $x^{-1/2}$ e converge. Per parti con $u=1-e^{-x}$, $dv=x^{-3/2}dx$, il termine al bordo in zero si annulla:</p>
+<p>$$I=-2(1-e^{-1})+2\int_0^1\frac{e^{-x}}{\sqrt x}\,dx=-2(1-e^{-1})+4\int_0^1e^{-t^2}\,dt.$$</p>
+<p>L’ultima sostituzione è $x=t^2$; resta una funzione integrale non elementare. Il valore approssimato è $1{,}7230554$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 78 · Quadrato del logaritmo all’infinito</summary><div class="soluzione"><p>Con $u=\log x$, $\int_2^{+\infty}dx/[x(\log x)^2]=\int_{\log2}^{+\infty}u^{-2}du=1/\log2$. La primitiva è $-1/\log x$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 79 · Logaritmo presso zero con segno negativo</summary><div class="soluzione"><p>Per $\int_0^{1/2}dx/(x\log x)$, porre $u=-\log x&gt;0$. Su $[\varepsilon,1/2]$ l’integrale è $\log|\log(1/2)|-\log|\log\varepsilon|$, che tende a $-\infty$. Il segno è negativo perché $\log x&lt;0$ sul tratto.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 80 · Una coda razionale</summary><div class="soluzione"><p>Con $u=1+x^2$, $\int_0^{+\infty}x\,dx/(1+x^2)^2=\frac12\int_1^{+\infty}u^{-2}du=1/2$. La funzione è regolare in zero e decade come $1/x^3$ all’infinito.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 81 · Quadrato del logaritmo presso zero</summary><div class="soluzione"><p>La primitiva $-1/\log x$ tende a zero per $x\downarrow0$, quindi $\int_0^{1/2}dx/[x(\log x)^2]=1/\log2$. Equivalentemente $u=-\log x$ produce $\int_{\log2}^{+\infty}u^{-2}du$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 82 · Integrale di Fresnel</summary><div class="soluzione"><p>Studiare $\int_0^{+\infty}\sin(x^2)dx$. Su $[0,1]$ la funzione è continua. Per $R&gt;1$, con $t=x^2$,</p>
+<p>$$\int_1^R\sin(x^2)dx=\frac12\int_1^{R^2}\frac{\sin t}{\sqrt t}\,dt=\left[-\frac{\cos t}{2\sqrt t}\right]_1^{R^2}-\frac14\int_1^{R^2}\frac{\cos t}{t^{3/2}}\,dt.$$</p>
+<p>Il termine di bordo ha limite e l’ultimo integrale converge assolutamente; dunque Fresnel converge. Non converge assolutamente, come mostra il confronto per blocchi del complemento 7. Il valore $\sqrt{2\pi}/4$ richiede strumenti ulteriori; la dimostrazione del carattere qui non dipende da quel valore.</p></div></details>
+<h2 id="sezione-12">12. Funzioni integrali</h2>
+<p>Data $f$ integrabile e un punto fisso $x_0$, la <strong>funzione integrale</strong> è $F(x)=\int_{x_0}^x f(t)\,dt$. Non si deve confondere questa funzione con il numero $\int_a^b f$ o con la famiglia delle primitive $\int f(x)\,dx$.</p>
+<h3>Teorema 6.10 · Secondo teorema fondamentale</h3>
+<p>Se $f$ è integrabile su $[a,b]$, anche in senso improprio con ogni singolarità trattata separatamente e ogni integrale convergente, $F$ è continua (agli estremi singolari tramite il prolungamento dato dal limite). In ogni punto interno $x$ dove $f$ è continua, $F$ è derivabile e $F'(x)=f(x)$. Agli estremi regolari si intendono derivate unilaterali. Se $f\in C^k$, allora $F\in C^{k+1}$; in particolare ogni funzione continua ha una primitiva.</p>
+<p><strong>Dimostrazione.</strong> Per $f$ limitata, $|F(x+h)-F(x)|\le M|h|$, dunque $F$ è continua. Presso un estremo improprio, l’integrale su un tratto che si restringe tende a zero per la convergenza dell’integrale stesso. Se $f$ è continua in $x$, la media integrale su $[x,x+h]$ tende a $f(x)$, quindi $[F(x+h)-F(x)]/h\to f(x)$, anche per $h&lt;0$.</p>
+<p>La formula con estremi variabili, per $f$ continua e $u,v$ derivabili, è $\frac d{dx}\int_{u(x)}^{v(x)}f(t)\,dt=f(v(x))v'(x)-f(u(x))u'(x)$.</p>
+<p><strong>Esempi.</strong> Per $f(t)=\operatorname{sgn}t$, $F(x)=|x|$: continua ma angolosa in $0$. Per $f(t)=1/\sqrt[3]t$, $F(x)=\frac32|x|^{2/3}$: continua con cuspide. Una discontinuità dell’integranda non implica sempre non derivabilità della funzione integrale: cambiare soltanto $f(0)$ non cambia $F$. Il teorema garantisce la derivabilità nei punti di continuità, non una reciproca.</p>
+<p>La funzione di ripartizione normale $\Phi(x)=\frac1{\sqrt{2\pi}}\int_{-\infty}^xe^{-t^2/2}\,dt$ è crescente, ha limiti $0$ e $1$, ed è convessa per $x&lt;0$, concava per $x&gt;0$, con flesso in $0$. Le funzioni di Fresnel, qui senza fattori di normalizzazione, sono $C(x)=\int_0^x\cos(t^2)\,dt$ e $S(x)=\int_0^x\sin(t^2)\,dt$.</p>
+<div class="lab" id="laboratorio-13" data-lab="13"></div>
+<div class="lab" id="laboratorio-14" data-lab="14"></div>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 83 · Derivate, estremi e flessi di Fresnel</summary><div class="soluzione"><p>Con la normalizzazione $C(x)=\int_0^x\cos(t^2)dt$, $S(x)=\int_0^x\sin(t^2)dt$, si ha $C'=\cos(x^2)$, $C''=-2x\sin(x^2)$, $S'=\sin(x^2)$, $S''=2x\cos(x^2)$. Entrambe sono dispari.</p>
+<p>Per $a_k=\sqrt{\pi/2+k\pi}$, $k\ge0$, $C$ ha massimo locale in $a_k$ se $k$ è pari, minimo se è dispari; in $-a_k$ i ruoli si scambiano. I flessi di $C$ sono $0$ e $\pm\sqrt{k\pi}$, $k\ge1$, dove $C''$ cambia segno.</p>
+<p>Per $b_k=\sqrt{k\pi}$, $k\ge1$, $S$ ha massimo locale in $b_k$ se $k$ è dispari, minimo se è pari; in $-b_k$ i ruoli si scambiano. In $0$, $S'\ge0$ nei due lati: non è un estremo, ma un flesso a tangente orizzontale. Gli altri flessi di $S$ sono $\pm a_k$, $k\ge0$.</p>
+<p>Moltiplicando $C,S$ per costanti di normalizzazione positive, le ascisse restano invariate; una costante negativa scambia massimi e minimi.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 84 · Integrare il valore assoluto</summary><div class="soluzione"><p>Per $F(x)=\int_0^x|t|dt$, separare i segni: $F(x)=x^2/2$ per $x\ge0$ e $F(x)=-x^2/2$ per $x&lt;0$, ossia $F(x)=x|x|/2$. È dispari, $F'=|x|$ anche in zero, quindi $F\in C^1(\mathbb R)$. Non è due volte derivabile in zero perché le derivate laterali di $|x|$ sono $-1$ e $1$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 85 · Esponenziale causale</summary><div class="soluzione"><p>Se $f(t)=e^{-t}$ per $t&gt;0$ e $0$ per $t\le0$, allora $F(x)=\int_0^xf(t)dt=0$ per $x\le0$ e $1-e^{-x}$ per $x&gt;0$. È continua in zero; la derivata sinistra è $0$ e quella destra è $1$, quindi non è derivabile lì. Per $x\to+\infty$, $F(x)\to1$.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 86 · Accumulare un’onda rettangolare</summary><div class="soluzione"><p>Sia $f$ periodica di periodo $2$, uguale a $1$ su $[0,1)$ e $0$ su $[1,2)$. Per $x\ge0$, scrivere $x=2k+r$, con $k=\lfloor x/2\rfloor$ e $0\le r&lt;2$. Ogni periodo fornisce area $1$, quindi</p>
+<p>$$F(x)=\int_0^xf(t)dt=k+\min(r,1).$$</p>
+<p>Il grafico alterna segmenti di pendenza $1$ e $0$ ed è continuo. In ogni intero positivo presenta uno spigolo: non si confonde il valore dell’onda nel punto con le due pendenze laterali della sua integrale. Il laboratorio delle funzioni integrali permette di confrontare i due grafici.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 87 · La parità cambia integrando da zero</summary><div class="soluzione"><p>Con $t=-u$,</p>
+<p>$$F(-x)=\int_0^{-x}f(t)dt=-\int_0^xf(-u)du.$$</p>
+<p>Se $f$ è pari, $F(-x)=-F(x)$ e $F$ è dispari. Se $f$ è dispari, $F(-x)=F(x)$ e $F$ è pari. L’estremo fisso deve essere zero per questa conclusione senza costanti aggiuntive.</p></div></details>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 88 · Studio senza primitiva elementare</summary><div class="soluzione"><p>Per $F(x)=\int_0^x\sin t/(1+t^2)dt$, il dominio è $\mathbb R$ e $F$ è pari, perché l’integranda è dispari. È $C^\infty$, con</p>
+<p>$$F'(x)=\frac{\sin x}{1+x^2},\qquad F''(x)=\frac{(1+x^2)\cos x-2x\sin x}{(1+x^2)^2}.$$</p>
+<p>Sul semiasse positivo cresce in $(2k\pi,(2k+1)\pi)$ e decresce in $((2k+1)\pi,(2k+2)\pi)$, $k\ge0$. Ha massimi locali in $\pm(2k+1)\pi$, minimi in $\pm2k\pi$ per $k\ge1$ e un minimo in $0$. Le aree dei semiperiodi successivi diminuiscono in valore assoluto: ciò segue confrontando il peso $1/(1+t^2)$ dopo una traslazione di $\pi$. Ne segue $F(x)&gt;0$ per $x\ne0$, quindi $0$ è il minimo assoluto. Il primo massimo, in $\pm\pi$, è assoluto.</p>
+<p>Poiché $|\sin t|/(1+t^2)\le1/(1+t^2)$, esiste $L=\int_0^{+\infty}\sin t/(1+t^2)dt&gt;0$, e $F(x)\to L$ a entrambi gli infiniti. Si hanno quindi due rami oscillanti attorno allo stesso asintoto $y=L$. I flessi risolvono $(1+x^2)\cos x-2x\sin x=0$: non si deducono dai soli zeri di $\sin x$. Per $x&gt;0$ c’è un’unica soluzione in $(k\pi,k\pi+\pi/2)$ per ciascun $k\ge0$, poiché l’equazione equivalente è $x+\arctan(2x/(1+x^2))=\pi/2+k\pi$, con membro sinistro strettamente crescente. Per simmetria compaiono anche le soluzioni negative. In zero $F''(0)=1$: non è un flesso.</p></div></details>
+<h2 id="sezione-13">13. Convoluzione e sistemi lineari</h2>
+<h3>Definizione 6.5 · Linearità e invarianza temporale</h3>
+<p>Un operatore $T$ che trasforma un ingresso $e$ in una risposta $r=T[e]$ è <strong>lineare</strong> se $T[\sum_j\lambda_je_j]=\sum_j\lambda_jT[e_j]$. È <strong>invariante nel tempo</strong> se ritardare l’ingresso di $h$ ritarda dello stesso $h$ la risposta: $T[e(\cdot-h)](t)=T[e](t-h)$. La risposta può dipendere da molti istanti dell’ingresso, non solo da $e(t)$.</p>
+<p>La <strong>convoluzione</strong> è</p>
+<p>$$ (f*g)(x)=\int_{-\infty}^{+\infty} f(t)g(x-t)\,dt,$$</p>
+<p>dove l’integrale esiste. Per funzioni integrabili in valore assoluto, la convoluzione è definita quasi ovunque ed è ancora integrabile; per le funzioni a tratti limitate e a supporto compatto dei laboratori è definita per ogni $x$. Sotto ipotesi che consentano gli scambi di integrali, valgono commutatività, associatività e distributività: $f*g=g*f$, $(f*g)*h=f*(g*h)$, $(f+g)*h=f*h+g*h$. La commutatività segue da $u=x-t$; l’associatività richiede lo scambio degli integrali e non va usata senza le condizioni di integrabilità.</p>
+<p>Se $f,g$ sono nulle per tempi negativi, per $x\ge0$ basta integrare da $0$ a $x$; per $x&lt;0$ il risultato è zero. In un sistema lineare invariante nel tempo, con risposta impulsiva $h$ e le opportune ipotesi di continuità dell’operatore, $r=e*h$. La derivazione tramite sovrapposizione di impulsi è una motivazione intuitiva, non una dimostrazione per un operatore lineare arbitrario.</p>
+<div class="lab" id="laboratorio-15" data-lab="15"></div>
+<p>L’impulso rettangolare $I_\varepsilon(t)=1/\varepsilon$ su $[0,\varepsilon]$ e $0$ altrove ha area $1$. Per $f$ continua,</p>
+<p>$$ (I_\varepsilon*f)(x)=\frac1\varepsilon\int_{x-\varepsilon}^xf(u)\,du\longrightarrow f(x).$$</p>
+<p>La <strong>delta di Dirac</strong> descrive questo limite nel senso delle distribuzioni: non è una funzione ordinaria ottenuta per limite puntuale (il limite puntuale dei rettangoli non conserva area $1$). Simbolicamente $\delta*f=f$. In un salto, la media a sinistra tende al limite sinistro, non necessariamente al valore assegnato nel punto.</p>
+<div class="lab" id="laboratorio-16" data-lab="16"></div>
+<details class="esercizio" data-tipo="esercizio"><summary>Esercizio 89 · Due impulsi rettangolari</summary><div class="soluzione"><p>Sia $I_1$ uguale a $1$ su $[0,1]$ e zero altrove. Il prodotto $I_1(t)I_1(x-t)$ vale $1$ soltanto nell’intersezione $[0,1]\cap[x-1,x]$. La convoluzione è la lunghezza di tale intersezione:</p>
+<p>$$ (I_1*I_1)(x)=\begin{cases}0&amp;x&lt;0,\\x&amp;0\le x\le1,\\2-x&amp;1\le x\le2,\\0&amp;x&gt;2.\end{cases}$$</p>
+<p>Il grafico è un triangolo con vertice $(1,1)$; l’area totale è $1$, prodotto delle aree dei due impulsi. È continuo, ma non derivabile nei tre vertici. Il laboratorio mostra lo scorrimento dell’intersezione e il valore corrispondente sul triangolo.</p></div></details>
+<h2 id="sezione-14">14. Fondamenti: successioni e continuità uniforme</h2>
+<h3>Definizioni 6.6, 6.7 e 6.8</h3>
+<p>Una <strong>sottosuccessione</strong> di $(a_n)$ è $(a_{n_k})$ con $n_1&lt;n_2&lt;\cdots$ interi. Se $a_n\to\ell$ (anche infinito), ogni sottosuccessione ha lo stesso limite; la convergenza di una sottosuccessione non basta per quella dell’intera successione: $(-1)^n$ ha sottosuccessioni pari e dispari costanti con limiti diversi.</p>
+<p>Una successione è <strong>di Cauchy</strong> se $\forall\varepsilon&gt;0\ \exists N\ \forall n,m\ge N:\ |a_n-a_m|&lt;\varepsilon$. La definizione confronta i termini tra loro senza conoscere un limite.</p>
+<p>Una funzione $f:I\to\mathbb R$ è <strong>uniformemente continua</strong> se $\forall\varepsilon&gt;0\ \exists\delta&gt;0\ \forall x,y\in I:\ |x-y|&lt;\delta\Rightarrow|f(x)-f(y)|&lt;\varepsilon$. Qui $\delta$ dipende soltanto da $\varepsilon$, non dal punto. La continuità ordinaria permette invece $\delta=\delta(\varepsilon,x)$.</p>
+<h3>Teoremi 6.11–6.15</h3>
+<p><strong>6.11 · Bolzano–Weierstrass.</strong> Ogni successione in un intervallo compatto $[a,b]$ possiede una sottosuccessione convergente a un punto di $[a,b]$. <strong>Dimostrazione:</strong> dimezzare ripetutamente l’intervallo scegliendo ogni volta una metà con infiniti indici; scegliere $n_k$ crescenti in tali metà. Gli estremi degli intervalli annidati hanno lo stesso limite perché la lunghezza è $(b-a)/2^k$; per confronto anche $a_{n_k}$ converge.</p>
+<p><strong>6.12.</strong> Ogni successione convergente è di Cauchy; ogni successione di Cauchy è limitata. <strong>Dimostrazione:</strong> se $a_n\to\ell$, per $n,m$ grandi $|a_n-a_m|\le|a_n-\ell|+|a_m-\ell|&lt;\varepsilon$. Per la limitatezza usare Cauchy con $\varepsilon=1$, fissare un termine della coda e aggiungere il massimo del numero finito di termini iniziali.</p>
+<p><strong>6.13 · Completezza.</strong> Una successione reale di Cauchy converge a un limite reale finito. <strong>Dimostrazione:</strong> è limitata, quindi Bolzano–Weierstrass fornisce $a_{n_k}\to\ell$. Per $n$ grande scegliere $n_k$ ancora più grande: $|a_n-\ell|\le|a_n-a_{n_k}|+|a_{n_k}-\ell|&lt;\varepsilon$. La proprietà è specifica di uno spazio completo: le approssimazioni decimali razionali di $\sqrt2$ sono di Cauchy ma non hanno limite in $\mathbb Q$.</p>
+<p><strong>6.14 · Cantor–Heine.</strong> Una funzione continua su un intervallo compatto è uniformemente continua. <strong>Dimostrazione:</strong> se fallisse, esisterebbero $\varepsilon_0&gt;0$ e coppie $x_n,y_n$ con $|x_n-y_n|&lt;1/n$ ma $|f(x_n)-f(y_n)|\ge\varepsilon_0$. Una sottosuccessione $x_{n_k}$ converge a $c$; anche $y_{n_k}\to c$, contraddicendo la continuità in $c$.</p>
+<p><strong>6.15 · Integrabilità delle funzioni continue.</strong> Chiude la dimostrazione del teorema 6.1. Per $f$ continua su $[a,b]$, Cantor–Heine controlla uniformemente le oscillazioni. Il modulo $\omega_f(\eta)=\sup\{|f(x)-f(y)|:|x-y|\le\eta\}$ tende a zero. Su una partizione con passo massimo $h$, la differenza tra somma superiore e inferiore è al più $(b-a)\omega_f(h)\to0$. Tutte le somme di Riemann sono intrappolate tra gli stessi limiti: l’integrale esiste. Equivalentemente si raffinano due partizioni in una partizione comune; la differenza delle somme è al più $(b-a)\omega_f(h_1+h_2)$, quindi sono di Cauchy e hanno tutte lo stesso limite. Il numero di celle della partizione comune dipende dai nodi coincidenti e non va fissato sempre a $n+m$.</p>
+<p><strong>Esempio.</strong> $x^2$ su $[0,1]$ è uniformemente continua perché $|x^2-y^2|\le2|x-y|$: basta $\delta=\varepsilon/2$. Su $\mathbb R$ non lo è: per ogni $\delta&gt;0$, i punti $x=n$ e $y=n+\delta/2$ hanno distanza $\delta/2$ ma differenza dei quadrati $n\delta+\delta^2/4$, arbitrariamente grande. Una funzione può comunque essere uniformemente continua su un intervallo non compatto: per esempio $\sin x$ su $\mathbb R$, essendo $|\sin x-\sin y|\le|x-y|$.</p>
+<div class="lab" id="laboratorio-17" data-lab="17"></div>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 1 · Una singola somma non è una definizione</summary><div class="soluzione"><p>La funzione di Dirichlet dà somme sinistre tutte uguali a $1$ sulle partizioni razionali, ma somme nulle scegliendo solo punti irrazionali. Il limite deve essere indipendente da tutti i punti campione. Il grafico di un computer contiene soltanto un numero finito di campioni e non distingue i due insiemi densi.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 2 · Il punto medio e il refuso nell’errore</summary><div class="soluzione"><p>Per $f(x)=x^2$ su $[0,1]$, $M_n=1/3-1/(12n^2)$. Il suo errore esatto è $1/(12n^2)$, uguale alla stima con $K=2$. Questo controesempio esclude un denominatore generale $n^4$.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 3 · Energia della molla: controllare il segno</summary><div class="soluzione"><p>Con $U(0)=0$ deve valere $F=-U'$. Da $F=-kx$ segue $U=kx^2/2$. Il lavoro elastico è $-\Delta U$; il lavoro esterno quasi statico è $+\Delta U$. Il segno negativo attribuito all’energia nell’esempio della scansione non rispetta questa relazione.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 4 · Dominio reale dell’esercizio 52</summary><div class="soluzione"><p>L’integranda $\sqrt{x^2-2}/x$ non è reale su $[1,\sqrt2)$. L’integrale stampato con estremi $1$ e $2$ non è un integrale reale, neppure improprio: non basta escludere un singolo punto. La variante reale ha estremo inferiore $\sqrt2$.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 5 · Valore principale e integrale improprio</summary><div class="soluzione"><p>Per $1/x$ su $[-1,1]$, i due integrali separati divergono con segni opposti. Il limite simmetrico $\lim_{\varepsilon\downarrow0}(\int_{-1}^{-\varepsilon}1/x+\int_\varepsilon^1 1/x)=0$ è un valore principale, non l’integrale improprio.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 6 · Discontinuità dell’integranda e derivabilità</summary><div class="soluzione"><p>Sia $f(0)=1$ e $f(t)=0$ per $t\ne0$. L’integrale è zero su ogni intervallo, quindi $F(x)=\int_0^xf=0$ è derivabile anche in $0$, dove $f$ è discontinua, ma $F'(0)=0\ne f(0)$. Nei punti di salto vero con limiti laterali diversi, invece, le derivate laterali di $F$ sono quei limiti e non coincidono.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 7 · Fresnel: convergenza senza assoluta convergenza</summary><div class="soluzione"><p>Con $t=x^2$, l’integrale di coda diventa $\frac12\int \sin t/\sqrt t\,dt$. Per parti il termine di bordo tende a zero e resta un integrale assolutamente convergente con denominatore $t^{3/2}$. Al contrario, su $[k\pi+\pi/6,k\pi+5\pi/6]$ vale $|\sin t|\ge1/2$: i contributi di $|\sin t|/\sqrt t$ dominano una serie proporzionale a $\sum k^{-1/2}$, che diverge.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 8 · La delta non è una funzione ordinaria</summary><div class="soluzione"><p>Ogni rettangolo $I_\varepsilon$ ha integrale $1$, ma per ogni $t\ne0$ tende a zero. Non si può scambiare questo limite puntuale con l’integrale. Per ogni funzione test continua a supporto compatto, invece, $\int I_\varepsilon(t)\varphi(t)\,dt\to\varphi(0)$: è questo il significato utile del limite di Dirac.</p></div></details>
+<details class="esercizio" data-tipo="complemento"><summary>Complemento 9 · Confrontare primitive su componenti diverse</summary><div class="soluzione"><p>Una primitiva di $1/x$ su $\mathbb R\setminus\{0\}$ può essere $\log|x|$ per $x&lt;0$ e $\log x+7$ per $x&gt;0$. Le due costanti sono indipendenti: il teorema della differenza costante vale su ciascun intervallo connesso.</p></div></details><nav class="chapter-links" aria-label="Tutti i capitoli"><a href="../capitolo-1/">Capitolo 1 · Numeri</a><a href="../capitolo-2/">Capitolo 2 · Funzioni</a><a href="../capitolo-3/">Capitolo 3 · Limiti e continuità</a><a href="../capitolo-4/">Capitolo 4 · Calcolo differenziale</a><a href="../capitolo-5/">Capitolo 5 · Serie</a><a href="../capitolo-6/">Capitolo 6 · Calcolo integrale</a></nav><footer id="crediti">Analisi 1 · Capitolo 6 — Dispensa didattica rielaborata a partire da Bramanti, Pagani e Salsa.<br><a href="../capitolo-5/">← Capitolo 5 · Serie</a> · <a href="#inizio">Torna all’inizio ↑</a><!-- identita-inizio --><div class="author-card"><span class="eyebrow">A CURA DI</span><h3>Michelle Vrapi</h3><p><a href="mailto:michelle.vrapi@icloud.com">michelle.vrapi@icloud.com</a><br><a href="https://chasemaneuver.carrd.co/">chasemaneuver.carrd.co</a></p><p class="author-links"><a href="https://orcid.org/0009-0007-3304-8042">ORCID · 0009-0007-3304-8042</a> · <a href="https://www.linkedin.com/in/michellevrapi/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Michelle-Vrapi">ResearchGate</a> · <a href="https://github.com/chasemaneuver">GitHub</a><br><a href="https://www.facebook.com/michellevrapi/">Facebook</a> · <a href="https://www.instagram.com/chase_maneuver">Instagram</a></p><p class="license-note">© 2026 Michelle Vrapi · Contributi didattici originali: <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it">CC BY-NC-ND 4.0</a>.<br>Puoi condividere copie inalterate, citando l’autrice, per fini non commerciali. I materiali di terzi restano esclusi. <a href="https://github.com/chasemaneuver/Analisi-1/blob/main/LICENSE">Dettagli delle licenze</a>.</p></div><!-- identita-fine --></footer></main></div></body></html>
