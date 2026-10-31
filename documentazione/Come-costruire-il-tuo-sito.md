@@ -48,6 +48,9 @@ Analisi-1/
 ├── capitolo-6/
 │   ├── index.html
 │   └── laboratori.js
+├── capitolo-7/
+│   ├── index.html
+│   └── laboratori.js
 ├── verifiche/
 │   ├── README.md
 │   ├── stato.json
@@ -162,7 +165,7 @@ Apri il file, entra in **History**, trova la versione precedente e recupera il s
 
 ## 8. Aggiungi un capitolo o riordina i file
 
-1. Per il prossimo capitolo crea `capitolo-7/` con `index.html` e `laboratori.js`, seguendo il formato esistente.
+1. Per il prossimo capitolo crea `capitolo-8/` con `index.html` e `laboratori.js`, seguendo il formato esistente.
 2. Aggiorna la sitemap `sitemap.xml` con il nuovo indirizzo, il titolo e i metadati della nuova pagina. Aggiorna il menu nelle pagine e la gestione condivisa in `assets/capitoli.js`.
 3. Aggiungi il capitolo al README e verifica il suo link pubblico.
 4. Mantieni i capitoli esistenti nei loro percorsi: spostare o rinominare una cartella cambia l’indirizzo pubblico.
@@ -188,7 +191,7 @@ Configurazione di questo repository: ottobre 2026. Riferimento: [documentazione 
 
 ## Statistiche gratuite con GoatCounter
 
-I sei capitoli inviano le visite al pannello https://analisi1-mv.goatcounter.com/ tramite lo script ufficiale GoatCounter, caricato in modo asincrono. Accedi con il tuo account per consultare pagine visitate e provenienza degli accessi. Il pannello richiede autenticazione: non pubblicare password o token nel repository.
+I sette capitoli inviano le visite al pannello https://analisi1-mv.goatcounter.com/ tramite lo script ufficiale GoatCounter, caricato in modo asincrono. Accedi con il tuo account per consultare pagine visitate e provenienza degli accessi. Il pannello richiede autenticazione: non pubblicare password o token nel repository.
 
 Le statistiche iniziano dall’attivazione; quelle precedenti non si possono ricostruire. Ad blocker e filtri del servizio possono escludere alcune visite. Il numero di visitatori non identifica gli studenti. La pagina di ingresso reindirizza al capitolo 1 senza inviare una seconda visita. Non sono tracciati clic sugli slider o contenuti delle risposte.
 
