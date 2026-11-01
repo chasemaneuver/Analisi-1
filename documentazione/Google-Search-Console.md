@@ -2,7 +2,7 @@
 
 Proprietà da usare: **https://chasemaneuver.github.io/Analisi-1/**, di tipo prefisso URL. Comprende i sette capitoli e le due appendici.
 
-Configurazione avviata il 1° novembre 2026 con l’account Google **michelle.vrapi@gmail.com**. Lo stato conclusivo della verifica e dell’invio sitemap è registrato nel report della stessa data.
+Proprietà verificata il 1° novembre 2026 con l’account Google dell’autrice; sitemap inviata nella stessa data. Lo stato del recupero e i controlli eseguiti sono registrati nel report della stessa data. L’account da usare è quello indicato nella conferma in chat.
 
 ## Verifica della proprietà
 
@@ -13,6 +13,8 @@ Il tag non introduce un secondo servizio di conteggio delle visite. GoatCounter 
 ## Sitemap
 
 Inviare **https://chasemaneuver.github.io/Analisi-1/sitemap.xml** dalla voce **Sitemap**. Il file contiene nove pagine canoniche: sette capitoli e due appendici. Dopo aver aggiunto una pagina, aggiornare il file, pubblicare e verificare che Google riesca a leggerlo. La sitemap non va inviata di nuovo per ogni modifica ordinaria: Google può rileggerla.
+
+Se compare **Impossibile recuperare**, aprire il dettaglio e controllare l’indirizzo completo, quindi usare **Controllo URL → Testa URL pubblicato** sul file sitemap. Una risposta HTTP 200 ottenuta dal nostro computer non dimostra da sola che Google l’abbia letta. Verificare il recupero effettivo prima di dichiarare la sitemap elaborata; alcuni problemi temporanei richiedono un controllo successivo, come spiega la documentazione ufficiale.
 
 ## Come leggere i risultati
 

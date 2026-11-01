@@ -76,3 +76,5 @@ La radice contiene solo ingresso, configurazione e presentazione; le pagine rest
 ## Qualità e indicizzazione
 
 Leggi il [registro delle verifiche](verifiche/README.md) e il [report del 1° novembre 2026](verifiche/report-2026-11-01.md) per risultati, correzioni e copertura dei controlli. Le versioni verificate sono registrate con SHA-256. La [sitemap](sitemap.xml) elenca i sette capitoli e le due appendici canoniche.
+
+La [guida Google Search Console](documentazione/Google-Search-Console.md) descrive la verifica della proprietà, l’invio della sitemap e la lettura dei dati della Ricerca Google.
