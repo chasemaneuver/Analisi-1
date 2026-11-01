@@ -1,8 +1,8 @@
 # Registro delle verifiche
 
-Ultimo aggiornamento: [capitolo 7 e controllo delle correzioni](report-2026-10-31.md).
+Ultimo aggiornamento: [appendici A e B](report-2026-11-01.md).
 
-Prima di un nuovo controllo leggere il [report del 31 ottobre 2026](report-2026-10-31.md) e il [registro delle versioni](stato.json).
+Prima di un nuovo controllo leggere il [report del 1° novembre 2026](report-2026-11-01.md) e il [registro delle versioni](stato.json).
 
 Il registro distingue i controlli completi di struttura, rendering e funzionamento dai controlli matematici mirati. Non è una certificazione formale di ogni dimostrazione o di conformità WCAG.
 
@@ -34,6 +34,8 @@ python verifiche/strumenti/formule5.py
 python verifiche/strumenti/formule6.py
 python verifiche/strumenti/formule7.py
 python verifiche/strumenti/link_esterni.py
+node verifiche/strumenti/appendici.cjs
+python verifiche/strumenti/formule_appendici.py
 ```
 
 Il browser completa questi controlli con MathJax, uso dei controlli, ripristino, navigazione, lettura mobile e stampa. I test numerici campionano i parametri: non dimostrano ogni possibile configurazione.

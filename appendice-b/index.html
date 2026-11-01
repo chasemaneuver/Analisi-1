@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Analisi 1, appendice B: 39 grafici di funzioni, con domini, asintoti, punti esclusi e controlli interattivi. A cura di Michelle Vrapi.">
+<title>Analisi 1: Grafici | Michelle Vrapi</title><link rel="stylesheet" href="../assets/stile.css?v=20261013-formule">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="../assets/capitoli.js"></script><script defer src="laboratori.js"></script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><meta name="author" content="Michelle Vrapi"><link rel="icon" type="image/svg+xml" href="../assets/mv.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Analisi 1 · Michelle Vrapi">
+<meta property="og:title" content="Analisi 1: Grafici | Michelle Vrapi">
+<meta property="og:description" content="Analisi 1, appendice B: 39 grafici di funzioni, con domini, asintoti, punti esclusi e controlli interattivi. A cura di Michelle Vrapi.">
+<meta property="og:image" content="https://chasemaneuver.github.io/Analisi-1/assets/anteprima-social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="A1 / Analisi 1, monogramma MV e @chasemaneuver su fondo avorio.">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chasemaneuver.github.io/Analisi-1/assets/anteprima-social.png">
+<meta property="og:url" content="https://chasemaneuver.github.io/Analisi-1/appendice-b/">
+<link rel="canonical" href="https://chasemaneuver.github.io/Analisi-1/appendice-b/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="twitter:title" content="Analisi 1: Grafici | Michelle Vrapi">
+<meta name="twitter:description" content="Analisi 1, appendice B: 39 grafici di funzioni, con domini, asintoti, punti esclusi e controlli interattivi. A cura di Michelle Vrapi.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "@id": "https://chasemaneuver.github.io/Analisi-1/appendice-b/#dispensa", "url": "https://chasemaneuver.github.io/Analisi-1/appendice-b/", "name": "Analisi 1 · Appendice B · Grafici", "description": "Analisi 1, appendice B: 39 grafici di funzioni, con domini, asintoti, punti esclusi e controlli interattivi. A cura di Michelle Vrapi.", "inLanguage": "it", "learningResourceType": "Dispensa interattiva", "isAccessibleForFree": true, "author": {"@type": "Person", "name": "Michelle Vrapi", "url": "https://chasemaneuver.carrd.co/"}, "educationalLevel": "Università", "about": {"@type": "Thing", "name": "Grafici"}, "isPartOf": {"@type": "WebSite", "name": "Analisi 1 · Michelle Vrapi", "url": "https://chasemaneuver.github.io/Analisi-1/"}}</script>
+<script data-goatcounter="https://analisi1-mv.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body><a class="skip" href="#contenuto">Vai al contenuto</a><header><a class="brand" href="../capitolo-1/">A<span>1</span> / Analisi</a><span>UNA DISPENSA PER STUDENTI DI INGEGNERIA</span><button id="stampa" type="button">Stampa / PDF</button></header><div class="layout"><aside><div class="chapter-picker"><label for="capitolo">SCEGLI IL CAPITOLO</label><select id="capitolo" aria-label="Scegli il capitolo"><option value="../capitolo-1/">1 · Numeri</option><option value="../capitolo-2/">2 · Funzioni</option><option value="../capitolo-3/">3 · Limiti e continuità</option><option value="../capitolo-4/">4 · Calcolo differenziale</option><option value="../capitolo-5/">5 · Serie</option><option value="../capitolo-6/">6 · Calcolo integrale</option><option value="../capitolo-7/">7 · Modelli dinamici discreti</option><option value="../appendice-a/">A · Formule utili</option><option value="../appendice-b/" selected>B · Grafici</option></select></div><details open><summary>In questa appendice</summary><nav aria-label="Indice dell’appendice"><a href="#sezione-1">1. Funzioni a tratti e salti</a><a href="#sezione-2">2. Potenze e radici</a><a href="#sezione-3">3. Razionali e coniche</a><a href="#sezione-4">4. Esponenziali e iperboliche</a><a href="#sezione-5">5. Logaritmi e prodotti</a><a href="#sezione-6">6. Trigonometriche e inverse</a><a href="#sezione-7">7. Trasformazioni e oscillazioni</a><a href="#sezione-8">8. Potenze ed esponenziali</a></nav></details><div class="aside-note">Atlante · 39 tavole<br>Domini, limiti e asintoti</div></aside><main id="contenuto"><div class="hero" id="inizio"><!-- firma-cover-inizio --><a class="cover-signature" href="https://chasemaneuver.carrd.co/" aria-label="Michelle Vrapi · @chasemaneuver"><span class="monogram" aria-hidden="true">MV</span><span>@chasemaneuver</span></a><!-- firma-cover-fine --><span class="eyebrow">APPENDICE B</span><h1>Grafici<span class="punto">.</span></h1><p class="lead">Un atlante delle funzioni, da esplorare.</p><div class="tags"><span>Strumenti per lo studio</span><a href="#laboratorio-1">Esplora le figure ↗</a></div></div><!-- firma-stampa-inizio --><p class="print-credit">Dispensa a cura di <strong>Michelle Vrapi</strong><br>michelle.vrapi@icloud.com · https://chasemaneuver.carrd.co/<br>Contributi originali: CC BY-NC-ND 4.0 · https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it</p><!-- firma-stampa-fine --><noscript><p class="avviso">Attiva JavaScript per le formule impaginate e le figure.</p></noscript><section class="introduzione"><p><strong>Fonte:</strong> <em>Analisi matematica 1</em>, Bramanti, Pagani, Salsa · Zanichelli, ISBN 978-88-08-06485-1, appendice B, pp. 369–375.</p><p><strong>Convenzioni:</strong> grafici reali; angoli in radianti; cerchio vuoto per un punto escluso, pieno per un punto incluso; linee verdi tratteggiate per asintoti o inviluppi dichiarati; le finestre mostrano solo una parte del grafico.</p></section>
+<p>I 39 grafici sono raggruppati per famiglia, mantenendo i numeri delle tavole del libro. Le formule e le proprietà restano leggibili anche senza i comandi interattivi. Il campionamento numerico aiuta a visualizzare: non sostituisce il dominio, i limiti o lo studio analitico. I disegni sono ricostruiti a partire dalle funzioni.</p>
+<h2 id="sezione-1">1. Funzioni a tratti e salti</h2>
+<h3>Tavola 01 · Gradino di Heaviside</h3>
+<p>$$H(x)=0\ (x&lt;0),\quad H(x)=1\ (x\ge0).$$</p>
+<p>Dominio e immagine: $\mathbb R$ e $\{0,1\}$. Salto in zero; qui scegliamo $H(0)=1$. Il selettore mostra anche altre convenzioni, che cambiano il solo punto in zero.</p>
+<div class="lab" id="laboratorio-1" data-lab="1"></div>
+<h3>Tavola 02 · Segno</h3>
+<p>$$\operatorname{sgn}x.$$</p>
+<p>Vale $-1$ per $x&lt;0$, $0$ in zero e $1$ per $x&gt;0$. È dispari, con salto in zero.</p>
+<div class="lab" id="laboratorio-2" data-lab="2"></div>
+<h3>Tavola 03 · Valore assoluto</h3>
+<p>$$|x|.$$</p>
+<p>Pari, immagine $[0,+\infty)$; minimo in zero e punto angoloso con derivate laterali $-1$ e $1$.</p>
+<div class="lab" id="laboratorio-3" data-lab="3"></div>
+<h3>Tavola 04 · Parte positiva</h3>
+<p>$$x_+=\max\{0,x\}.$$</p>
+<p>Nulla per $x\le0$, uguale a $x$ per $x&gt;0$. Continua, non derivabile in zero.</p>
+<div class="lab" id="laboratorio-4" data-lab="4"></div>
+<h3>Tavola 05 · Parte intera inferiore</h3>
+<p>$$\lfloor x\rfloor.$$</p>
+<p>Il massimo intero non maggiore di $x$; ogni tratto $[k,k+1)$ vale $k$. Negli interi è continua da destra e ha salto uno.</p>
+<div class="lab" id="laboratorio-5" data-lab="5"></div>
+<h3>Tavola 06 · Parte frazionaria</h3>
+<p>$$\{x\}=x-\lfloor x\rfloor.$$</p>
+<p>Immagine $[0,1)$ e periodo uno. Vale zero in ogni intero e tende a uno da sinistra; per esempio $\{-0{,}2\}=0{,}8$.</p>
+<div class="lab" id="laboratorio-6" data-lab="6"></div>
+<h2 id="sezione-2">2. Potenze e radici</h2>
+<h3>Tavola 07 · Potenze razionali positive</h3>
+<p>$$x^{p/q}\quad(p,q\in\mathbb N_{&gt;0}).$$</p>
+<p>La frazione viene ridotta prima di scegliere il dominio: con denominatore pari servono $x\ge0$, con denominatore dispari si ammettono anche basi negative. Per $x&lt;0$ il segno dipende dalla parità del numeratore. Tutte passano per $(1,1)$.</p>
+<div class="lab" id="laboratorio-7" data-lab="7"></div>
+<h3>Tavola 08 · Potenze razionali negative</h3>
+<p>$$x^{-p/q}.$$</p>
+<p>Stesse restrizioni della radice, con zero escluso. Per $x&gt;0$ sono decrescenti, tendono a $+\infty$ in $0^+$ e a zero all’infinito. A sinistra di zero il ramo esiste solo se il denominatore ridotto è dispari.</p>
+<div class="lab" id="laboratorio-8" data-lab="8"></div>
+<h3>Tavola 09 · Potenze reali su semiretta</h3>
+<p>$$x^\alpha\quad(x&gt;0,\ \alpha&gt;0).$$</p>
+<p>Immagine $(0,+\infty)$ e crescita stretta. Convesse per $\alpha&gt;1$, concave per $0&lt;\alpha&lt;1$; per $\alpha=1$ sono la retta. Il punto zero non appartiene al dominio dichiarato, pur essendoci prolungamento continuo.</p>
+<div class="lab" id="laboratorio-9" data-lab="9"></div>
+<h2 id="sezione-3">3. Razionali e coniche</h2>
+<h3>Tavola 10 · Una funzione razionale limitata</h3>
+<p>$$\frac1{1+x^2}.$$</p>
+<p>Dominio $\mathbb R$, pari, massimo $1$ in zero, positiva; asintoto orizzontale $y=0$ ai due infiniti.</p>
+<div class="lab" id="laboratorio-10" data-lab="10"></div>
+<h3>Tavola 11 · Due asintoti verticali</h3>
+<p>$$\frac1{1-x^2}.$$</p>
+<p>Dominio $\mathbb R\setminus\{-1,1\}$. Pari, positiva fra gli asintoti $x=\pm1$, negativa all’esterno; asintoto orizzontale $y=0$.</p>
+<div class="lab" id="laboratorio-11" data-lab="11"></div>
+<h3>Tavola 12 · Radice di un quadratico esterno</h3>
+<p>$$\sqrt{x^2-1}.$$</p>
+<p>Dominio $(-\infty,-1]\cup[1,+\infty)$ e immagine $[0,+\infty)$. Pari; asintoti $y=-x$ a sinistra, $y=x$ a destra. Gli estremi $\pm1$ appartengono al grafico.</p>
+<div class="lab" id="laboratorio-12" data-lab="12"></div>
+<h3>Tavola 13 · Semicirconferenza superiore</h3>
+<p>$$\sqrt{1-x^2}.$$</p>
+<p>Dominio $[-1,1]$, immagine $[0,1]$, pari. È la metà superiore del cerchio unitario; tangenti verticali agli estremi.</p>
+<div class="lab" id="laboratorio-13" data-lab="13"></div>
+<h2 id="sezione-4">4. Esponenziali e iperboliche</h2>
+<h3>Tavola 14 · Esponenziali opposti</h3>
+<p>$$e^x\quad\text{e}\quad e^{-x}.$$</p>
+<p>Entrambe positive su $\mathbb R$, riflesse rispetto all’asse verticale; intersezione $(0,1)$. La prima cresce, la seconda decresce; ciascuna ha $y=0$ come asintoto in un solo verso.</p>
+<div class="lab" id="laboratorio-14" data-lab="14"></div>
+<h3>Tavola 15 · Esponenziale di base variabile</h3>
+<p>$$a^x\quad(a&gt;0).$$</p>
+<p>Crescente se $a&gt;1$, decrescente se $0&lt;a&lt;1$, costante $1$ se $a=1$. Passa sempre per $(0,1)$ ed è positiva. La base deve essere positiva per un esponente reale qualunque.</p>
+<div class="lab" id="laboratorio-15" data-lab="15"></div>
+<h3>Tavola 16 · Seno e coseno iperbolici</h3>
+<p>$$\sinh x,\quad\cosh x,\quad\tfrac12e^x.$$</p>
+<p>Seno iperbolico dispari e crescente; coseno iperbolico pari con minimo $1$ in zero. Le due funzioni si avvicinano a $e^x/2$ per $x\to+\infty$: è una differenza che tende a zero, non un asintoto rettilineo.</p>
+<div class="lab" id="laboratorio-16" data-lab="16"></div>
+<h3>Tavola 17 · Tangente iperbolica</h3>
+<p>$$\tanh x.$$</p>
+<p>Dispari, strettamente crescente, immagine $(-1,1)$; asintoti orizzontali $y=-1$ a sinistra e $y=1$ a destra.</p>
+<div class="lab" id="laboratorio-17" data-lab="17"></div>
+<h2 id="sezione-5">5. Logaritmi e prodotti</h2>
+<h3>Tavola 18 · Logaritmo naturale</h3>
+<p>$$\ln x.$$</p>
+<p>Dominio $(0,+\infty)$, immagine $\mathbb R$, crescente e concava; zero in $1$, asintoto verticale $x=0$.</p>
+<div class="lab" id="laboratorio-18" data-lab="18"></div>
+<h3>Tavola 19 · Logaritmo di base variabile</h3>
+<p>$$\log_a x=\frac{\ln x}{\ln a}.$$</p>
+<p>Servono $x&gt;0$, $a&gt;0$, $a\ne1$. Cresce per $a&gt;1$, decresce per $0&lt;a&lt;1$; passa per $(1,0)$. A differenza dell’esponenziale, la base uno è esclusa.</p>
+<div class="lab" id="laboratorio-19" data-lab="19"></div>
+<h3>Tavola 20 · Campana di Gauss</h3>
+<p>$$\frac1{\sqrt{2\pi}}e^{-x^2/2}.$$</p>
+<p>Pari e positiva, massimo $1/\sqrt{2\pi}$ in zero; flessi in $\pm1$ e area totale uno. La normalizzazione è quella della gaussiana standard.</p>
+<div class="lab" id="laboratorio-20" data-lab="20"></div>
+<h3>Tavola 21 · Esponenziale con singolarità eliminabile</h3>
+<p>$$e^{-1/x^2}\quad(x\ne0).$$</p>
+<p>Pari, tende a zero da entrambi i lati in zero e a uno ai due infiniti. Il grafico originario ha un punto escluso in zero; si può scegliere il prolungamento continuo $f(0)=0$.</p>
+<div class="lab" id="laboratorio-21" data-lab="21"></div>
+<h3>Tavola 22 · Prodotto con il logaritmo</h3>
+<p>$$x\ln x.$$</p>
+<p>Dominio $(0,+\infty)$; minimo $-1/e$ in $x=1/e$, zero in $1$. Per $x\to0^+$ tende a zero: l’estremo resta escluso finché non si prolunga la funzione.</p>
+<div class="lab" id="laboratorio-22" data-lab="22"></div>
+<h3>Tavola 23 · Una potenza con esponente variabile</h3>
+<p>$$x^x=e^{x\ln x}\quad(x&gt;0).$$</p>
+<p>Immagine $[e^{-1/e},+\infty)$ e minimo in $x=1/e$. Tende a uno per $x\to0^+$; non si assegna qui un valore a $0^0$.</p>
+<div class="lab" id="laboratorio-23" data-lab="23"></div>
+<h2 id="sezione-6">6. Trigonometriche e inverse</h2>
+<h3>Tavola 24 · Seno</h3>
+<p>$$\sin x.$$</p>
+<p>Dispari, periodo $2\pi$, immagine $[-1,1]$. Zeri in $k\pi$; il grafico usa radianti.</p>
+<div class="lab" id="laboratorio-24" data-lab="24"></div>
+<h3>Tavola 25 · Coseno</h3>
+<p>$$\cos x.$$</p>
+<p>Pari, periodo $2\pi$, immagine $[-1,1]$. Zeri in $\pi/2+k\pi$; massimo $1$ in zero.</p>
+<div class="lab" id="laboratorio-25" data-lab="25"></div>
+<h3>Tavola 26 · Arcoseno</h3>
+<p>$$\arcsin x.$$</p>
+<p>Dominio $[-1,1]$, immagine $[-\pi/2,\pi/2]$, dispari e crescente; è l’inversa del seno ristretto a $[-\pi/2,\pi/2]$.</p>
+<div class="lab" id="laboratorio-26" data-lab="26"></div>
+<h3>Tavola 27 · Arcocoseno</h3>
+<p>$$\arccos x.$$</p>
+<p>Dominio $[-1,1]$, immagine $[0,\pi]$, decrescente; è l’inversa del coseno ristretto a $[0,\pi]$.</p>
+<div class="lab" id="laboratorio-27" data-lab="27"></div>
+<h3>Tavola 28 · Tangente</h3>
+<p>$$\tan x.$$</p>
+<p>Dominio senza $\pi/2+k\pi$, periodo $\pi$, dispari. Crescente su ciascun intervallo fra due asintoti, non sull’intero dominio disconnesso. I rami non vanno uniti attraverso i poli.</p>
+<div class="lab" id="laboratorio-28" data-lab="28"></div>
+<h3>Tavola 29 · Arcotangente</h3>
+<p>$$\arctan x.$$</p>
+<p>Dominio $\mathbb R$, immagine $(-\pi/2,\pi/2)$, dispari e crescente. Asintoti orizzontali $y=\pm\pi/2$; non raggiunge quei valori.</p>
+<div class="lab" id="laboratorio-29" data-lab="29"></div>
+<h2 id="sezione-7">7. Trasformazioni e oscillazioni</h2>
+<h3>Tavola 30 · Quadrato e modulo del seno</h3>
+<p>$$\sin^2x\quad\text{e}\quad|\sin x|.$$</p>
+<p>Entrambe pari, di periodo $\pi$ e immagine $[0,1]$. Vale $\sin^2x\le|\sin x|$; il modulo ha punti angolosi negli zeri, il quadrato è regolare.</p>
+<div class="lab" id="laboratorio-30" data-lab="30"></div>
+<h3>Tavola 31 · Cubo del seno</h3>
+<p>$$\sin^3x\quad\text{e}\quad\sin x.$$</p>
+<p>Il cubo resta fra $-1$ e $1$, conserva il segno del seno e ne riduce il modulo. È dispari e ha periodo $2\pi$.</p>
+<div class="lab" id="laboratorio-31" data-lab="31"></div>
+<h3>Tavola 32 · Radice del seno</h3>
+<p>$$\sqrt{\sin x}\quad\text{e}\quad\sin x.$$</p>
+<p>La radice reale esiste solo dove $\sin x\ge0$, cioè negli intervalli $[2k\pi,(2k+1)\pi]$. Nei tratti ammessi sta sopra il seno; non si disegna una radice dei valori negativi.</p>
+<div class="lab" id="laboratorio-32" data-lab="32"></div>
+<h3>Tavola 33 · Seno cardinale non normalizzato</h3>
+<p>$$\frac{\sin x}{x}\quad(x\ne0).$$</p>
+<p>Pari, tende a uno in zero e a zero ai due infiniti. Il selettore distingue la funzione con il punto escluso e il prolungamento continuo in zero. La stima $|\sin x/x|\le1/|x|$ vale per $x\ne0$.</p>
+<div class="lab" id="laboratorio-33" data-lab="33"></div>
+<h3>Tavola 34 · Oscillazioni con frequenza variabile</h3>
+<p>$$\sin(x^2).$$</p>
+<p>Pari e limitata fra $-1$ e $1$, non periodica. Le oscillazioni diventano più fitte all’aumentare di $|x|$; la fase è quadratica.</p>
+<div class="lab" id="laboratorio-34" data-lab="34"></div>
+<h3>Tavola 35 · Seno con ampiezza crescente</h3>
+<p>$$x\sin x.$$</p>
+<p>Pari, compresa tra $-|x|$ e $|x|$, non periodica. Gli zeri sono $k\pi$; oscillazioni con ampiezza crescente non implicano un limite infinito con segno fissato.</p>
+<div class="lab" id="laboratorio-35" data-lab="35"></div>
+<h3>Tavola 36 · Oscillazioni presso zero</h3>
+<p>$$\sin(1/x)\quad(x\ne0).$$</p>
+<p>Dispari, limitata, priva di limite in zero. Le successioni $x_n=1/(\pi/2+2n\pi)$ e $y_n=1/(3\pi/2+2n\pi)$ danno valori $1$ e $-1$. Il disegno omette una fascia centrale troppo fitta per il campionamento.</p>
+<div class="lab" id="laboratorio-36" data-lab="36"></div>
+<h3>Tavola 37 · Oscillazioni smorzate presso zero</h3>
+<p>$$x\sin(1/x)\quad(x\ne0).$$</p>
+<p>Pari, compresa tra $-|x|$ e $|x|$, tende a zero in zero. Il prolungamento con valore zero è continuo ma non derivabile in zero, perché il rapporto incrementale è $\sin(1/x)$. Asintoto $y=1$ ai due infiniti.</p>
+<div class="lab" id="laboratorio-37" data-lab="37"></div>
+<h2 id="sezione-8">8. Potenze ed esponenziali</h2>
+<h3>Tavola 38 · Potenze ed esponenziale decrescente</h3>
+<p>$$x^n e^{-x}\quad(n=1,2,3,4).$$</p>
+<p>Per $x\to+\infty$ tende a zero. In $x&gt;0$ ha massimo in $x=n$ con valore $n^ne^{-n}$; per $n&gt;1$ anche zero è stazionario. Sul semiasse negativo il segno dipende dalla parità di $n$ e il modulo cresce senza limite.</p>
+<div class="lab" id="laboratorio-38" data-lab="38"></div>
+<h3>Tavola 39 · Potenze e gaussiana</h3>
+<p>$$x^n e^{-x^2}\quad(n=1,2,3,4).$$</p>
+<p>Tende a zero ai due infiniti. Pari per $n$ pari, dispari per $n$ dispari; punti stazionari non nulli in $x=\pm\sqrt{n/2}$. In $x&gt;0$ il massimo vale $(n/2)^{n/2}e^{-n/2}$.</p>
+<div class="lab" id="laboratorio-39" data-lab="39"></div><nav class="chapter-links" aria-label="Tutti i capitoli"><a href="../capitolo-1/">Capitolo 1 · Numeri</a><a href="../capitolo-2/">Capitolo 2 · Funzioni</a><a href="../capitolo-3/">Capitolo 3 · Limiti e continuità</a><a href="../capitolo-4/">Capitolo 4 · Calcolo differenziale</a><a href="../capitolo-5/">Capitolo 5 · Serie</a><a href="../capitolo-6/">Capitolo 6 · Calcolo integrale</a><a href="../capitolo-7/">Capitolo 7 · Modelli dinamici discreti</a><a href="../appendice-a/">Appendice A · Formule utili</a><a href="../appendice-b/">Appendice B · Grafici</a></nav><footer id="crediti">Analisi 1 · Appendice B — Dispensa didattica rielaborata a partire da Bramanti, Pagani e Salsa.<br><a href="../appendice-a/">Appendice A · Formule utili</a> · <a href="#inizio">Torna all’inizio ↑</a><!-- identita-inizio --><div class="author-card"><span class="eyebrow">A CURA DI</span><h3>Michelle Vrapi</h3><p><a href="mailto:michelle.vrapi@icloud.com">michelle.vrapi@icloud.com</a><br><a href="https://chasemaneuver.carrd.co/">chasemaneuver.carrd.co</a></p><p class="author-links"><a href="https://orcid.org/0009-0007-3304-8042">ORCID · 0009-0007-3304-8042</a> · <a href="https://www.linkedin.com/in/michellevrapi/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Michelle-Vrapi">ResearchGate</a> · <a href="https://github.com/chasemaneuver">GitHub</a><br><a href="https://www.facebook.com/michellevrapi/">Facebook</a> · <a href="https://www.instagram.com/chase_maneuver">Instagram</a></p><p class="license-note">© 2026 Michelle Vrapi · Contributi didattici originali: <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it">CC BY-NC-ND 4.0</a>.<br>Puoi condividere copie inalterate, citando l’autrice, per fini non commerciali. I materiali di terzi restano esclusi. <a href="https://github.com/chasemaneuver/Analisi-1/blob/main/LICENSE">Dettagli delle licenze</a>.</p></div><!-- identita-fine --></footer></main></div></body></html>

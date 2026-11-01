@@ -2,8 +2,9 @@
 // Eseguire dalla radice: node verifiche/strumenti/laboratori.cjs
 const assert=require('node:assert/strict'),path=require('node:path');
 let total=0;const chapters=[];
-for(let n=1;n<=7;n++){
- const {labs}=require(path.join(__dirname,`../../capitolo-${n}/laboratori.js`));
+for(const folder of [...Array.from({length:7},(_,i)=>`capitolo-${i+1}`),'appendice-a','appendice-b']){
+ const n=folder;
+ const {labs}=require(path.join(__dirname,`../../${folder}/laboratori.js`));
  let configurations=0;
  for(const [id,lab]of Object.entries(labs)){
   const initial=Object.fromEntries(lab.controls.map(c=>[c[0],Array.isArray(c[2])?c[3]:c[5]]));

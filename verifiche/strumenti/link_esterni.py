@@ -13,7 +13,7 @@ class Links(HTMLParser):
   for k in ('href','src'):
    if a.get(k,'').startswith('https://'):self.urls.add(a[k])
 urls=set()
-for p in [ROOT/'index.html',*ROOT.glob('capitolo-*/index.html')]:
+for p in [ROOT/'index.html',*ROOT.glob('capitolo-*/index.html'),*ROOT.glob('appendice-*/index.html')]:
  l=Links();l.feed(p.read_text(encoding='utf8'));urls.update(l.urls)
 def check(url):
  try:

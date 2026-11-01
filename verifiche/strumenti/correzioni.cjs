@@ -10,6 +10,7 @@ for(let n=1;n<=7;n++){
  assert(s.includes('https://analisi1-mv.goatcounter.com/count'));
  const menu=s.match(/<select id="capitolo"[\s\S]*?<\/select>/)[0];
  for(let c=1;c<=7;c++)assert(menu.includes(`../capitolo-${c}/`));
+ for(const letter of ['a','b'])assert(menu.includes(`../appendice-${letter}/`));
  checks.push(`C${n}: notazione, fonte, convenzioni, menu, analytics`);
 }
 const c4=fs.readFileSync(path.join(root,'capitolo-4/index.html'),'utf8');

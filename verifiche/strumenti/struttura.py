@@ -24,7 +24,7 @@ class Page(HTMLParser):
   if self.ld:self.jsonld.append(d)
   if not self.skip:self.text.append(d)
 pages={};errors=[];external=set();references=0;counts=[]
-for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,8)]]:
+for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,8)],*ROOT.glob('appendice-*/index.html')]:
  c=Page(p);c.feed(p.read_text(encoding='utf8'));pages[p]=c
  if len(c.ids)!=len(set(c.ids)):errors.append(f'ID duplicati: {p.relative_to(ROOT)}')
  if len(c.canonical)!=1:errors.append(f'Canonical: {p.relative_to(ROOT)}')
@@ -41,6 +41,16 @@ for p in [ROOT/'index.html',*[ROOT/f'capitolo-{n}/index.html' for n in range(1,8
   if bad:errors.append(f'Residui: capitolo {n}: {bad}')
   if len(re.findall(r'(?<!\\)\$',text))%2:errors.append(f'Delimitatori matematici: capitolo {n}')
   counts.append({'chapter':n,'laboratories':len(re.findall('data-lab=',s)),'text_characters':len(text),'details':len(re.findall('<details class="esercizio"',s))})
+ elif p.parent.name.startswith('appendice-'):
+  letter=p.parent.name[-1].upper();s=p.read_text(encoding='utf8');text=''.join(c.text)
+  if c.h1!=1 or not c.meta.get('description'):errors.append(f'Titolo/descrizione: appendice {letter}')
+  for raw in c.jsonld:
+   ld=json.loads(raw)
+   if f'Appendice {letter} ' not in ld.get('name',''):errors.append(f'Nome JSON-LD: appendice {letter}')
+   if ld.get('url')!=f'https://chasemaneuver.github.io/Analisi-1/appendice-{letter.lower()}/':errors.append(f'URL JSON-LD: appendice {letter}')
+  if re.search(r'\b(?:TODO|FIXME|SEL1|SEL2|cis)\b|\ufffd',text):errors.append(f'Residui: appendice {letter}')
+  if len(re.findall(r'(?<!\\)\$',text))%2:errors.append(f'Delimitatori matematici: appendice {letter}')
+  counts.append({'appendix':letter,'laboratories':s.count('data-lab='),'text_characters':len(text)})
 for p,c in pages.items():
  for ref in c.refs:
   u=urlsplit(ref)

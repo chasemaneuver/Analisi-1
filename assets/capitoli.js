@@ -7,9 +7,9 @@ document.head.append(mvIcon);
 const chapterSelect=document.querySelector('#capitolo');
 if(chapterSelect){
   // Il catalogo condiviso aggiorna il menu anche nei capitoli già pubblicati.
-  const chapters=[[1,'Numeri'],[2,'Funzioni'],[3,'Limiti e continuità'],[4,'Calcolo differenziale'],[5,'Serie'],[6,'Calcolo integrale'],[7,'Modelli dinamici discreti']];
-  for(const [number,title] of chapters){
-    const value=`../capitolo-${number}/`;
+  const chapters=[["1", "Numeri", "capitolo-1"], ["2", "Funzioni", "capitolo-2"], ["3", "Limiti e continuità", "capitolo-3"], ["4", "Calcolo differenziale", "capitolo-4"], ["5", "Serie", "capitolo-5"], ["6", "Calcolo integrale", "capitolo-6"], ["7", "Modelli dinamici discreti", "capitolo-7"], ["A", "Formule utili", "appendice-a"], ["B", "Grafici", "appendice-b"]];
+  for(const [number,title,path] of chapters){
+    const value=`../${path}/`;
     let option=[...chapterSelect.options].find(option=>option.value===value);
     if(!option){option=document.createElement('option');option.value=value;option.textContent=`${number} · ${title}`;}
     chapterSelect.append(option);
