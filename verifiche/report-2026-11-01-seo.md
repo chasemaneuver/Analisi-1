@@ -22,7 +22,15 @@ Verifica temporanea dei metadati: nove titoli unici, nove description uniche, co
 
 All’inizio dell’intervento Search Console mostra ancora la sitemap come **Impossibile recuperare**, zero pagine rilevate; la proprietà rimane verificata. Non si può dedurre da questo che nessuna pagina sia indicizzata. Il test live positivo della sitemap del controllo precedente resta l’ultima evidenza di accessibilità diretta da Google; lo stato del sistema Sitemap è distinto. Nessuna promessa di ranking, tempi di scansione o indicizzazione.
 
-Esiti di pubblicazione, HTTP, statistiche e richiesta di indicizzazione annotati a conclusione del lavoro.
+Pubblicato `55c57aa` su main. [GitHub Pages, run 89](https://github.com/chasemaneuver/Analisi-1/actions/runs/41342504042): **Success**, 26s. Confrontati l’ingresso, i nove HTML e la sitemap: **11 risposte 200, tutte identiche ai file locali** normalizzando i fine-riga. Nel browser pubblico C1 mostra il nuovo titolo e la nuova descrizione; 975 formule senza errori MathJax rilevati, nove voci del menu.
+
+`python verifiche/strumenti/link_esterni.py`: **20 URL, 18 risposte 200**. LinkedIn 999 e ResearchGate 403 per accesso automatico limitato; nessun 404/410. Prima delle nuove prove pubbliche GoatCounter mostrava 22 visualizzazioni nel periodo 25 ottobre–1° novembre (C1 6, C3 3, C2/C4/C5/C7/A/B 2 ciascuno, C6 1). Conteggi influenzabili dalle nostre verifiche, non studenti distinti o una misura degli effetti SEO. Nessuna impostazione statistica modificata.
+
+Dopo la pubblicazione eseguito un solo nuovo invio di sitemap.xml, con conferma **Sitemap inviata**. La sitemap comprende i dati strutturati aggiornati e la segnalazione precedente risaliva a qualche ora prima. Nessuna variante inventata del percorso e nessuna rimozione della proprietà.
+
+Controllo URL del capitolo 1: Google segnala **L’URL non si trova su Google**, URL sconosciuto, senza una precedente scansione riportata. Richiesta di indicizzazione della pagina canonica di ingresso **accettata**: conferma **Indicizzazione richiesta**, URL aggiunto alla coda di scansione prioritaria. Questo non equivale a indicizzazione completata. Non è stato richiesto di indicizzare il file XML né ripetuta la richiesta su tutte le nove pagine. Al controllo conclusivo il report Sitemap conserva **Impossibile recuperare**, tipo sconosciuto e zero pagine rilevate: resta da ricontrollare in seguito. Nessuna ulteriore richiesta ripetuta nella sessione.
+
+Aggiornata la guida Search Console con istruzioni per mantenere titoli, descrizioni, dati strutturati e lastmod coerenti. Il successivo aggiornamento del repository riguarda documentazione e registro, non i metadati appena pubblicati.
 
 ## Riferimenti e manutenzione
 

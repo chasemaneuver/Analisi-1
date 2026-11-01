@@ -24,4 +24,10 @@ Se compare **Impossibile recuperare**, aprire il dettaglio e controllare l’ind
 
 Verificare la proprietà o inviare la sitemap non garantisce l’indicizzazione o una posizione specifica. I dati possono richiedere tempo prima di comparire. I clic Google e le visite GoatCounter misurano fenomeni diversi e possono non coincidere.
 
-Istruzioni ufficiali: [verifica della proprietà](https://support.google.com/webmasters/answer/9008080), [gestione delle sitemap](https://support.google.com/webmasters/answer/7451001).
+## Quando aggiorni i contenuti per la ricerca
+
+Ogni capitolo o appendice ha un titolo descrittivo e una meta description propri. Se cambia l’argomento, aggiorna insieme `<title>`, `description`, titoli e descrizioni Open Graph/Twitter e la descrizione JSON-LD. I temi in `about` e `teaches` devono corrispondere a quelli realmente trattati; mantieni autore e URL coerenti. Questi campi si trovano nel `<head>` del rispettivo `index.html`.
+
+Conserva canonical e percorsi già pubblicati. Aggiorna `lastmod` nella sitemap quando cambiano in modo significativo contenuti, dati strutturati o collegamenti; la data non va rinnovata ogni giorno. Dopo il deploy confronta pagina pubblica e file modificato. Valuta poi clic, impressioni e query effettive in Search Console: metadati corretti non garantiscono una determinata posizione e Google può scegliere un titolo o una descrizione diversi.
+
+Istruzioni ufficiali: [verifica della proprietà](https://support.google.com/webmasters/answer/9008080), [gestione delle sitemap](https://support.google.com/webmasters/answer/7451001), [titoli](https://developers.google.com/search/docs/appearance/title-link), [descrizioni](https://developers.google.com/search/docs/appearance/snippet).
