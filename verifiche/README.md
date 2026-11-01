@@ -1,8 +1,8 @@
 # Registro delle verifiche
 
-Ultimo aggiornamento: [appendici A e B](report-2026-11-01.md).
+Ultimo aggiornamento: [miglioramenti SEO](report-2026-11-01-seo.md).
 
-Prima di un nuovo controllo leggere il [report del 1° novembre 2026](report-2026-11-01.md) e il [registro delle versioni](stato.json).
+Prima di un nuovo controllo leggere il [report SEO del 1° novembre 2026](report-2026-11-01-seo.md) e il [registro delle versioni](stato.json). Per matematica e grafici conservare la copertura del [report delle appendici](report-2026-11-01.md).
 
 Il registro distingue i controlli completi di struttura, rendering e funzionamento dai controlli matematici mirati. Non è una certificazione formale di ogni dimostrazione o di conformità WCAG.
 
