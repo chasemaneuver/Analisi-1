@@ -67,7 +67,7 @@
       "sha256": "8de6d576ac1c37d49d85e15ec2e041e3d88a7bbea198b61da87373c5c0adf739"
     },
     "capitolo-1/index.html": {
-      "sha256": "98e80ee6a6614cf8db7f2a01c4d1f17fcf62541a280d1b1a9182e9c34f0f7a63",
+      "sha256": "fb359587a28d1099f9261e9d3f0e81e5356e3b932fdd5373c4821ccee563c9d2",
       "body_sha256": "9e63ab67a8d9cdf80fdfe19b0bdeb73acdf9514b40176b632e72be8298921b93",
       "sections": {
         "sezione-1": "64a7c2b795cbf9ee04313486dbbc5efbd8968916f55b7a7904ebbed880eced8d",
@@ -217,8 +217,11 @@
     "documentazione/Come-costruire-il-tuo-sito.md": {
       "sha256": "4f15fb7768e78313cca7b5afa087b99f5e2f4beca97cff03b93dbbb3a65d03c2"
     },
+    "documentazione/Google-Search-Console.md": {
+      "sha256": "66fe4b98a9c4975c58de1f70232a6e81c1491f25731d2469be8955d9a57214a9"
+    },
     "index.html": {
-      "sha256": "0b8f5d7954fadea16042879253324fdec8b6dce0605b4fed0c67b88f71d56443",
+      "sha256": "31a6428477cc00e9b73c86b4304ffbdc1c3bb3a902bf29b9bcbeec04fcf60ff5",
       "body_sha256": "cf39072b51ef5cb4378c7916cafc9f609061c9ea04789cdf84f011cdfe71637d",
       "sections": {}
     },
